@@ -1,4 +1,0 @@
-begin
-Writeln('Hello world!');פûן פûגן פûגן
-Readln;
-end.
