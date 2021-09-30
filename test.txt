@@ -1,0 +1,4 @@
+begin
+Writeln('Hello world!');
+Readln;
+end.
