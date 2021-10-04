@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PixelCrew.Components;
 
+
 namespace PixelCrew
 {
 
@@ -15,13 +16,18 @@ namespace PixelCrew
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
 
+        [SerializeField] private SpawnParticlesComponent _footStepsParticles;
+        [SerializeField] private ParticleSystem _hitParticles;
+
         private Rigidbody2D _rigidbody;
         private Vector2 _direction;
         private Animator _animator;
-        private SpriteRenderer _sprite;
         private bool _isGrounded;
         private bool _allowDoubleJump;
         private Collider2D[] _interactionResult = new Collider2D[1];
+        private float _lastYVelocity;
+        private bool _allowFallDustSpawn;
+        private bool _isJumping;
 
         public int _money;
 
@@ -35,7 +41,6 @@ namespace PixelCrew
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
-            _sprite = GetComponent<SpriteRenderer>();
         }
 
         private void Update()
@@ -55,6 +60,7 @@ namespace PixelCrew
 
             _rigidbody.velocity = new Vector2(xVelocity, yVelocity);
 
+
             _animator.SetBool(IsRunningKey, _direction.x != 0);
             _animator.SetFloat(VerticalVelocityKey, _rigidbody.velocity.y);
             _animator.SetBool(IsGroundKey, _isGrounded);
@@ -67,17 +73,34 @@ namespace PixelCrew
             var yVelocity = _rigidbody.velocity.y;
             var isJumpPressing = _direction.y > 0;
 
-            if (_isGrounded) _allowDoubleJump = true;
+            // Смотрим какой скорости падения достигли. Если меньше -1 - разрешаем спавнить пыль
+            if (yVelocity < -15)
+            {
+                _allowFallDustSpawn = true;
+            }
+            // если все условия выполнены - спавним пыль
+            if ((_lastYVelocity < 0) & (yVelocity == 0) & (_allowFallDustSpawn))
+            {
+                SpawnFallDust();
+            }
+
+            if (_isGrounded)
+            {
+                _allowDoubleJump = true;
+                _isJumping = false;
+            }
 
             if (isJumpPressing)
             {
+                _isJumping = true;
                 yVelocity = CalculateJumpVelocity(yVelocity);
             }
-            else if (_rigidbody.velocity.y > 0)
+            else if (_rigidbody.velocity.y > 0 && _isJumping)
             {
                 yVelocity *= 0.5f;
             }
 
+            _lastYVelocity = yVelocity;
             return yVelocity;
         }
 
@@ -89,11 +112,14 @@ namespace PixelCrew
             if (_isGrounded)
             {
                 yVelocity += _jumpforce;
+                SpawnJumpDust();
             }
             else if (_allowDoubleJump)
             {
                 yVelocity = _jumpforce;
+                SpawnJumpDust();
                 _allowDoubleJump = false;
+                _allowFallDustSpawn = true;
             }
             return yVelocity;
         }
@@ -102,11 +128,11 @@ namespace PixelCrew
         {
             if (_direction.x > 0)
             {
-                _sprite.flipX = false;
+                transform.localScale = Vector3.one;
             }
             else if (_direction.x < 0)
             {
-                _sprite.flipX = true;
+                transform.localScale = new Vector3(-1, 1, 1);
             }
         }
 
@@ -140,8 +166,43 @@ namespace PixelCrew
 
         public void TakeDamage()
         {
+            _isJumping = false;
             _animator.SetTrigger(Hit);
             _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damageJumpForce);
+
+            if (_money > 0)
+            {
+                SpawnCoins();
+            }
         }
+
+        private void SpawnCoins()
+        {
+            var numCoinsToDispose = Mathf.Min(_money, 5);
+            _money -= numCoinsToDispose;
+
+            var burst = _hitParticles.emission.GetBurst(0);
+            burst.count = numCoinsToDispose;
+            _hitParticles.emission.SetBurst(0, burst);
+            _hitParticles.gameObject.SetActive(true);
+            _hitParticles.Play();
+        }
+
+        public void SpawnFootDust ()
+        {
+            _footStepsParticles.Spawn(0);
+        }
+
+        public void SpawnJumpDust()
+        {
+            _footStepsParticles.Spawn(1);
+        }
+
+        public void SpawnFallDust()
+        {
+            _footStepsParticles.Spawn(2);
+            _allowFallDustSpawn = false;
+        }
+
     }
 }
