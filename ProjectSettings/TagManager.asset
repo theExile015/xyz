@@ -18,7 +18,7 @@ TagManager:
   - Creatures
   - Level
   - Interactables
-  - 
+  - Front layer
   - 
   - 
   - 
@@ -50,4 +50,7 @@ TagManager:
     locked: 0
   - name: Creatures
     uniqueID: 1744696815
+    locked: 0
+  - name: Front layer
+    uniqueID: 1501466391
     locked: 0
