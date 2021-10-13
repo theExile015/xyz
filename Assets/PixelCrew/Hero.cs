@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PixelCrew.Components;
 using PixelCrew.Utils;
-
+using UnityEditor.Animations;
 
 namespace PixelCrew
 {
@@ -14,11 +14,23 @@ namespace PixelCrew
         [SerializeField] private float _jumpforce;
         [SerializeField] private float _damageJumpForce;
         [SerializeField] private float _slamDownVelocity;
+        [SerializeField] private int _meleeDamage = 1;
         [SerializeField] private LayerCheck _groundCheck;
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
 
+        [SerializeField] private CheckCircleOverlap _attackRange;
+
+        [SerializeField] private AnimatorController _armed;
+        [SerializeField] private AnimatorController _unarmed;
+
+
+
+        [Space][Header("Particles")]
         [SerializeField] private SpawnParticlesComponent _footStepsParticles;
+        [SerializeField] private SpawnParticlesComponent _jumpParticles;
+        [SerializeField] private SpawnParticlesComponent _fallParticles;
+
         [SerializeField] private ParticleSystem _hitParticles;
 
         private Rigidbody2D _rigidbody;
@@ -26,16 +38,19 @@ namespace PixelCrew
         private Animator _animator;
         private bool _isGrounded;
         private bool _allowDoubleJump;
-        private Collider2D[] _interactionResult = new Collider2D[1];
+        private readonly Collider2D[] _interactionResult = new Collider2D[1];
         private float _lastYVelocity;
         private bool _isJumping;
 
         public int _money;
 
+        private bool _isArmed;
+
         private static readonly int IsGroundKey = Animator.StringToHash("IsGround");
         private static readonly int IsRunningKey = Animator.StringToHash("IsRunning");
         private static readonly int VerticalVelocityKey = Animator.StringToHash("VerticalVelocity");
         private static readonly int Hit = Animator.StringToHash("Hit");
+        private static readonly int AttackKey = Animator.StringToHash("Attack");
 
 
         private void Awake()
@@ -191,17 +206,43 @@ namespace PixelCrew
 
         public void SpawnFootDust ()
         {
-            _footStepsParticles.Spawn(0);
+            _footStepsParticles.Spawn();
         }
 
         public void SpawnJumpDust()
         {
-            _footStepsParticles.Spawn(1);
+            _jumpParticles.Spawn();
         }
 
         public void SpawnFallDust()
         {
-            _footStepsParticles.Spawn(2);
+            _fallParticles.Spawn();
+        }
+         
+        public void Attack()
+        {
+            if (!_isArmed) return;
+
+            _animator.SetTrigger(AttackKey);   
+        }
+
+        public void OnMeleeAttack()
+        {
+            var gos = _attackRange.GetObjectsInRange(); 
+            foreach (var go in gos)
+            {
+                var _hp = go.GetComponent<HealthComponent>();
+                if (_hp != null && go.CompareTag("Enemy"))
+                {
+                    _hp.ModifyHP(-_meleeDamage);
+                }
+}
+        }
+
+        public void ArmHero()
+        {
+            _isArmed = true;
+            _animator.runtimeAnimatorController = _armed;
         }
 
     }
