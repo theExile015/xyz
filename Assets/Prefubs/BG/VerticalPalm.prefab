@@ -96,12 +96,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
-  _loop: 1
-  _sprites:
-  - {fileID: 8683632313750085214, guid: 472481cf901fad54c9ad750a95a6e89c, type: 3}
-  - {fileID: 262518517033693272, guid: 472481cf901fad54c9ad750a95a6e89c, type: 3}
-  - {fileID: 762285979657935423, guid: 472481cf901fad54c9ad750a95a6e89c, type: 3}
-  - {fileID: 1400697303485121525, guid: 472481cf901fad54c9ad750a95a6e89c, type: 3}
-  _onComplete:
-    m_PersistentCalls:
-      m_Calls: []
+  _clips:
+  - _name: 
+    _sprites:
+    - {fileID: 8683632313750085214, guid: 472481cf901fad54c9ad750a95a6e89c, type: 3}
+    - {fileID: 262518517033693272, guid: 472481cf901fad54c9ad750a95a6e89c, type: 3}
+    - {fileID: 762285979657935423, guid: 472481cf901fad54c9ad750a95a6e89c, type: 3}
+    - {fileID: 1400697303485121525, guid: 472481cf901fad54c9ad750a95a6e89c, type: 3}
+    _loop: 1
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  - _name: 
+    _sprites: []
+    _loop: 0
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  - _name: 
+    _sprites: []
+    _loop: 0
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+  - _name: 
+    _sprites: []
+    _loop: 0
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []

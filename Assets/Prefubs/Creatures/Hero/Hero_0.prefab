@@ -107,6 +107,7 @@ MonoBehaviour:
   _speed: 3
   _jumpforce: 9
   _damageJumpForce: 7
+  _slamDownVelocity: 10
   _groundCheck: {fileID: 5667291143501099337}
   _interactionRadius: 0.55
   _interactionLayer:
@@ -301,6 +302,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _onHeal:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5667291142706246294
 GameObject:
   m_ObjectHideFlags: 0

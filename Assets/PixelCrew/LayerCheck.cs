@@ -2,7 +2,7 @@
 
 public class LayerCheck : MonoBehaviour
 {
-    [SerializeField] private LayerMask _groundlayer;
+    [SerializeField] public LayerMask _groundlayer;
     private Collider2D _collider;
 
     public bool IsTouchingLayer;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using PixelCrew.Components;
+using PixelCrew.Utils;
 
 
 namespace PixelCrew
@@ -12,6 +13,7 @@ namespace PixelCrew
         [SerializeField] private float _speed;
         [SerializeField] private float _jumpforce;
         [SerializeField] private float _damageJumpForce;
+        [SerializeField] private float _slamDownVelocity;
         [SerializeField] private LayerCheck _groundCheck;
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
@@ -26,7 +28,6 @@ namespace PixelCrew
         private bool _allowDoubleJump;
         private Collider2D[] _interactionResult = new Collider2D[1];
         private float _lastYVelocity;
-        private bool _allowFallDustSpawn;
         private bool _isJumping;
 
         public int _money;
@@ -73,17 +74,6 @@ namespace PixelCrew
             var yVelocity = _rigidbody.velocity.y;
             var isJumpPressing = _direction.y > 0;
 
-            // Смотрим какой скорости падения достигли. Если меньше -1 - разрешаем спавнить пыль
-            if (yVelocity < -15)
-            {
-                _allowFallDustSpawn = true;
-            }
-            // если все условия выполнены - спавним пыль
-            if ((_lastYVelocity < 0) & (yVelocity == 0) & (_allowFallDustSpawn))
-            {
-                SpawnFallDust();
-            }
-
             if (_isGrounded)
             {
                 _allowDoubleJump = true;
@@ -119,7 +109,6 @@ namespace PixelCrew
                 yVelocity = _jumpforce;
                 SpawnJumpDust();
                 _allowDoubleJump = false;
-                _allowFallDustSpawn = true;
             }
             return yVelocity;
         }
@@ -188,6 +177,18 @@ namespace PixelCrew
             _hitParticles.Play();
         }
 
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.IsInLayer(_groundCheck._groundlayer))
+            {
+                var contact = other.contacts[0];
+                if (contact.relativeVelocity.y >= _slamDownVelocity)
+                {
+                    SpawnFallDust();
+                }
+            }
+        }
+
         public void SpawnFootDust ()
         {
             _footStepsParticles.Spawn(0);
@@ -201,7 +202,6 @@ namespace PixelCrew
         public void SpawnFallDust()
         {
             _footStepsParticles.Spawn(2);
-            _allowFallDustSpawn = false;
         }
 
     }

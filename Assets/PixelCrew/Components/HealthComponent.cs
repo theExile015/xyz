@@ -9,6 +9,7 @@ namespace PixelCrew.Components
         [SerializeField] private int _maxHealth;
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onDie;
+        [SerializeField] private UnityEvent _onHeal;
         private int _health;
 
         private void Awake()
@@ -28,9 +29,16 @@ namespace PixelCrew.Components
             if (_health <= 0)
             {
                 _onDie?.Invoke();
-            } else if (_health > _maxHealth)
+            }
+
+            if (hpValue > 0)
             {
-                _health = _maxHealth;
+                _onHeal?.Invoke();
+
+                if (_health > _maxHealth)
+                {
+                    _health = _maxHealth;
+                }
             }
 
             Debug.Log("Ouch!! HP = " + _health);
