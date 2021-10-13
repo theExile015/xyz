@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Run
+  m_Name: Attack
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,17 +20,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: a91d070ab8b214148a1378173f755c29, type: 3}
+      value: {fileID: 21300000, guid: 2fc4bbe937376794cbf2cedd782d9ff2, type: 3}
     - time: 0.1
-      value: {fileID: 21300000, guid: 98b33f07a812287428017f7c507b23bd, type: 3}
+      value: {fileID: 21300000, guid: 894307de153360a4fb308ddf185b4d3f, type: 3}
     - time: 0.2
-      value: {fileID: 21300000, guid: 9705f0af87363b34e9afbee383700b26, type: 3}
-    - time: 0.3
-      value: {fileID: 21300000, guid: fee5fe52ec37db74c86d7b45ab7a8dd4, type: 3}
-    - time: 0.4
-      value: {fileID: 21300000, guid: cdf3429640489bb4fbf51b709687c96f, type: 3}
-    - time: 0.5
-      value: {fileID: 21300000, guid: 59aef2851bc71ae47bf7250f90805431, type: 3}
+      value: {fileID: 21300000, guid: 3793a9e6d6a7896468d65fba74744279, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,18 +44,15 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: a91d070ab8b214148a1378173f755c29, type: 3}
-    - {fileID: 21300000, guid: 98b33f07a812287428017f7c507b23bd, type: 3}
-    - {fileID: 21300000, guid: 9705f0af87363b34e9afbee383700b26, type: 3}
-    - {fileID: 21300000, guid: fee5fe52ec37db74c86d7b45ab7a8dd4, type: 3}
-    - {fileID: 21300000, guid: cdf3429640489bb4fbf51b709687c96f, type: 3}
-    - {fileID: 21300000, guid: 59aef2851bc71ae47bf7250f90805431, type: 3}
+    - {fileID: 21300000, guid: 2fc4bbe937376794cbf2cedd782d9ff2, type: 3}
+    - {fileID: 21300000, guid: 894307de153360a4fb308ddf185b4d3f, type: 3}
+    - {fileID: 21300000, guid: 3793a9e6d6a7896468d65fba74744279, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.6
+    m_StopTime: 0.3
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -81,15 +72,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.2
-    functionName: SpawnFootDust
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.4
-    functionName: SpawnFootDust
+  - time: 0.1
+    functionName: OnMeleeAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

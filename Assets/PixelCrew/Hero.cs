@@ -30,6 +30,7 @@ namespace PixelCrew
         [SerializeField] private SpawnParticlesComponent _footStepsParticles;
         [SerializeField] private SpawnParticlesComponent _jumpParticles;
         [SerializeField] private SpawnParticlesComponent _fallParticles;
+        [SerializeField] private SpawnParticlesComponent _attackParticles;
 
         [SerializeField] private ParticleSystem _hitParticles;
 
@@ -218,12 +219,17 @@ namespace PixelCrew
         {
             _fallParticles.Spawn();
         }
-         
+
+        public void SpawnAttackTrace()
+        {
+            _attackParticles.Spawn();
+        }
+
         public void Attack()
         {
             if (!_isArmed) return;
 
-            _animator.SetTrigger(AttackKey);   
+            _animator.SetTrigger(AttackKey);
         }
 
         public void OnMeleeAttack()
@@ -236,7 +242,9 @@ namespace PixelCrew
                 {
                     _hp.ModifyHP(-_meleeDamage);
                 }
-}
+
+            }
+            SpawnAttackTrace();
         }
 
         public void ArmHero()

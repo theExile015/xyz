@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4902906562282497345}
   - component: {fileID: 4902906562282497375}
   - component: {fileID: 2681591664736379293}
+  - component: {fileID: 1517200628637601485}
   m_Layer: 0
   m_Name: destructableBarrel
   m_TagString: Enemy
@@ -154,6 +155,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1517200628637601485}
+          m_MethodName: SpawnLoot
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 4902906562282497347}
           m_MethodName: DestroyObject
           m_Mode: 1
@@ -190,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 832d38f8675982546b6421946c6e9621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 5
+  _maxHealth: 1
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -284,3 +296,25 @@ MonoBehaviour:
   _spawnTarget: {fileID: 4902906562282497372}
   _particlesPrefub: {fileID: 8218073054950575051, guid: 982e51a2801fc6541bd56d096b1164bc,
     type: 3}
+--- !u!114 &1517200628637601485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4902906562282497350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601a965ae954ce5408fcaeda06016b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnTarget: {fileID: 4902906562282497372}
+  _lootTable:
+  - _name: silver
+    _dropChance: 80
+    _prefub: {fileID: 3585575534756527232, guid: 80f4690374d8b6643936078c06f02819,
+      type: 3}
+  - _name: gold
+    _dropChance: 20
+    _prefub: {fileID: 3003033755818665641, guid: 3ab3431907d1b3f478a98e6d7f4cf1f2,
+      type: 3}
