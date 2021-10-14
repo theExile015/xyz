@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using UnityEngine.Events;
 
 namespace PixelCrew.Components
@@ -10,6 +11,8 @@ namespace PixelCrew.Components
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onDie;
         [SerializeField] private UnityEvent _onHeal;
+        [SerializeField] private HealthChangeEvent _onChange;
+
         private int _health;
 
         private void Awake()
@@ -20,6 +23,8 @@ namespace PixelCrew.Components
         public void ModifyHP(int hpValue)
         {
             _health += hpValue;
+
+            _onChange?.Invoke(_health);
                         
             if (hpValue < 0)
             {
@@ -42,6 +47,17 @@ namespace PixelCrew.Components
             }
 
             Debug.Log("Ouch!! HP = " + _health);
+        }
+
+        [Serializable]
+        public class HealthChangeEvent : UnityEvent<int>
+        {
+
+        }
+
+        public void SetHealth(int health)
+        {
+            _health = health;
         }
 
     }
