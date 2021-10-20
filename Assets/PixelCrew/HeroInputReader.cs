@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using PixelCrew.Creatures;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,7 +13,7 @@ namespace PixelCrew
         {
             if (context.canceled)
             {
-                _hero.SaySomething();
+                
             }
         }
 

@@ -82,14 +82,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.2
-    functionName: SpawnFootDust
-    data: 
+    functionName: Spawn
+    data: Run
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.4
-    functionName: SpawnFootDust
+    functionName: Attack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

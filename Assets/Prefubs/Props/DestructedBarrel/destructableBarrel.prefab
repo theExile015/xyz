@@ -234,6 +234,9 @@ MonoBehaviour:
   _onHeal:
     m_PersistentCalls:
       m_Calls: []
+  _onChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &4902906562282497345
 BoxCollider2D:
   m_ObjectHideFlags: 0
