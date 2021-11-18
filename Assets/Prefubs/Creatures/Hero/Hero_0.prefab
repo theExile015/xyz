@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3082823143992263468}
   - component: {fileID: 4363334670415823793}
   m_Layer: 14
-  m_Name: FallPosition
+  m_Name: ThrowSwordSpawnPosition
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -25,11 +25,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280377491619016765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.372, z: 0}
+  m_LocalPosition: {x: 0.394, y: -0.009, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5667291142690478710}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4363334670415823793
 MonoBehaviour:
@@ -44,6 +44,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnTarget: {fileID: 3082823143992263468}
+  _particlesPrefub: {fileID: 7990069752233272823, guid: aa8c0daa131d94e4a91a17ca26114253,
+    type: 3}
+--- !u!1 &2766187290672906971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2085413153597153437}
+  - component: {fileID: 7750234197348978624}
+  m_Layer: 14
+  m_Name: FallPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2085413153597153437
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2766187290672906971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.372, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5667291142690478710}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7750234197348978624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2766187290672906971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d7882d50f1c994a906190b8cc4afdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnTarget: {fileID: 2085413153597153437}
   _particlesPrefub: {fileID: 7990069752233272823, guid: dcfad0155f527694bb2724d8baf6a55e,
     type: 3}
 --- !u!1 &5667291142690478708
@@ -85,10 +131,11 @@ Transform:
   - {fileID: 5667291143501099339}
   - {fileID: 5667291142706246289}
   - {fileID: 5667291142927089606}
-  - {fileID: 5667291144048277280}
-  - {fileID: 3082823143992263468}
   - {fileID: 6990637213231790691}
   - {fileID: 3516641258860929674}
+  - {fileID: 3082823143992263468}
+  - {fileID: 5667291144048277280}
+  - {fileID: 2085413153597153437}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -129,9 +176,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1744696815
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6d67dd6b6f18b9c4e8cf0cb36778cb47, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c1e9087585b34c047b3c09b6f8fe0e69, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -170,6 +217,8 @@ MonoBehaviour:
   _interactionLayer:
     serializedVersion: 2
     m_Bits: 2048
+  _throwCooldown:
+    _value: 1.5
   _armed: {fileID: 9100000, guid: c147f8b6192b9b94e8cf0f57872a540e, type: 2}
   _unarmed: {fileID: 9100000, guid: 194505b33a161d543a76a4478bbb95f9, type: 2}
   _interactionCheck: {fileID: 4430016027453450904}
@@ -274,6 +323,25 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ee970662-6b7a-40fc-adb5-67d92a393119
     m_ActionName: HeroInput/Attack[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5a13395e-03ad-4ccd-941f-cf5532c01424
+    m_ActionName: HeroInput/New action
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5667291142690478704}
+        m_MethodName: OnThrow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bf64f4ca-a1bc-419e-8665-935a1abe2c60
+    m_ActionName: HeroInput/Throw[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: HeroInput
@@ -326,7 +394,7 @@ Animator:
   m_GameObject: {fileID: 5667291142690478708}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 194505b33a161d543a76a4478bbb95f9, type: 2}
+  m_Controller: {fileID: 9100000, guid: c147f8b6192b9b94e8cf0f57872a540e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -411,9 +479,11 @@ MonoBehaviour:
   - id: Run
     Component: {fileID: 5667291142706246288}
   - id: SlamDown
-    Component: {fileID: 4363334670415823793}
+    Component: {fileID: 7750234197348978624}
   - id: Attack
     Component: {fileID: 7409076337036547072}
+  - id: Throw
+    Component: {fileID: 4363334670415823793}
 --- !u!1 &5667291142706246294
 GameObject:
   m_ObjectHideFlags: 0
@@ -5247,7 +5317,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1187020389
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_RenderMode: 0
   m_SortMode: 0
@@ -5365,7 +5435,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5667291142690478710}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1437846671607912041
 MonoBehaviour:
@@ -5412,7 +5482,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5667291142690478710}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4430016027453450904
 MonoBehaviour:
@@ -5489,7 +5559,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5667291142690478710}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5931456910991614328
 MonoBehaviour:

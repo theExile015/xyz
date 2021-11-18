@@ -774,6 +774,7 @@ MonoBehaviour:
   _data:
     Coins: 0
     HP: 5
+    thrownNumber: 0
     IsArmed: 0
 --- !u!4 &759523455
 Transform:
@@ -1107,6 +1108,7 @@ GameObject:
   - component: {fileID: 1370371118}
   - component: {fileID: 1370371120}
   - component: {fileID: 1370371119}
+  - component: {fileID: 1370371121}
   m_Layer: 0
   m_Name: BG
   m_TagString: Untagged
@@ -6504,6 +6506,36 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1370371121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370371117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: 0}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &1392763928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6963,7 +6995,7 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1187020389
+  m_SortingLayerID: 84020753
   m_SortingLayer: 2
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}

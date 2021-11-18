@@ -14,7 +14,8 @@ namespace PixelCrew.Components
         public void Spawn()
         {
             var instantiate = Instantiate(_particlesPrefub, _spawnTarget.position, Quaternion.identity);
-            instantiate.transform.localScale = _spawnTarget.lossyScale;
+            var scale = _spawnTarget.lossyScale;
+            instantiate.transform.localScale = scale;
         }
     }
 }

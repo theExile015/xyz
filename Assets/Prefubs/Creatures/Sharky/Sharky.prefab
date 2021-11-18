@@ -158,7 +158,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1744696815
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4ba4dfad37f41834f873361faf00e253, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -385,7 +385,7 @@ Transform:
   m_GameObject: {fileID: 5667291142706246294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.357, y: -0.385, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5667291142690478710}
   m_RootOrder: 1
@@ -405,6 +405,7 @@ MonoBehaviour:
   _spawnTarget: {fileID: 5667291142706246289}
   _particlesPrefub: {fileID: 23932536491478171, guid: 15e501d5eb66eb74fb7353a07d5aaccc,
     type: 3}
+  _invertXScale: 1
 --- !u!1 &5667291143501099342
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +516,7 @@ MonoBehaviour:
   _spawnTarget: {fileID: 5667291144048277280}
   _particlesPrefub: {fileID: 3393601434514733161, guid: 425700786828e6d41813a7f83347f20e,
     type: 3}
+  _invertXScale: 0
 --- !u!1 &6871577206898373097
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,6 +599,7 @@ MonoBehaviour:
   _spawnTarget: {fileID: 6990637213231790691}
   _particlesPrefub: {fileID: 8905712907038806034, guid: a7252ba3e6c3b784e82702fdb96e4829,
     type: 3}
+  _invertXScale: 0
 --- !u!114 &3040065046344734351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -730,6 +733,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4294967295
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -790,6 +796,7 @@ MonoBehaviour:
   _spawnTarget: {fileID: 3453729093765906675}
   _particlesPrefub: {fileID: 8905712907038806034, guid: 505b2d65fbcfc334b94de4ab65b5372b,
     type: 3}
+  _invertXScale: 0
 --- !u!1 &9010025239596667837
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,3 +843,4 @@ MonoBehaviour:
   _spawnTarget: {fileID: 4835976267970837297}
   _particlesPrefub: {fileID: 7990069752233272823, guid: 9413289471d5b0e49befe73b366b03df,
     type: 3}
+  _invertXScale: 0

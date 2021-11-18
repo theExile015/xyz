@@ -13,11 +13,11 @@ namespace PixelCrew.Creatures
         [SerializeField] private float _alarmDelay = 0.5f;
         [SerializeField] private float _attackCooldown = 1.0f;
         [SerializeField] private float _missHeroCooldown = 1.0f;
-        
+
         private Coroutine _current;
         private GameObject _target;
         private bool _isDead;
-       
+
         private static readonly int IsDeadKey = Animator.StringToHash("IsDead");
 
         private SpawnListComponent _particles;
@@ -51,10 +51,18 @@ namespace PixelCrew.Creatures
 
         private IEnumerator AggroToHero()
         {
+            LookAtHero();
             _particles.Spawn("Exclamation");
             yield return new WaitForSeconds(_alarmDelay);
 
             StartState(GoToHero());
+        }
+
+        private void LookAtHero()
+        {
+            var direction = GetDirectionToTarget();
+            _creature.SetDirection(Vector2.zero);
+            _creature.UpdateSpriteDirection(direction);
         }
 
         private IEnumerator GoToHero()
@@ -72,9 +80,10 @@ namespace PixelCrew.Creatures
                 yield return null;
             }
 
+            _creature.SetDirection(Vector2.zero);
             _particles.Spawn("Miss");
             yield return new WaitForSeconds(_missHeroCooldown);
-            _patrol.DoPatrol();
+            StartState(_patrol.DoPatrol());
         }
 
         private IEnumerator Attack()
@@ -89,9 +98,15 @@ namespace PixelCrew.Creatures
 
         private void SetDirectionToTarget()
         {
+            var direction = GetDirectionToTarget();
+            _creature.SetDirection(direction);
+        }
+
+        private Vector2 GetDirectionToTarget()
+        {
             var direction = _target.transform.position - transform.position;
             direction.y = 0;
-            _creature.SetDirection(direction.normalized);
+            return direction.normalized;
         }
 
         private void StartState(IEnumerator coroutine)
@@ -106,6 +121,7 @@ namespace PixelCrew.Creatures
 
         public void OnDie()
         {
+            _creature.SetDirection(Vector2.zero);
             _isDead = true;
             _animator.SetBool(IsDeadKey, true);
 

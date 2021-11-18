@@ -9,9 +9,11 @@ namespace PixelCrew
     {
         [SerializeField] private Hero _hero;
 
+        private float _timeStarted;
+
         public void OnSaySomething(InputAction.CallbackContext context)
         {
-            if (context.canceled)
+            if (context.performed)
             {
                 
             }
@@ -19,7 +21,7 @@ namespace PixelCrew
 
         public void OnInteract(InputAction.CallbackContext context)
         {
-            if (context.canceled)
+            if (context.performed)
             {
                 _hero.Interact();
             }
@@ -33,10 +35,31 @@ namespace PixelCrew
 
         public void OnAttack(InputAction.CallbackContext context)
         {
-            if (context.canceled)
+            if (context.performed)
             {
                 _hero.Attack();
             }
+        }
+
+        public void OnThrow(InputAction.CallbackContext context)
+        {
+            if (context.started)
+            {
+                _timeStarted = Time.time;               
+            }
+
+            if (context.canceled)
+            {
+                var duration = Time.time - _timeStarted;
+                if (duration < 1f)
+                {
+                    _hero.Throw();
+                }
+                else
+                {
+                    _hero.TrippleThrow();
+                }
+            } 
         }
     }
 }

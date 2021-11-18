@@ -18,6 +18,7 @@ namespace PixelCrew.Creatures
 
         public override IEnumerator DoPatrol()
         {
+            UpdateDirection();
             while (enabled)
             {
                 if (!_layerCheck.IsTouchingLayer)
@@ -33,7 +34,7 @@ namespace PixelCrew.Creatures
         private void UpdateDirection()
         {
             var multiplier = _leftDirection ? -1 : 1;
-            var direction = new Vector3(multiplier, 0, 0);
+            var direction = new Vector3(multiplier * 1.5f, 0, 0);
             _creature.SetDirection(direction.normalized);
         }
 

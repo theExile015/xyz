@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using PixelCrew.Components;
-using PixelCrew.Utils;
-using UnityEditor.Animations;
+﻿using PixelCrew.Components;
 using PixelCrew.Model;
+using PixelCrew.Utils;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEditor.Animations;
+using UnityEngine;
 
 namespace PixelCrew.Creatures
 {
@@ -16,7 +16,7 @@ namespace PixelCrew.Creatures
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
 
-
+        [SerializeField] private Cooldown _throwCooldown;
         [SerializeField] private AnimatorController _armed;
         [SerializeField] private AnimatorController _unarmed;
 
@@ -27,7 +27,10 @@ namespace PixelCrew.Creatures
 
         [SerializeField] private ParticleSystem _hitParticles;
 
+        private static readonly int ThrowKey = Animator.StringToHash("throw");
+
         private bool _allowDoubleJump;
+        private int _thrownShooted;
 
         private GameSession _session;
 
@@ -133,8 +136,9 @@ namespace PixelCrew.Creatures
       //      _particles.Spawn("Attack");
       //  }
 
-        public void ArmHero()
+        public void ArmHero(int thrownAdded)
         {
+            _session.Data.thrownNumber += thrownAdded;
             _session.Data.IsArmed = true;
             Animator.runtimeAnimatorController = _armed;
             UpdateHeroWeaopn();
@@ -149,6 +153,52 @@ namespace PixelCrew.Creatures
         {
             _session.Data.Coins += _money;
             Debug.Log("Вы нашли монетку ценностью " + _money + " дублонов. Общее количество дублонов " + _session.Data.Coins);
+        }
+
+        public void OnDoThrow()
+        {
+            _particles.Spawn("Throw");
+            _session.Data.thrownNumber--;
+        }
+
+        public void Throw()
+        {
+            if (_session.Data.thrownNumber <= 1) return;
+
+            if (_throwCooldown.IsReady)
+            {
+                Animator.SetTrigger(ThrowKey);
+                _throwCooldown.Reset();
+            }
+            
+        }
+
+        public void TrippleThrow()
+        {
+            if (_session.Data.thrownNumber <= 1) return;
+            if (!_throwCooldown.IsReady) return;
+
+            if (_session.Data.thrownNumber <= 3)
+            {
+                Throw();
+            }
+            else
+            {
+                _thrownShooted = 0;
+                StartCoroutine(DoTrippleThrow());
+            }
+        }
+
+        private IEnumerator DoTrippleThrow()
+        {
+            while (_thrownShooted < 3)
+            {
+                OnDoThrow();
+                _thrownShooted++;
+                yield return new WaitForSeconds(0.15f);
+            }
+
+            yield return null;
         }
 
     }
