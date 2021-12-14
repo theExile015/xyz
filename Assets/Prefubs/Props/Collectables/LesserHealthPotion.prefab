@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2966400638717626014}
   - component: {fileID: 6245646553554341960}
   - component: {fileID: 888485956584758327}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: LesserHealthPotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1187020389
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 1185527514606905908, guid: 6ef7420a5c668a247bf2b1ca2d08d684,
     type: 3}
@@ -179,6 +179,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tag: Player
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4294967295
   _action:
     m_PersistentCalls:
       m_Calls:

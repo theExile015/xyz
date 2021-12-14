@@ -1,7 +1,7 @@
 ﻿#if UNITY_EDITOR
-using System.Collections;
 using UnityEngine;
-using PixelCrew.Components;
+using PixelCrew.Components.ColliderBased;
+using PixelCrew.Components.goBased;
 
 namespace PixelCrew.Creatures
 {

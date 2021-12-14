@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5272674353236153146}
   - component: {fileID: 6907504792991267098}
   - component: {fileID: 6152327198186197160}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PatrolTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,8 +91,8 @@ GameObject:
   - component: {fileID: 7940711054822077161}
   - component: {fileID: 840159419313951870}
   - component: {fileID: 70610417086163308}
-  - component: {fileID: 811497061}
-  m_Layer: 0
+  - component: {fileID: 131232246192831688}
+  m_Layer: 9
   m_Name: Sharky
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -325,7 +325,7 @@ MonoBehaviour:
   _meleeDamage: 1
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   _groundCheck: {fileID: 5667291143501099337}
   _attackRange: {fileID: 5931456910991614328}
   _particles: {fileID: 7940711054822077161}
@@ -346,7 +346,7 @@ MonoBehaviour:
   _alarmDelay: 0.5
   _attackCooldown: 1
   _missHeroCooldown: 1
---- !u!114 &811497061
+--- !u!114 &131232246192831688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5667291142690478708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef28165601f118348ac65daf57846085, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ef2521c301c6854d8853fc1eaf1538b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _layerCheck: {fileID: 6152327198186197160}
@@ -369,7 +369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5667291142706246289}
   - component: {fileID: 5667291142706246288}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FootStepPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,6 @@ MonoBehaviour:
   _spawnTarget: {fileID: 5667291142706246289}
   _particlesPrefub: {fileID: 23932536491478171, guid: 15e501d5eb66eb74fb7353a07d5aaccc,
     type: 3}
-  _invertXScale: 1
 --- !u!1 &5667291143501099342
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +416,7 @@ GameObject:
   - component: {fileID: 5667291143501099339}
   - component: {fileID: 5667291143501099337}
   - component: {fileID: 5667291143501099336}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -480,7 +479,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5667291144048277280}
   - component: {fileID: 1437846671607912041}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: JumpPostion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +515,6 @@ MonoBehaviour:
   _spawnTarget: {fileID: 5667291144048277280}
   _particlesPrefub: {fileID: 3393601434514733161, guid: 425700786828e6d41813a7f83347f20e,
     type: 3}
-  _invertXScale: 0
 --- !u!1 &6871577206898373097
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +529,7 @@ GameObject:
   - component: {fileID: 3040065046344734351}
   - component: {fileID: 5370556632698747716}
   - component: {fileID: 4923268337808044056}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AttackPosition
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -599,7 +597,6 @@ MonoBehaviour:
   _spawnTarget: {fileID: 6990637213231790691}
   _particlesPrefub: {fileID: 8905712907038806034, guid: a7252ba3e6c3b784e82702fdb96e4829,
     type: 3}
-  _invertXScale: 0
 --- !u!114 &3040065046344734351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,7 +654,7 @@ GameObject:
   - component: {fileID: 7451484437182597501}
   - component: {fileID: 8258869093490674402}
   - component: {fileID: 3478038564079019653}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -760,7 +757,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3453729093765906675}
   - component: {fileID: 2717685089488696919}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ExclamationPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +793,6 @@ MonoBehaviour:
   _spawnTarget: {fileID: 3453729093765906675}
   _particlesPrefub: {fileID: 8905712907038806034, guid: 505b2d65fbcfc334b94de4ab65b5372b,
     type: 3}
-  _invertXScale: 0
 --- !u!1 &9010025239596667837
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,7 +803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4835976267970837297}
   - component: {fileID: 533702840722954188}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MissPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -843,4 +839,3 @@ MonoBehaviour:
   _spawnTarget: {fileID: 4835976267970837297}
   _particlesPrefub: {fileID: 7990069752233272823, guid: 9413289471d5b0e49befe73b366b03df,
     type: 3}
-  _invertXScale: 0

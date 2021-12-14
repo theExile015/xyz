@@ -17,14 +17,14 @@ TagManager:
   - 
   - 
   - Ground
-  - Creatures
+  - Enemies
   - Level
   - Interactables
   - Front layer
   - Trash
   - Hero
-  - 
-  - 
+  - Collectables
+  - Checkers
   - 
   - 
   - 

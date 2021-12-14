@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3082823143992263468}
   - component: {fileID: 4363334670415823793}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: ThrowSwordSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
@@ -56,7 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2085413153597153437}
   - component: {fileID: 7750234197348978624}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: FallPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 5667291142690478988}
   - component: {fileID: 5667291142690478990}
   - component: {fileID: 7940711054822077161}
+  - component: {fileID: 3966644594958590609}
   m_Layer: 14
   m_Name: Hero_0
   m_TagString: Player
@@ -415,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 832d38f8675982546b6421946c6e9621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 5
+  _maxHealth: 1
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -433,7 +434,7 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3966644594958590609}
         m_MethodName: Reload
         m_Mode: 1
         m_Arguments:
@@ -484,6 +485,18 @@ MonoBehaviour:
     Component: {fileID: 7409076337036547072}
   - id: Throw
     Component: {fileID: 4363334670415823793}
+--- !u!114 &3966644594958590609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5667291142690478708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f32a7f485b41e4cab7febec9f56910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5667291142706246294
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5667291142706246289}
   - component: {fileID: 5667291142706246288}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: FootStepPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +554,7 @@ GameObject:
   - component: {fileID: 5667291142927089606}
   - component: {fileID: 5667291142927089600}
   - component: {fileID: 5667291142927089601}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5353,7 +5366,7 @@ GameObject:
   - component: {fileID: 5667291143501099339}
   - component: {fileID: 5667291143501099337}
   - component: {fileID: 5667291143501099336}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5416,7 +5429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5667291144048277280}
   - component: {fileID: 1437846671607912041}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: JumpPostion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5463,7 +5476,7 @@ GameObject:
   - component: {fileID: 3516641258860929674}
   - component: {fileID: 4430016027453450904}
   - component: {fileID: 5603453330415401757}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: InteractionCheck
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -5478,7 +5491,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6328920367926157605}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 0, z: 0}
+  m_LocalPosition: {x: 0.301, y: 0.019, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5667291142690478710}
@@ -5499,7 +5512,7 @@ MonoBehaviour:
   _radius: 0.5
   _mask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 4294967295
   _tags:
   - Interactable
   _onOverlap:
@@ -5540,7 +5553,7 @@ GameObject:
   - component: {fileID: 5931456910991614328}
   - component: {fileID: 7409076337036547072}
   - component: {fileID: 3040065046344734351}
-  m_Layer: 14
+  m_Layer: 16
   m_Name: AttackPosition
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -5576,7 +5589,7 @@ MonoBehaviour:
   _radius: 0.25
   _mask:
     serializedVersion: 2
-    m_Bits: 16183
+    m_Bits: 1536
   _tags:
   - Enemy
   _onOverlap:
