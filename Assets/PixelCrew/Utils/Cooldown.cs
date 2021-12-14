@@ -7,7 +7,7 @@ namespace PixelCrew.Utils
     public class Cooldown 
     {
         [SerializeField] private float _value;
-
+        
         private float _timeIsUp;
 
         public void Reset()

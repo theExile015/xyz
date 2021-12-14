@@ -18,12 +18,15 @@ namespace PixelCrew.Creatures.Mobs
 
         [Header("Range")]
         [SerializeField] private Cooldown _rangeCooldown;
+        [SerializeField] private float _rangeAttackDelay;
         [SerializeField] private SpawnParticlesComponent _rangeAttack;
 
         private static readonly int Melee = Animator.StringToHash("melee");
         private static readonly int Range = Animator.StringToHash("range");
 
         private Animator _animator;
+        private bool _isAttacking;
+        private float _tagTime;
 
         private void Awake()
         {
@@ -34,6 +37,11 @@ namespace PixelCrew.Creatures.Mobs
         {
             if (_vision.IsTouchingLayer)
             {
+                if (!_isAttacking)
+                {
+                    _isAttacking = true;
+                    _tagTime = Time.time;
+                }
                 if (_meleeCanAttack.IsTouchingLayer)
                 {
                     if (_meleeCooldown.IsReady)
@@ -41,8 +49,14 @@ namespace PixelCrew.Creatures.Mobs
                     return;
                 }
 
-                if (_rangeCooldown.IsReady)
-                    RangeAttack();
+                if (Time.time - _tagTime > _rangeAttackDelay)
+                {
+                    if (_rangeCooldown.IsReady)
+                        RangeAttack();
+                }
+            } else
+            {
+                _isAttacking = false;
             }
         }
 
