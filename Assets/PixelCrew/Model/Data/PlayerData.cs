@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PixelCrew.Model.Data;
+using System;
 using UnityEngine;
 
 namespace PixelCrew.Model
@@ -7,6 +8,7 @@ namespace PixelCrew.Model
     [Serializable]
     public class PlayerData
     {
+        [SerializeField] private InventoryData _inventory;
         public int Coins;
         public int HP;
         public int thrownNumber;
