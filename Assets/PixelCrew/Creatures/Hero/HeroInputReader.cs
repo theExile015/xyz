@@ -60,6 +60,14 @@ namespace PixelCrew.Creatures.Hero
                 }
             }
         }
+
+        public void OnPotionUse(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _hero.UseHealingPotion();
+            }
+        }
     }
 }
 

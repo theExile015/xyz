@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2966400638717625988}
   - component: {fileID: 2966400638717626014}
   - component: {fileID: 6245646553554341960}
-  - component: {fileID: 888485956584758327}
+  - component: {fileID: 744568828879003409}
   m_Layer: 15
   m_Name: LesserHealthPotion
   m_TagString: Untagged
@@ -196,8 +196,8 @@ MonoBehaviour:
           m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 888485956584758327}
-        m_MethodName: ModifyHP
+      - m_Target: {fileID: 744568828879003409}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -218,7 +218,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &888485956584758327
+--- !u!114 &744568828879003409
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,7 +227,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2966400638717625991}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 273e91f923c526e4d8e3d580bef4f50b, type: 3}
+  m_Script: {fileID: 11500000, guid: b9ed1b0b6742a8a47895c0ac294cbe3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: 5
+  _id: LesserHealingPotion
+  _count: 1

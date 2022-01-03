@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 3585575534756527234}
   - component: {fileID: 3585575534756527235}
   - component: {fileID: 3585575534756527241}
-  - component: {fileID: 9021126854154923407}
   - component: {fileID: 6091976891576948556}
   - component: {fileID: 4612346363048418659}
+  - component: {fileID: 1804916629881655466}
   m_Layer: 15
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -135,9 +135,9 @@ MonoBehaviour:
           m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 9021126854154923407}
-        m_MethodName: AddSomeMoney
-        m_Mode: 1
+      - m_Target: {fileID: 1804916629881655466}
+        m_MethodName: Add
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -206,19 +206,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &9021126854154923407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3585575534756527232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1761a60213173146a6407f08dbb0e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _value: 1
 --- !u!114 &6091976891576948556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,3 +242,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1804916629881655466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3585575534756527232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ed1b0b6742a8a47895c0ac294cbe3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: Coin
+  _count: 1

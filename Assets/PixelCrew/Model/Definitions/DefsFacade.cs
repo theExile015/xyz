@@ -9,6 +9,8 @@ namespace PixelCrew.Model.Definitions
     {
         [SerializeField] private InventoryItemsDef _items;
 
+        public InventoryItemsDef Items => _items;
+
         private static DefsFacade _instance;
         public static DefsFacade I => _instance == null ? LoadDefs() : _instance;
 
@@ -17,12 +19,5 @@ namespace PixelCrew.Model.Definitions
            return _instance = Resources.Load<DefsFacade>("DefsFacade");
         }
 
-        internal void Get()
-        {
-            foreach (var item in _items)
-            {
-                item.
-            }
-        }
     }
 }

@@ -38,7 +38,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "New action",
+                    "name": "PotionUse",
                     "type": "Button",
                     "id": "5a13395e-03ad-4ccd-941f-cf5532c01424",
                     "expectedControlType": "Button",
@@ -201,11 +201,11 @@
                 {
                     "name": "",
                     "id": "d1f1f0d2-be04-4c56-bb78-f0fce0f90615",
-                    "path": "",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "PotionUse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

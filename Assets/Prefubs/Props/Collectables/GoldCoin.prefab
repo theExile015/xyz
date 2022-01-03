@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1804916629881655466, guid: 80f4690374d8b6643936078c06f02819,
+        type: 3}
+      propertyPath: _count
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3585575534756527232, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
       propertyPath: m_Name
@@ -20,17 +25,17 @@ PrefabInstance:
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
@@ -41,20 +46,17 @@ PrefabInstance:
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 7304580940637829030, guid: 3ab3431907d1b3f478a98e6d7f4cf1f2,
-        type: 3}
+      objectReference: {fileID: 3003033755818665632}
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 3003033755818665632, guid: 3ab3431907d1b3f478a98e6d7f4cf1f2,
-        type: 3}
+      objectReference: {fileID: 99700026189597315}
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 3003033755818665644, guid: 3ab3431907d1b3f478a98e6d7f4cf1f2,
-        type: 3}
+      objectReference: {fileID: 3003033755818665644}
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -73,12 +75,12 @@ PrefabInstance:
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddSomeMoney
+      value: SetClip
       objectReference: {fileID: 0}
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetClip
+      value: Add
       objectReference: {fileID: 0}
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
@@ -98,12 +100,12 @@ PrefabInstance:
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 
+      value: destroy
       objectReference: {fileID: 0}
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: destroy
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
@@ -280,3 +282,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80f4690374d8b6643936078c06f02819, type: 3}
+--- !u!58 &3003033755818665644 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3585575534756527237, guid: 80f4690374d8b6643936078c06f02819,
+    type: 3}
+  m_PrefabInstance: {fileID: 1760466249095731753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3003033755818665632 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3585575534756527241, guid: 80f4690374d8b6643936078c06f02819,
+    type: 3}
+  m_PrefabInstance: {fileID: 1760466249095731753}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e338502b372208d40a3d05ebf189ea0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &99700026189597315 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1804916629881655466, guid: 80f4690374d8b6643936078c06f02819,
+    type: 3}
+  m_PrefabInstance: {fileID: 1760466249095731753}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ed1b0b6742a8a47895c0ac294cbe3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

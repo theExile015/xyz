@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbe0fa4be34297b4fae9a94d5bdb2984, type: 3}
   m_Name: DefsFacade
   m_EditorClassIdentifier: 
-  _items: {fileID: 0}
+  _items: {fileID: 11400000, guid: 9b4e3694460a24d438322aefe8dfc748, type: 2}

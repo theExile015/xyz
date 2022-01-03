@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d2dedcf3cb1c44f810472fb24be139, type: 3}
   m_Name: InventoryItems
   m_EditorClassIdentifier: 
-  _smth: 0
+  _items:
+  - _id: Coin
+  - _id: Sword
+  - _id: Key
+  - _id: LesserHealingPotion

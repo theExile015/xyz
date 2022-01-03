@@ -9,10 +9,10 @@ namespace PixelCrew.Model
     public class PlayerData
     {
         [SerializeField] private InventoryData _inventory;
-        public int Coins;
         public int HP;
         public int thrownNumber;
-        public bool IsArmed;
+
+        public InventoryData Inventory => _inventory;
 
         public PlayerData Clone()
         {
