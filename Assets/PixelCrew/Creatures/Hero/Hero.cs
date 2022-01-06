@@ -23,16 +23,21 @@ namespace PixelCrew.Creatures.Hero
 
         [SerializeField] private CheckCircleOverlap _interactionCheck;
 
+        [Header("Super Throw")]
+        [SerializeField] private Cooldown _superThrowCooldown;
+        [SerializeField] private int _superThrowParticles = 3;
+        [SerializeField] private float _superThrowDelay = 0.2f;
+        private bool _superThrow;
+
         [Space]
         [Header("Particles")]
         [SerializeField] private SpawnParticlesComponent _attackParticles;
 
-        [SerializeField] private ParticleSystem _hitParticles;
+        [SerializeField] private ProbabilityDropComponent _hitDrop;
 
         private static readonly int ThrowKey = Animator.StringToHash("throw");
 
         private bool _allowDoubleJump;
-        private int _thrownShooted;
 
         private GameSession _session;
 
@@ -64,7 +69,9 @@ namespace PixelCrew.Creatures.Hero
         private void OnInventoryChanged(string id, int value)
         {
             if (id == "Sword")
+            {
                 UpdateHeroWeaopn();
+            }
         }
 
         protected override void Update()
@@ -113,11 +120,8 @@ namespace PixelCrew.Creatures.Hero
             var numCoinsToDispose = Mathf.Min(CoinCount, 5);
             _session.Data.Inventory.Remove("Coin", numCoinsToDispose);
 
-            var burst = _hitParticles.emission.GetBurst(0);
-            burst.count = numCoinsToDispose;
-            _hitParticles.emission.SetBurst(0, burst);
-            _hitParticles.gameObject.SetActive(true);
-            _hitParticles.Play();
+            _hitDrop.SetCount(numCoinsToDispose);
+            _hitDrop.CalculateDrop();
         }
 
         private void OnCollisionEnter2D(Collision2D other)
@@ -152,49 +156,33 @@ namespace PixelCrew.Creatures.Hero
 
         public void OnDoThrow()
         {
-            Sounds.Play("Range");
-            _particles.Spawn("Throw");
-            _session.Data.thrownNumber--;
-        }
-
-        public void Throw()
-        {
-            if (_session.Data.thrownNumber <= 1) return;
-
-            if (_throwCooldown.IsReady)
+            if (_superThrow)
             {
-                Animator.SetTrigger(ThrowKey);
-                _throwCooldown.Reset();
-            }
-
-        }
-
-        public void TrippleThrow()
-        {
-            if (_session.Data.thrownNumber <= 1) return;
-            if (!_throwCooldown.IsReady) return;
-
-            if (_session.Data.thrownNumber <= 3)
-            {
-                Throw();
+                var numThrows = Mathf.Min(_superThrowParticles, SwordCount - 1);
+                StartCoroutine(DoSuperThrow(numThrows));
             }
             else
             {
-                _thrownShooted = 0;
-                StartCoroutine(DoTrippleThrow());
+                ThrowAndRemoveFromInventory();
             }
+            _superThrow = false;
         }
 
-        private IEnumerator DoTrippleThrow()
+        private void ThrowAndRemoveFromInventory()
         {
-            while (_thrownShooted < 3)
-            {
-                OnDoThrow();
-                _thrownShooted++;
-                yield return new WaitForSeconds(0.15f);
-            }
+            Sounds.Play("Range");
+            _particles.Spawn("Throw");
+            _session.Data.Inventory.Remove("Sword", 1);
+        }
 
-            yield return null;
+
+        private IEnumerator DoSuperThrow(int numThrows)
+        {
+            for (int i = 0; i < numThrows; i++)
+            {
+                ThrowAndRemoveFromInventory();
+                yield return new WaitForSeconds(_superThrowDelay);
+            }
         }
 
         private void OnDestroy()
@@ -209,6 +197,21 @@ namespace PixelCrew.Creatures.Hero
             _session.Data.Inventory.Remove("LesserHealingPotion", 1);
             var hp = GetComponent<HealthComponent>();
             hp.ModifyHP(5);
+        }
+
+        public void StartThrowing()
+        {
+            _superThrowCooldown.Reset();
+        }
+
+        public void PerformThrowing()
+        {
+            if (!_throwCooldown.IsReady || SwordCount <= 1) return;
+
+            if (_superThrowCooldown.IsReady) _superThrow = true;
+
+            Animator.SetTrigger(ThrowKey);
+            _throwCooldown.Reset();
         }
 
     }

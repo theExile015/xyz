@@ -60,5 +60,10 @@ namespace PixelCrew.Components.goBased
         {
 
         }
+
+        public void SetCount(int count)
+        {
+            _count = count;    
+        }
     }
 }

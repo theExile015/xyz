@@ -10,7 +10,6 @@ namespace PixelCrew.Model
     {
         [SerializeField] private InventoryData _inventory;
         public int HP;
-        public int thrownNumber;
 
         public InventoryData Inventory => _inventory;
 

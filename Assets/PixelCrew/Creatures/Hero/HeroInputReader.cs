@@ -8,7 +8,6 @@ namespace PixelCrew.Creatures.Hero
     {
         [SerializeField] private Hero _hero;
 
-        private float _timeStarted;
 
         public void OnSaySomething(InputAction.CallbackContext context)
         {
@@ -44,20 +43,12 @@ namespace PixelCrew.Creatures.Hero
         {
             if (context.started)
             {
-                _timeStarted = Time.time;
+                _hero.StartThrowing();
             }
 
             if (context.canceled)
             {
-                var duration = Time.time - _timeStarted;
-                if (duration < 1f)
-                {
-                    _hero.Throw();
-                }
-                else
-                {
-                    _hero.TrippleThrow();
-                }
+                _hero.PerformThrowing();
             }
         }
 

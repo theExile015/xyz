@@ -25,7 +25,7 @@ PrefabInstance:
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
@@ -40,7 +40,7 @@ PrefabInstance:
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
@@ -56,7 +56,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 3003033755818665644}
+      objectReference: {fileID: 8461726014001335548}
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -85,7 +85,7 @@ PrefabInstance:
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: set_enabled
+      value: Play
       objectReference: {fileID: 0}
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
@@ -282,12 +282,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80f4690374d8b6643936078c06f02819, type: 3}
---- !u!58 &3003033755818665644 stripped
-CircleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 3585575534756527237, guid: 80f4690374d8b6643936078c06f02819,
-    type: 3}
-  m_PrefabInstance: {fileID: 1760466249095731753}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3003033755818665632 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3585575534756527241, guid: 80f4690374d8b6643936078c06f02819,
@@ -312,3 +306,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ed1b0b6742a8a47895c0ac294cbe3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &8461726014001335548 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7854409982166505173, guid: 80f4690374d8b6643936078c06f02819,
+    type: 3}
+  m_PrefabInstance: {fileID: 1760466249095731753}
+  m_PrefabAsset: {fileID: 0}
