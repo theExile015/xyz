@@ -9,7 +9,7 @@ namespace PixelCrew.Components.Health
     {
         [SerializeField] private int _maxHealth;
         [SerializeField] private UnityEvent _onDamage;
-        [SerializeField] private UnityEvent _onDie;
+        [SerializeField] public UnityEvent _onDie;
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] private HealthChangeEvent _onChange;
 
@@ -49,6 +49,11 @@ namespace PixelCrew.Components.Health
             }
 
             Debug.Log("Ouch!! HP = " + _health);
+        }
+
+        private void OnDestroy()
+        {
+            _onDie.RemoveAllListeners();
         }
 
         [Serializable]

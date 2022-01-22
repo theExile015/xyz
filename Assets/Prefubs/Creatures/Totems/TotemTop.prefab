@@ -38,6 +38,29 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1.875
       objectReference: {fileID: 0}
+    - target: {fileID: 2223454287793939043, guid: 8c2c37858be43884ba4f3142d9cdb994,
+        type: 3}
+      propertyPath: _gos.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223454287793939043, guid: 8c2c37858be43884ba4f3142d9cdb994,
+        type: 3}
+      propertyPath: _gos.Array.data[0]
+      value: 
+      objectReference: {fileID: 367956272546962046, guid: 9c017399534c61d49945093757e76e4e,
+        type: 3}
+    - target: {fileID: 2223454287793939043, guid: 8c2c37858be43884ba4f3142d9cdb994,
+        type: 3}
+      propertyPath: _gos.Array.data[1]
+      value: 
+      objectReference: {fileID: 3285032071159038073, guid: 183579359bcef164c887c82a57e23da3,
+        type: 3}
+    - target: {fileID: 2223454287793939043, guid: 8c2c37858be43884ba4f3142d9cdb994,
+        type: 3}
+      propertyPath: _gos.Array.data[2]
+      value: 
+      objectReference: {fileID: 5420360772495335318, guid: 4cf268ba9289dbe41bceb4301263e4c3,
+        type: 3}
     - target: {fileID: 3906466324402771839, guid: 8c2c37858be43884ba4f3142d9cdb994,
         type: 3}
       propertyPath: _rangeAttackDelay
@@ -48,6 +71,12 @@ PrefabInstance:
       propertyPath: _rangeCooldown._value
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4286006016541224452, guid: 8c2c37858be43884ba4f3142d9cdb994,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 01dbf5f9a7fab9d42a8fee997f524725,
+        type: 2}
     - target: {fileID: 6429389733286959322, guid: 8c2c37858be43884ba4f3142d9cdb994,
         type: 3}
       propertyPath: m_RootOrder

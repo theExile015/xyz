@@ -9,7 +9,7 @@ namespace PixelCrew.Creatures.Mobs
 {
     public class ShootingTrapAI : MonoBehaviour
     {
-        [SerializeField] private LayerCheck _vision;
+        [SerializeField] public LayerCheck _vision;
 
         [Header("Melee")]
         [SerializeField] private Cooldown _meleeCooldown;
@@ -18,7 +18,6 @@ namespace PixelCrew.Creatures.Mobs
 
         [Header("Range")]
         [SerializeField] private Cooldown _rangeCooldown;
-        [SerializeField] private float _rangeAttackDelay;
         [SerializeField] private SpawnParticlesComponent _rangeAttack;
 
         private static readonly int Melee = Animator.StringToHash("melee");
@@ -42,6 +41,7 @@ namespace PixelCrew.Creatures.Mobs
                     _isAttacking = true;
                     _tagTime = Time.time;
                 }
+
                 if (_meleeCanAttack.IsTouchingLayer)
                 {
                     if (_meleeCooldown.IsReady)
@@ -49,10 +49,9 @@ namespace PixelCrew.Creatures.Mobs
                     return;
                 }
 
-                if (Time.time - _tagTime > _rangeAttackDelay)
+                if (_rangeCooldown.IsReady)
                 {
-                    if (_rangeCooldown.IsReady)
-                        RangeAttack();
+                    RangeAttack();
                 }
             } else
             {
@@ -66,7 +65,7 @@ namespace PixelCrew.Creatures.Mobs
             _animator.SetTrigger(Melee);
         }
 
-        private void RangeAttack()
+        public void RangeAttack()
         {
             _rangeCooldown.Reset();
             _animator.SetTrigger(Range);

@@ -26,6 +26,14 @@ namespace PixelCrew.Utils
             _routine = StartCoroutine(StartSpawm(items));
         }
 
+        public void DropImmediate(GameObject[] items)
+        {
+            foreach (var item in items)
+            {
+                Spawn(item);
+            }
+        }
+
 
         private IEnumerator StartSpawm(GameObject[] particlesToSpawn)
         {
