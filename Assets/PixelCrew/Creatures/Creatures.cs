@@ -27,6 +27,11 @@ namespace PixelCrew.Creatures
         protected PlaySoundsComponent Sounds;
         protected bool IsGrounded;
         protected bool IsJumping;
+        protected bool IsFalling;
+
+        public bool CreatureIsJumping => IsJumping;
+        public bool CreatureIsGrounded => IsGrounded;
+        public bool CreatureIsFalling => IsFalling; 
 
         private static readonly int IsGroundKey = Animator.StringToHash("IsGround");
         private static readonly int IsRunningKey = Animator.StringToHash("IsRunning");
@@ -79,9 +84,9 @@ namespace PixelCrew.Creatures
             if (isJumpPressing)
             {
                 IsJumping = true;
-                var isFalling = Rigidbody.velocity.y <= 0.5f;
-                if (!isFalling) return yVelocity;
-                yVelocity = isFalling ? CalculateJumpVelocity(yVelocity) : yVelocity;
+                IsFalling = Rigidbody.velocity.y <= 0.5f;
+                if (!IsFalling) return yVelocity;
+                yVelocity = IsFalling ? CalculateJumpVelocity(yVelocity) : yVelocity;
             }
             else if (Rigidbody.velocity.y > 0 && IsJumping)
             {
@@ -137,6 +142,19 @@ namespace PixelCrew.Creatures
         public virtual void OnMeleeAttack()
         {
             _attackRange.Check();
+        }
+
+        public void SetMobJump(bool jump)
+        {
+            if (jump)
+            {
+                Sounds.Play("Jump");
+                Direction.y = 1;
+            }
+            else
+            {
+                Direction.y = 0;
+            }
         }
     }
 }

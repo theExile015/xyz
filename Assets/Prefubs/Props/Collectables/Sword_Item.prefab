@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1661748811943338612}
   - component: {fileID: 6411161534698591197}
   - component: {fileID: 4807725232589583815}
-  - component: {fileID: -9177139755093831483}
+  - component: {fileID: 6754940221129361139}
   m_Layer: 15
   m_Name: Sword_Item
   m_TagString: Untagged
@@ -172,7 +172,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: -9177139755093831483}
+      - m_Target: {fileID: 6754940221129361139}
         m_MethodName: Play
         m_Mode: 1
         m_Arguments:
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: Sword
   _count: 1
---- !u!82 &-9177139755093831483
+--- !u!82 &6754940221129361139
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -231,7 +231,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f73a956734fd6ca44bf506a5ded780e7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b43a3065c6b41544a9d6eb549fbfe81a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

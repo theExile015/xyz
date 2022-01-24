@@ -342,6 +342,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3482faa4be82349bee1757dc682bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _invertScale: 0
+  _speed: 0
+  Jumpforce: 0
+  _damageJumpForce: 0
+  _meleeDamage: 1
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _groundCheck: {fileID: 5667291143501099337}
+  _attackRange: {fileID: 5931456910991614328}
+  _particles: {fileID: 7940711054822077161}
   _vision: {fileID: 8258869093490674402}
   _canAttack: {fileID: 4923268337808044056}
   _alarmDelay: 0.5

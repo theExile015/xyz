@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,12 +7,19 @@ namespace PixelCrew.Components.ColliderBased
 {
     public class EnterCollisionComponent : MonoBehaviour
     {
-        [SerializeField] private string _tag;
+        [SerializeField] private string[] _tags;
         [SerializeField] private EnterEvent _action;
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.CompareTag(_tag))
+            var isInTags = false;
+            foreach (string tag in _tags)
+            {
+                isInTags = other.gameObject.CompareTag(tag);
+                if (isInTags) break;
+            }
+
+            if (isInTags)
             {
                 _action?.Invoke(other.gameObject);
             }

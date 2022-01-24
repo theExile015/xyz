@@ -6640,7 +6640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120be1bf3ac9a69468f3c603ebd7a782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: Barrel
+  _tags: []
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -6697,7 +6697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120be1bf3ac9a69468f3c603ebd7a782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: Player
+  _tags: []
   _action:
     m_PersistentCalls:
       m_Calls:

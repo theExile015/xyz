@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8991594484429088397}
   - component: {fileID: 7952880917740622502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DropSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 7575806037331196948}
   - component: {fileID: 2427598987183497356}
   - component: {fileID: 4949172082671315796}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Drop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 4902906562282497375}
   - component: {fileID: 2681591664736379293}
   - component: {fileID: 1597050362129190206}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DestructableBarrelWithLoot
   m_TagString: Enemy
   m_Icon: {fileID: 0}

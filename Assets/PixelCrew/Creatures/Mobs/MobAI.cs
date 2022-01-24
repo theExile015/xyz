@@ -15,6 +15,8 @@ namespace PixelCrew.Creatures.Mobs
         [SerializeField] private float _attackCooldown = 1.0f;
         [SerializeField] private float _missHeroCooldown = 1.0f;
 
+        [SerializeField] private bool _jumpingMob;
+
         private IEnumerator _current;
         private GameObject _target;
         private bool _isDead;
@@ -44,8 +46,11 @@ namespace PixelCrew.Creatures.Mobs
         public void OnHeroInVision(GameObject go)
         {
             if (_isDead) return;
+            if (!_creature.CreatureIsGrounded) return;
 
             _target = go;
+
+            Debug.Log("Aggro!");
 
             StartState(AggroToHero());
         }
@@ -133,5 +138,6 @@ namespace PixelCrew.Creatures.Mobs
             if (_current != null)
                 StopCoroutine(_current);
         }
+
     }
 }
