@@ -146,6 +146,7 @@ namespace PixelCrew.Creatures
 
         public void SetMobJump(bool jump)
         {
+            if (Direction.x == 0) return;
             if (jump)
             {
                 Sounds.Play("Jump");
