@@ -502,8 +502,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1780215172439246109}
+  - component: {fileID: 4777727240155610410}
   m_Layer: 5
-  m_Name: ValueItem
+  m_Name: MusicOption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -531,6 +532,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4777727240155610410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3080358919110023785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db5a1e8ac483e8741a921b68c0678193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 611955493}
+  _value: {fileID: 4795336363365487961}
 --- !u!1 &3325685293268319022
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,6 +631,7 @@ GameObject:
   - component: {fileID: 3375389144117553902}
   - component: {fileID: 3375389144117553896}
   - component: {fileID: 3375389144117553903}
+  - component: {fileID: 6249652488647022556}
   m_Layer: 5
   m_Name: SettingsWindow
   m_TagString: Untagged
@@ -674,6 +690,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c0e744cba581b943b6e710723dd9f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6249652488647022556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3375389144117553901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eedad4fd33289d4f8cb53369d9f18bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _music: {fileID: 4777727240155610410}
+  _sfx: {fileID: 636267300208001164}
 --- !u!1 &3375389144920255105
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,6 +716,7 @@ GameObject:
   - component: {fileID: 3375389144920255117}
   - component: {fileID: 3375389144920255116}
   - component: {fileID: 3375389144920255107}
+  - component: {fileID: 8317585737679817108}
   m_Layer: 5
   m_Name: OkButton
   m_TagString: Untagged
@@ -808,6 +839,19 @@ MonoBehaviour:
         m_CallState: 2
   _normal: {fileID: 3375389145875703922}
   _pressed: {fileID: 3375389145000813943}
+--- !u!114 &8317585737679817108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3375389144920255105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d84fae4bd51d34fa7ddf5efe9a1f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 18c2faf3094fb1e428b9733768bec378, type: 3}
 --- !u!1 &3375389145000813943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,8 +1252,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4887263985878583949}
+  - component: {fileID: 636267300208001164}
   m_Layer: 5
-  m_Name: ValueItem (1)
+  m_Name: SfxOption
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1237,6 +1282,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &636267300208001164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4044069709242855848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db5a1e8ac483e8741a921b68c0678193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 2085742301769480473}
+  _value: {fileID: 6328375639724774961}
 --- !u!1 &5393545352971504430
 GameObject:
   m_ObjectHideFlags: 0
