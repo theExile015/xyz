@@ -53,7 +53,7 @@ namespace PixelCrew.Creatures.Hero
 
         public void OnHealthChanged(int _currentHealth)
         {
-            _session.Data.HP = _currentHealth;
+            _session.Data.HP.Value = _currentHealth;
         }
 
         private void Start()
@@ -61,7 +61,7 @@ namespace PixelCrew.Creatures.Hero
             _session = FindObjectOfType<GameSession>();
             var health = GetComponent<HealthComponent>();
             _session.Data.Inventory.OnChanged += OnInventoryChanged;
-            health.SetHealth(_session.Data.HP);
+            health.SetHealth(_session.Data.HP.Value);
 
             UpdateHeroWeaopn();
         }
