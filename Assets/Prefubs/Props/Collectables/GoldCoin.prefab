@@ -56,7 +56,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 8461726014001335548}
+      objectReference: {fileID: 3368097030630348690}
     - target: {fileID: 3585575534756527234, guid: 80f4690374d8b6643936078c06f02819,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -306,9 +306,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ed1b0b6742a8a47895c0ac294cbe3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &8461726014001335548 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 7854409982166505173, guid: 80f4690374d8b6643936078c06f02819,
+--- !u!114 &3368097030630348690 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3950656185118444987, guid: 80f4690374d8b6643936078c06f02819,
     type: 3}
   m_PrefabInstance: {fileID: 1760466249095731753}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 682cfa54213cc3245b58b048654e83fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

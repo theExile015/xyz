@@ -47,7 +47,7 @@ namespace PixelCrew.Utils
 
         private void Spawn(GameObject particleToSpawn)
         {
-            var instance = Instantiate(particleToSpawn, transform.position, Quaternion.identity);
+            var instance = SpawnUtils.Spawn(particleToSpawn, transform.position);
             var rigidBody = instance.GetComponent<Rigidbody2D>();
 
             var randomAngle = Random.Range(0, _sectorAngle);

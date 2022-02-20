@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.PixelCrew.Utils;
+using System;
 using UnityEngine;
 
 namespace PixelCrew.Components.Audio
@@ -16,7 +17,7 @@ namespace PixelCrew.Components.Audio
                 if (audioData.Id != id) continue;
 
                 if (_source == null)
-                    _source = GameObject.FindWithTag("SfxAudioSource").GetComponent<AudioSource>();
+                    _source = AudioUtils.FindSfxSound();
 
                 _source.PlayOneShot(audioData.Clip);
                 break;

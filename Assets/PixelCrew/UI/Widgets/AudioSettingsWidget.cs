@@ -1,4 +1,5 @@
 ﻿using PixelCrew.Model.Data.Properties;
+using PixelCrew.Utils.Disposables;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,9 +12,11 @@ namespace PixelCrew.UI.Widgets
 
         private FloatPresistentProperty _model;
 
+        private readonly CompositeDisposable _trash = new CompositeDisposable();
+
         private void Start()
         {
-            _slider.onValueChanged.AddListener(OnSliderValueChanged);
+            _trash.Retain(_slider.onValueChanged.Subscribe(OnSliderValueChanged));
         }
 
         private void OnSliderValueChanged(float value)
@@ -24,10 +27,10 @@ namespace PixelCrew.UI.Widgets
         public void SetModel(FloatPresistentProperty model)
         {
             _model = model;
-            model.OnChanged += OnValueChanged;
+            _trash.Retain(model.Subscribe(OnValueChanged));
             OnValueChanged(model.Value, model.Value);
         }
-
+         
         private void OnValueChanged(float newValue, float oldValue)
         {
             var textValue = Mathf.Round(newValue * 100);
@@ -38,8 +41,7 @@ namespace PixelCrew.UI.Widgets
 
         private void OnDestroy()
         {
-            _slider.onValueChanged.RemoveListener(OnSliderValueChanged);
-            _model.OnChanged -= OnValueChanged;
+            _trash.Dispose();
         }
     }
 }
