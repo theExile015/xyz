@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3082823143992263468}
   - component: {fileID: 4363334670415823793}
   m_Layer: 16
-  m_Name: ThrowSwordSpawnPosition
+  m_Name: ThrowSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -270,6 +270,7 @@ MonoBehaviour:
   _superThrowDelay: 0.2
   _attackParticles: {fileID: 7409076337036547072}
   _hitDrop: {fileID: 2132858975917804866}
+  _throwSpawner: {fileID: 4363334670415823793}
 --- !u!114 &5667291142690478704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,6 +389,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: bf64f4ca-a1bc-419e-8665-935a1abe2c60
     m_ActionName: HeroInput/Throw[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5667291142690478704}
+        m_MethodName: OnNextItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d4e2a9df-ef41-4671-a11a-266acc9da1ab
+    m_ActionName: HeroInput/NextItem[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: HeroInput
@@ -440,7 +456,7 @@ Animator:
   m_GameObject: {fileID: 5667291142690478708}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c147f8b6192b9b94e8cf0f57872a540e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 194505b33a161d543a76a4478bbb95f9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -565,7 +581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad765ac5948d63488b6c742a059646b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 0}
   _sounds:
   - _id: Jump
     _clip: {fileID: 8300000, guid: d060a259c1fa4eb489c4234fad6b64a5, type: 3}

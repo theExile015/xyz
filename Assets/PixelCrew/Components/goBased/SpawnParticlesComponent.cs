@@ -1,4 +1,5 @@
 ﻿using PixelCrew.Utils;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +20,11 @@ namespace PixelCrew.Components.goBased
             var scale = _spawnTarget.lossyScale;
             instance.transform.localScale = scale;
             instance.SetActive(true);
+        }
+
+        internal void SetPrefub(GameObject prefub)
+        {
+            _particlesPrefub = prefub;
         }
     }
 }

@@ -2308,7 +2308,9 @@ MonoBehaviour:
       - Id: Coin
         Value: 5
       - Id: Sword
-        Value: 1
+        Value: 0
+      - Id: PearlProjectile
+        Value: 10
     HP:
       _value: 10
 --- !u!4 &759523455
