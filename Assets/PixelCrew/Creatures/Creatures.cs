@@ -11,6 +11,7 @@ namespace PixelCrew.Creatures
         [Header("Params")]
         [SerializeField] private bool _invertScale;
         [SerializeField] private float _speed;
+        [SerializeField] private float _hasteSpeed;
         [SerializeField] protected float Jumpforce;
         [SerializeField] private float _damageJumpForce;
         [SerializeField] private int _meleeDamage = 1;
@@ -28,6 +29,7 @@ namespace PixelCrew.Creatures
         protected bool IsGrounded;
         protected bool IsJumping;
         protected bool IsFalling;
+        protected bool IsHasteUp;
 
         public bool CreatureIsJumping => IsJumping;
         public bool CreatureIsGrounded => IsGrounded;
@@ -58,7 +60,8 @@ namespace PixelCrew.Creatures
 
         private void FixedUpdate()
         {
-            var xVelocity = Direction.x * _speed;
+            var speed = IsHasteUp ? _hasteSpeed : _speed;
+            var xVelocity = Direction.x * speed;
             var yVelocity = CalculateYVelocity();
 
             Rigidbody.velocity = new Vector2(xVelocity, yVelocity);

@@ -56,7 +56,7 @@ namespace PixelCrew.Creatures.Hero
         {
             if (context.performed)
             {
-                _hero.UseHealingPotion();
+                _hero.UsePotion();
             }
         }
 

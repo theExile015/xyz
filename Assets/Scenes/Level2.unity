@@ -1923,10 +1923,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1046883556}
     m_Modifications:
-    - target: {fileID: 5624067238533197722, guid: 5869c17d052053446813587c400d855c,
+    - target: {fileID: 5667291142690478707, guid: 5869c17d052053446813587c400d855c,
         type: 3}
-      propertyPath: m_Name
-      value: Listener
+      propertyPath: _hasteSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5667291142690478707, guid: 5869c17d052053446813587c400d855c,
+        type: 3}
+      propertyPath: _hasteTimer._value
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5667291142690478708, guid: 5869c17d052053446813587c400d855c,
         type: 3}
@@ -1987,11 +1992,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5667291142690478990, guid: 5869c17d052053446813587c400d855c,
-        type: 3}
-      propertyPath: _maxHealth
-      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5869c17d052053446813587c400d855c, type: 3}
@@ -2307,12 +2307,12 @@ MonoBehaviour:
       _inventory:
       - Id: Coin
         Value: 5
-      - Id: Sword
-        Value: 0
-      - Id: PearlProjectile
-        Value: 10
+      - Id: MiddleHealingPotion
+        Value: 3
+      - Id: HastePotion
+        Value: 3
     HP:
-      _value: 10
+      _value: 1
 --- !u!4 &759523455
 Transform:
   m_ObjectHideFlags: 0

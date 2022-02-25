@@ -30,6 +30,10 @@ namespace PixelCrew.Creatures.Hero
         [SerializeField] private float _superThrowDelay = 0.2f;
         private bool _superThrow;
 
+        [Header("HastePotion")]
+        [SerializeField] private Cooldown _hasteTimer;
+
+
         [Space]
         [Header("Particles")]
         [SerializeField] private SpawnParticlesComponent _attackParticles;
@@ -44,9 +48,11 @@ namespace PixelCrew.Creatures.Hero
         private GameSession _session;
 
         private const string SwordId = "Sword";
+        private const string LesserHealingId = "LesserHealingPotion";
+        private const string MiddleHealingId = "MiddleHealingPotion";
+        private const string HastePotId = "HastePotion";
         private int CoinCount => _session.Data.Inventory.Count("Coin");
         private int SwordCount => _session.Data.Inventory.Count("Sword");
-        private int LesserPotionCount => _session.Data.Inventory.Count("LesserHealingPotion");
 
         private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
         private bool CanThrow
@@ -60,6 +66,22 @@ namespace PixelCrew.Creatures.Hero
                 return def.HashTag(ItemTag.Throwable);
             }
         }
+
+        private bool CanUse
+        {
+            get
+            {
+                var def = DefsFacade.I.Items.Get(SelectedItemId);
+                if (!def.HashTag(ItemTag.Throwable))
+                {
+                    return def.HashTag(ItemTag.Usable);
+                }
+                else
+                    return false;
+            }
+        }
+
+
 
         protected override void Awake()
         {
@@ -92,6 +114,13 @@ namespace PixelCrew.Creatures.Hero
         protected override void Update()
         {
             base.Update();
+            
+            // Haste potion check and disabling
+            if(IsHasteUp)
+            {
+                if (_hasteTimer.IsReady)
+                    IsHasteUp = false;
+            }
         }
 
         protected override float CalculateYVelocity()
@@ -212,13 +241,30 @@ namespace PixelCrew.Creatures.Hero
             _session.Data.Inventory.OnChanged -= OnInventoryChanged;
         }
 
-        public void UseHealingPotion()
+        public void UsePotion()
         {
-            if (LesserPotionCount <= 0) return;
+            if (!CanUse) return;
 
-            _session.Data.Inventory.Remove("LesserHealingPotion", 1);
+            var potionId = _session.QuickInventory.SelectedItem.Id;
             var hp = GetComponent<HealthComponent>();
-            hp.ModifyHP(5);
+
+            switch (potionId)
+            {
+                case (LesserHealingId):
+                    hp.ModifyHP(3);
+                    break;
+
+                case (MiddleHealingId):
+                    hp.ModifyHP(6);
+                    break;
+
+                case (HastePotId):
+                    IsHasteUp = true;
+                    _hasteTimer.Reset();
+                    break;
+            }
+
+            _session.Data.Inventory.Remove(potionId, 1);
         }
 
         public void StartThrowing()
