@@ -49,5 +49,11 @@ namespace PixelCrew.UI.HUD.QuickInventory
                 _createdItem[i].gameObject.SetActive(false);
             }
         }
+
+
+        private void OnDestroy()
+        {
+            _trash.Dispose();
+        }
     }
 }

@@ -2305,7 +2305,7 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory:
-      - Id: Coin
+      - Id: LesserHealingPotion
         Value: 5
       - Id: MiddleHealingPotion
         Value: 3
