@@ -15,6 +15,8 @@ namespace PixelCrew.Creatures.Mobs
         [SerializeField] private float _attackCooldown = 1.0f;
         [SerializeField] private float _missHeroCooldown = 1.0f;
 
+        [SerializeField] private float _horizontalTreshold = 0.2f;
+
         [SerializeField] private bool _jumpingMob;
 
         private IEnumerator _current;
@@ -81,7 +83,11 @@ namespace PixelCrew.Creatures.Mobs
                 }
                 else
                 {
-                    SetDirectionToTarget();
+                    var horizontalDelta = Mathf.Abs(_target.transform.position.x - transform.position.x);
+                    if (horizontalDelta <= _horizontalTreshold)
+                        _creature.SetDirection(Vector2.zero);
+                    else
+                        SetDirectionToTarget();
                 }
                 yield return null;
             }

@@ -1,47 +1,52 @@
-﻿using PixelCrew.UI;
+﻿using PixelCrew.Model;
+using PixelCrew.UI;
+using PixelCrew.Utils;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Assets.PixelCrew.UI.GameMenu
 {
     public class GameMenu : AnimatedWindow
     {
-
         private System.Action _closeAction;
+        private float _defaultTimeScale;
 
+        protected override void Start()
+        {
+            base.Start();
+
+            _defaultTimeScale = Time.timeScale;
+            Time.timeScale = 0;
+        }
         public void OnShowSettings()
         {
-            var window = Resources.Load<GameObject>("UI/SettingsWindow");
-            var canvas = FindObjectOfType<Canvas>();
-            Instantiate(window, canvas.transform);
+            WindowUtils.CreateWindow("UI/SettingsWindow");
         }
 
-        public void OnRetartGame()
+        public void OnExitGame()
         {
-            _closeAction = () => { SceneManager.LoadScene("Level2"); };
-            Close();
+            SceneManager.LoadScene("Main menu");
+
+            var session = FindObjectOfType<GameSession>();
+            Destroy(session.gameObject);
         }
 
-        public void OnExit()
+        public void OnExitMenu()
         {
-            _closeAction = () =>
-            {
-                Application.Quit();
-
-#if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-#endif
-            };
-
-            Close();
+            this.Close();
         }
 
         public override void OnCloseAnimationComplete()
         {
             base.OnCloseAnimationComplete();
             _closeAction?.Invoke();
+        }
 
+        private void OnDestroy()
+        {
+            Time.timeScale = _defaultTimeScale;
         }
     }
 }

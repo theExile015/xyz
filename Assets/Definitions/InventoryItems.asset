@@ -36,3 +36,6 @@ MonoBehaviour:
   - _id: HastePotion
     _icon: {fileID: 2011574832808370117, guid: 6ef7420a5c668a247bf2b1ca2d08d684, type: 3}
     _tags: 0000000001000000
+  - _id: GreenDiamond
+    _icon: {fileID: 5489425550423852611, guid: 456ad15b831805d488a6d475522a7251, type: 3}
+    _tags: 0000000001000000
