@@ -134,10 +134,13 @@ MonoBehaviour:
         m_Calls: []
   - _name: destroy
     _sprites:
-    - {fileID: -7481350877133238684, guid: 6ef7420a5c668a247bf2b1ca2d08d684, type: 3}
     - {fileID: 6040734443530017722, guid: 6ef7420a5c668a247bf2b1ca2d08d684, type: 3}
     - {fileID: 8167133005111728920, guid: 6ef7420a5c668a247bf2b1ca2d08d684, type: 3}
     - {fileID: 2014349484240403859, guid: 6ef7420a5c668a247bf2b1ca2d08d684, type: 3}
+    - {fileID: 6326803469982491369, guid: 6ef7420a5c668a247bf2b1ca2d08d684, type: 3}
+    - {fileID: 6519628818910804322, guid: 6ef7420a5c668a247bf2b1ca2d08d684, type: 3}
+    - {fileID: -7293215197781682108, guid: 6ef7420a5c668a247bf2b1ca2d08d684, type: 3}
+    - {fileID: -8747828868849804721, guid: 6ef7420a5c668a247bf2b1ca2d08d684, type: 3}
     _loop: 0
     _allowNextClip: 0
     _onComplete:
