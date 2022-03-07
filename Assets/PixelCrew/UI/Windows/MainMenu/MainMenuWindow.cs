@@ -1,10 +1,9 @@
-﻿using PixelCrew.Utils;
-using System.Collections;
-using UnityEditor; 
+﻿using PixelCrew.UI.Windows;
+using PixelCrew.Utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace PixelCrew.UI.MainMenu
+namespace PixelCrew.UI.MainMenu.Windows
 {
     public class MainMenuWindow : AnimatedWindow
     {
@@ -15,9 +14,14 @@ namespace PixelCrew.UI.MainMenu
             WindowUtils.CreateWindow("UI/SettingsWindow");
         }
 
+        public void OnLanguages()
+        {
+            WindowUtils.CreateWindow("UI/LocalizationWindow");
+        }
+
         public void OnStartGame()
         {
-            _closeAction = () => { SceneManager.LoadScene("Level2"); };
+            _closeAction = () => { SceneManager.LoadScene("Level3"); };
             Close();
         }
 

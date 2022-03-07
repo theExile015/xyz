@@ -1,5 +1,6 @@
 ﻿using Assets.PixelCrew.Utils;
 using PixelCrew.Model.Data;
+using PixelCrew.Model.Definitions.Localization;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -46,7 +47,9 @@ namespace PixelCrew.UI.HUD.Dialogs
         private IEnumerator TypeDialogText()
         {
             _text.text = String.Empty;
-            var sentence = _data.Sentences[_currentSentence];
+            var sentenceKey = _data.Sentences[_currentSentence];
+            var sentence = LocalizationManager.I.Localize(sentenceKey); //преобразуем ключ в текст из данных локализации
+
             foreach (var letter in sentence)
             {
                 _text.text += letter;

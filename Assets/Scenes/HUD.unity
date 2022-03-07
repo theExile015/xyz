@@ -780,7 +780,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 46a503a6dde87294981e5b4516e3ebe7, type: 3}
+    m_Font: {fileID: 12800000, guid: b9feb572617647643ba24abbf8d4824c, type: 3}
     m_FontSize: 9
     m_FontStyle: 0
     m_BestFit: 0
@@ -972,7 +972,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 46a503a6dde87294981e5b4516e3ebe7, type: 3}
+    m_Font: {fileID: 12800000, guid: b9feb572617647643ba24abbf8d4824c, type: 3}
     m_FontSize: 7
     m_FontStyle: 0
     m_BestFit: 0
@@ -1469,7 +1469,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 46a503a6dde87294981e5b4516e3ebe7, type: 3}
+    m_Font: {fileID: 12800000, guid: b9feb572617647643ba24abbf8d4824c, type: 3}
     m_FontSize: 9
     m_FontStyle: 0
     m_BestFit: 0
@@ -1709,6 +1709,7 @@ GameObject:
   - component: {fileID: 1407873348}
   - component: {fileID: 1407873350}
   - component: {fileID: 1407873351}
+  - component: {fileID: 1407873352}
   m_Layer: 0
   m_Name: Continue
   m_TagString: Untagged
@@ -1755,7 +1756,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 46a503a6dde87294981e5b4516e3ebe7, type: 3}
+    m_Font: {fileID: 12800000, guid: b9feb572617647643ba24abbf8d4824c, type: 3}
     m_FontSize: 9
     m_FontStyle: 0
     m_BestFit: 0
@@ -1849,6 +1850,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1407873352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407873346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8d4492bf20a724789156d6090afa90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: dialog_continue
+  _capitalize: 0
 --- !u!1 &1446185088
 GameObject:
   m_ObjectHideFlags: 0

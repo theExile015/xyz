@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a55bbd00beeff940afaee8ca54e3b3d, type: 3}
+  m_Name: en
+  m_EditorClassIdentifier: 
+  _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vTlmX_UxB9fMIEQz0d1wJ4IZBtffIp4o9JS2YX3tFzQAYVIUTu1tKFY7mozDqIO0lVApe8LvdcG8qWw/pub?gid=265680004&single=true&output=tsv
+  _localeItems:
+  - Key: menu_title
+    Value: "menu\r"
+  - Key: menu_start
+    Value: "start\r"
+  - Key: menu_options
+    Value: "options\r"
+  - Key: menu_exit
+    Value: "exit\r"
+  - Key: selected_language
+    Value: "Selected language is {0}\r"
+  - Key: menu_locales
+    Value: "language\r"
+  - Key: button_back
+    Value: "back\r"
+  - Key: opt_title
+    Value: "options\r"
+  - Key: opt_music
+    Value: "music\r"
+  - Key: opt_sfx
+    Value: "sfx\r"
+  - Key: button_restart
+    Value: "restart\r"
+  - Key: dialog_continue
+    Value: "continue...\r"
+  - Key: dialog_1_1
+    Value: "Get me Green Gem...\r"
+  - Key: dialog_1_2
+    Value: "And I show you the miracle!\r"
+  - Key: dialog_2_1
+    Value: "And now the miracle!\r"
+  - Key: dialog_2_2
+    Value: "I have a gem...\r"
+  - Key: dialog_2_3
+    Value: "...and you are not\r"
+  - Key: dialog_2_4
+    Value: "ahahahahahaha!\r"
+  - Key: menu_pause
+    Value: pause

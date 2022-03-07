@@ -1,12 +1,10 @@
 ﻿using PixelCrew.Model;
-using PixelCrew.UI;
+using PixelCrew.UI.Windows;
 using PixelCrew.Utils;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
-namespace Assets.PixelCrew.UI.GameMenu
+namespace Assets.PixelCrew.UI.GameMenu.Windows
 {
     public class GameMenu : AnimatedWindow
     {

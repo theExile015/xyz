@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _sentences:
-    - Get me Green Gem...
-    - And I show you the miracle!
+    - dialog_1_1
+    - dialog_1_2
