@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace PixelCrew.Components.goBased
 {
-    public class SpawnParticlesComponent : MonoBehaviour
+    public class SpawnComponent : MonoBehaviour
     {
         [SerializeField] private Transform _spawnTarget;
         [SerializeField] private GameObject _particlesPrefub;

@@ -36,10 +36,10 @@ namespace PixelCrew.Creatures.Hero
 
         [Space]
         [Header("Particles")]
-        [SerializeField] private SpawnParticlesComponent _attackParticles;
+        [SerializeField] private SpawnComponent _attackParticles;
 
         [SerializeField] private ProbabilityDropComponent _hitDrop;
-        [SerializeField] private SpawnParticlesComponent _throwSpawner;
+        [SerializeField] private SpawnComponent _throwSpawner;
 
         private static readonly int ThrowKey = Animator.StringToHash("throw");
 

@@ -27,7 +27,7 @@ namespace PixelCrew.Components.goBased
         public class SpawnData
         {
             public string id;
-            public SpawnParticlesComponent Component;
+            public SpawnComponent Component;
         }
     }
 }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3082823143992263468}
-  - component: {fileID: 4363334670415823793}
+  - component: {fileID: 7513869545175237437}
   m_Layer: 16
   m_Name: ThrowSpawnPosition
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 5667291142690478710}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4363334670415823793
+--- !u!114 &7513869545175237437
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,7 +40,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1280377491619016765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d7882d50f1c994a906190b8cc4afdb, type: 3}
+  m_Script: {fileID: 11500000, guid: 296f3acc80d58d84191ab9fc346333e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnTarget: {fileID: 3082823143992263468}
@@ -55,7 +55,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2085413153597153437}
-  - component: {fileID: 7750234197348978624}
+  - component: {fileID: 8052824483503117789}
   m_Layer: 16
   m_Name: FallPosition
   m_TagString: Untagged
@@ -77,7 +77,7 @@ Transform:
   m_Father: {fileID: 5667291142690478710}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7750234197348978624
+--- !u!114 &8052824483503117789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,7 +86,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2766187290672906971}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d7882d50f1c994a906190b8cc4afdb, type: 3}
+  m_Script: {fileID: 11500000, guid: 296f3acc80d58d84191ab9fc346333e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnTarget: {fileID: 2085413153597153437}
@@ -271,9 +271,9 @@ MonoBehaviour:
   _superThrowDelay: 0.2
   _hasteTimer:
     _value: 3
-  _attackParticles: {fileID: 7409076337036547072}
+  _attackParticles: {fileID: 2859541196937790419}
   _hitDrop: {fileID: 2132858975917804866}
-  _throwSpawner: {fileID: 4363334670415823793}
+  _throwSpawner: {fileID: 7513869545175237437}
 --- !u!114 &5667291142690478704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,15 +562,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawners:
   - id: Jump
-    Component: {fileID: 1437846671607912041}
+    Component: {fileID: 6248419150786381058}
   - id: Run
-    Component: {fileID: 5667291142706246288}
+    Component: {fileID: 1243329650410976044}
   - id: SlamDown
-    Component: {fileID: 7750234197348978624}
+    Component: {fileID: 8052824483503117789}
   - id: Attack
-    Component: {fileID: 7409076337036547072}
+    Component: {fileID: 2859541196937790419}
   - id: Throw
-    Component: {fileID: 4363334670415823793}
+    Component: {fileID: 7513869545175237437}
 --- !u!114 &3966644594958590609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,7 +613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5667291142706246289}
-  - component: {fileID: 5667291142706246288}
+  - component: {fileID: 1243329650410976044}
   m_Layer: 16
   m_Name: FootStepPosition
   m_TagString: Untagged
@@ -629,13 +629,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5667291142706246294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.393, y: -0.385, z: 0}
+  m_LocalPosition: {x: -0.422, y: -0.355, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5667291142690478710}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5667291142706246288
+--- !u!114 &1243329650410976044
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5667291142706246294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d7882d50f1c994a906190b8cc4afdb, type: 3}
+  m_Script: {fileID: 11500000, guid: 296f3acc80d58d84191ab9fc346333e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnTarget: {fileID: 5667291142706246289}
@@ -723,7 +723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5667291144048277280}
-  - component: {fileID: 1437846671607912041}
+  - component: {fileID: 6248419150786381058}
   m_Layer: 16
   m_Name: JumpPostion
   m_TagString: Untagged
@@ -745,7 +745,7 @@ Transform:
   m_Father: {fileID: 5667291142690478710}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1437846671607912041
+--- !u!114 &6248419150786381058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -754,7 +754,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5667291144048277281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d7882d50f1c994a906190b8cc4afdb, type: 3}
+  m_Script: {fileID: 11500000, guid: 296f3acc80d58d84191ab9fc346333e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnTarget: {fileID: 5667291144048277280}
@@ -926,8 +926,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6990637213231790691}
   - component: {fileID: 5931456910991614328}
-  - component: {fileID: 7409076337036547072}
   - component: {fileID: 3040065046344734351}
+  - component: {fileID: 2859541196937790419}
   m_Layer: 16
   m_Name: AttackPosition
   m_TagString: Untagged
@@ -981,21 +981,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7409076337036547072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6871577206898373097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d7882d50f1c994a906190b8cc4afdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawnTarget: {fileID: 6990637213231790691}
-  _particlesPrefub: {fileID: 8905712907038806034, guid: a7252ba3e6c3b784e82702fdb96e4829,
-    type: 3}
 --- !u!114 &3040065046344734351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,3 +994,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _value: -1
+--- !u!114 &2859541196937790419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6871577206898373097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296f3acc80d58d84191ab9fc346333e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnTarget: {fileID: 6990637213231790691}
+  _particlesPrefub: {fileID: 8905712907038806034, guid: a7252ba3e6c3b784e82702fdb96e4829,
+    type: 3}

@@ -417,8 +417,7 @@ MonoBehaviour:
   _meleeCanAttack: {fileID: 5190328512941522448}
   _rangeCooldown:
     _value: 2
-  _rangeAttackDelay: 0
-  _rangeAttack: {fileID: 500328897913779685}
+  _rangeAttack: {fileID: 5295698382921514960}
 --- !u!95 &4286006016541224452
 Animator:
   serializedVersion: 3
@@ -552,7 +551,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1861210045116555512}
-  - component: {fileID: 500328897913779685}
+  - component: {fileID: 5295698382921514960}
   m_Layer: 9
   m_Name: PearlThrowPosition
   m_TagString: Untagged
@@ -574,7 +573,7 @@ Transform:
   m_Father: {fileID: 6429389733286959322}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &500328897913779685
+--- !u!114 &5295698382921514960
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -583,7 +582,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7346665615360770176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d7882d50f1c994a906190b8cc4afdb, type: 3}
+  m_Script: {fileID: 11500000, guid: 296f3acc80d58d84191ab9fc346333e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnTarget: {fileID: 1861210045116555512}

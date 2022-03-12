@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7080464764735863515}
-  - component: {fileID: 7080464764735863516}
+  - component: {fileID: 6745007946738828831}
   m_Layer: 9
   m_Name: PearlThrowPosiiton
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 7080464766364621122}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7080464764735863516
+--- !u!114 &6745007946738828831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,7 +40,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7080464764735863514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d7882d50f1c994a906190b8cc4afdb, type: 3}
+  m_Script: {fileID: 11500000, guid: 296f3acc80d58d84191ab9fc346333e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnTarget: {fileID: 7080464764735863515}
@@ -56,10 +56,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7080464765491534546}
   - component: {fileID: 7080464765491534551}
-  - component: {fileID: 7080464765491534550}
   - component: {fileID: 7080464765491534549}
   - component: {fileID: 7080464765491534548}
   - component: {fileID: 7080464765491534547}
+  - component: {fileID: 6905021341353392920}
   m_Layer: 9
   m_Name: AttackPosition
   m_TagString: Untagged
@@ -113,21 +113,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7080464765491534550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7080464765491534545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d7882d50f1c994a906190b8cc4afdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawnTarget: {fileID: 7080464765491534546}
-  _particlesPrefub: {fileID: 8905712907038806034, guid: a7252ba3e6c3b784e82702fdb96e4829,
-    type: 3}
 --- !u!114 &7080464765491534549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +158,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16384
   _isTouchingLayer: 0
+--- !u!114 &6905021341353392920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7080464765491534545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296f3acc80d58d84191ab9fc346333e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnTarget: {fileID: 7080464765491534546}
+  _particlesPrefub: {fileID: 8905712907038806034, guid: a7252ba3e6c3b784e82702fdb96e4829,
+    type: 3}
 --- !u!1 &7080464766123679498
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 7535102258177623049}
   - component: {fileID: 4208536054446925690}
   - component: {fileID: 2102594945607839446}
-  - component: {fileID: 7104209520687597461}
+  - component: {fileID: 6177301764626280736}
   m_Layer: 9
   m_Name: Seashell
   m_TagString: Enemy
@@ -440,7 +440,7 @@ MonoBehaviour:
   _meleeCanAttack: {fileID: 7080464765491534547}
   _rangeCooldown:
     _value: 2
-  _rangeAttack: {fileID: 7080464764735863516}
+  _rangeAttack: {fileID: 6745007946738828831}
 --- !u!114 &4208536054446925690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,7 +471,7 @@ MonoBehaviour:
   _onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7104209520687597461}
+      - m_Target: {fileID: 6177301764626280736}
         m_MethodName: Spawn
         m_Mode: 1
         m_Arguments:
@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 7080464766364621121}
---- !u!114 &7104209520687597461
+--- !u!114 &6177301764626280736
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7080464766364621121}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d7882d50f1c994a906190b8cc4afdb, type: 3}
+  m_Script: {fileID: 11500000, guid: 296f3acc80d58d84191ab9fc346333e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnTarget: {fileID: 7080464766364621122}

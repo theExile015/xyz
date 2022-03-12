@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8991594484429088397}
-  - component: {fileID: 7952880917740622502}
+  - component: {fileID: 4969932739461123931}
   m_Layer: 8
   m_Name: DropSpawner
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 4902906562282497372}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7952880917740622502
+--- !u!114 &4969932739461123931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,7 +40,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3058376267129381632}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d7882d50f1c994a906190b8cc4afdb, type: 3}
+  m_Script: {fileID: 11500000, guid: 296f3acc80d58d84191ab9fc346333e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnTarget: {fileID: 8991594484429088397}
@@ -142,8 +142,8 @@ GameObject:
   - component: {fileID: 4902906562282497344}
   - component: {fileID: 4902906562282497345}
   - component: {fileID: 4902906562282497375}
-  - component: {fileID: 2681591664736379293}
   - component: {fileID: 1597050362129190206}
+  - component: {fileID: 5341628891037458269}
   m_Layer: 8
   m_Name: DestructableBarrelWithLoot
   m_TagString: Enemy
@@ -402,21 +402,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2681591664736379293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4902906562282497350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d7882d50f1c994a906190b8cc4afdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawnTarget: {fileID: 4902906562282497372}
-  _particlesPrefub: {fileID: 8218073054950575051, guid: 982e51a2801fc6541bd56d096b1164bc,
-    type: 3}
 --- !u!114 &1597050362129190206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,6 +416,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawners:
   - id: Trash
-    Component: {fileID: 2681591664736379293}
+    Component: {fileID: 5341628891037458269}
   - id: Loot
-    Component: {fileID: 7952880917740622502}
+    Component: {fileID: 4969932739461123931}
+--- !u!114 &5341628891037458269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4902906562282497350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296f3acc80d58d84191ab9fc346333e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnTarget: {fileID: 4902906562282497372}
+  _particlesPrefub: {fileID: 8218073054950575051, guid: 982e51a2801fc6541bd56d096b1164bc,
+    type: 3}

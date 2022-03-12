@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7295270092742496751}
-  - component: {fileID: 299484194641756319}
+  - component: {fileID: 1377382291295101667}
   m_Layer: 9
   m_Name: FootStepPosition
   m_TagString: Untagged
@@ -95,7 +95,7 @@ Transform:
   m_Father: {fileID: 1853513181933587876}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &299484194641756319
+--- !u!114 &1377382291295101667
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,11 +104,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 818453414232896224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d7882d50f1c994a906190b8cc4afdb, type: 3}
+  m_Script: {fileID: 11500000, guid: 296f3acc80d58d84191ab9fc346333e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnTarget: {fileID: 7295270092742496751}
-  _particlesPrefub: {fileID: 23932536491478171, guid: 15e501d5eb66eb74fb7353a07d5aaccc,
+  _particlesPrefub: {fileID: 3393601434514733161, guid: 425700786828e6d41813a7f83347f20e,
     type: 3}
 --- !u!1 &3243660276115915142
 GameObject:
@@ -194,10 +194,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2044020279731306906}
   - component: {fileID: 6502618691788230661}
-  - component: {fileID: 250432031108644862}
   - component: {fileID: 5412655068218697221}
   - component: {fileID: 2803210279722924040}
   - component: {fileID: 2182310016643520039}
+  - component: {fileID: 4877951827744623672}
   m_Layer: 9
   m_Name: AttackPosition (1)
   m_TagString: Enemy
@@ -251,21 +251,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &250432031108644862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3537180929048489611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d7882d50f1c994a906190b8cc4afdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawnTarget: {fileID: 2044020279731306906}
-  _particlesPrefub: {fileID: 8905712907038806034, guid: a7252ba3e6c3b784e82702fdb96e4829,
-    type: 3}
 --- !u!114 &5412655068218697221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +296,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16384
   _isTouchingLayer: 0
+--- !u!114 &4877951827744623672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3537180929048489611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 296f3acc80d58d84191ab9fc346333e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnTarget: {fileID: 2044020279731306906}
+  _particlesPrefub: {fileID: 8905712907038806034, guid: a7252ba3e6c3b784e82702fdb96e4829,
+    type: 3}
 --- !u!1 &5968384000790894863
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +596,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2678189928246806542}
-  - component: {fileID: 3940867178818119934}
+  - component: {fileID: 625433948240685952}
   m_Layer: 9
   m_Name: JumpHeroTrigger
   m_TagString: Untagged
@@ -618,7 +618,7 @@ Transform:
   m_Father: {fileID: 1853513181933587876}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3940867178818119934
+--- !u!114 &625433948240685952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -627,7 +627,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6365721212033473211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d7882d50f1c994a906190b8cc4afdb, type: 3}
+  m_Script: {fileID: 11500000, guid: 296f3acc80d58d84191ab9fc346333e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnTarget: {fileID: 2678189928246806542}
@@ -909,6 +909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _invertScale: 1
   _speed: 2
+  _hasteSpeed: 0
   Jumpforce: 8
   _damageJumpForce: 2
   _meleeDamage: 1
@@ -935,6 +936,7 @@ MonoBehaviour:
   _alarmDelay: 0.5
   _attackCooldown: 1
   _missHeroCooldown: 1
+  _horizontalTreshold: 0.2
   _jumpingMob: 0
 --- !u!114 &5967867818022103364
 MonoBehaviour:
@@ -1027,9 +1029,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawners:
   - id: Jump
-    Component: {fileID: 3940867178818119934}
+    Component: {fileID: 625433948240685952}
   - id: Run
-    Component: {fileID: 299484194641756319}
+    Component: {fileID: 1377382291295101667}
 --- !u!114 &7347656037469489395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,7 +1044,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad765ac5948d63488b6c742a059646b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 0}
   _sounds: []
 --- !u!114 &6845246672290938302
 MonoBehaviour:
@@ -1056,7 +1057,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad765ac5948d63488b6c742a059646b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 1891386829342447916}
   _sounds:
   - _id: Jump
     _clip: {fileID: 8300000, guid: d060a259c1fa4eb489c4234fad6b64a5, type: 3}
