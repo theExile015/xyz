@@ -13015,6 +13015,10 @@ MonoBehaviour:
       _inventory:
       - Id: Sword
         Value: 5
+      - Id: LesserHealingPotion
+        Value: 1
+      - Id: HastePotion
+        Value: 10
     HP:
       _value: 5
   _defaultCheckPoint: level1-checkpoint1

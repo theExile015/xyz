@@ -29,7 +29,6 @@ namespace PixelCrew.Creatures
         protected bool IsGrounded;
         protected bool IsJumping;
         protected bool IsFalling;
-        protected bool IsHasteUp;
 
         public bool CreatureIsJumping => IsJumping;
         public bool CreatureIsGrounded => IsGrounded;
@@ -60,8 +59,7 @@ namespace PixelCrew.Creatures
 
         private void FixedUpdate()
         {
-            var speed = IsHasteUp ? _hasteSpeed : _speed;
-            var xVelocity = Direction.x * speed;
+            var xVelocity = CalculateXVelocity();
             var yVelocity = CalculateYVelocity();
 
             Rigidbody.velocity = new Vector2(xVelocity, yVelocity);
@@ -72,6 +70,16 @@ namespace PixelCrew.Creatures
             Animator.SetBool(IsGroundKey, IsGrounded);
 
             UpdateSpriteDirection(Direction);
+        }
+
+        protected virtual float CalculateXVelocity()
+        {
+            return Direction.x * CalculateSpeed();
+        }
+
+        protected virtual float CalculateSpeed()
+        {
+            return _speed;
         }
 
         protected virtual float CalculateYVelocity()

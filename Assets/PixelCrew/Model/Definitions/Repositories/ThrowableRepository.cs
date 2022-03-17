@@ -6,20 +6,9 @@ using UnityEngine;
 namespace PixelCrew.Model.Definitions.Repositories
 {
     [CreateAssetMenu(menuName = "Defs/Throwable", fileName = "Throwable")]
-    public class ThrowableItemsDef : DefRepository<ThrowableDef>
+    public class ThrowableRepository : DefRepository<ThrowableDef>
     {
-        [SerializeField] private ThrowableDef[] _items;
 
-        public ThrowableDef Get(string id)
-        {
-            foreach (var itemDef in _items)
-            {
-                if (itemDef.Id == id)
-                    return itemDef;
-            }
-
-            return default;
-        }
     }
 
     [Serializable]

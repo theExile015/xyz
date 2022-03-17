@@ -48,7 +48,7 @@ namespace PixelCrew.Creatures.Hero
 
             if (context.canceled)
             {
-                _hero.PerformThrowing();
+                _hero.UseInventory();
             }
         }
 

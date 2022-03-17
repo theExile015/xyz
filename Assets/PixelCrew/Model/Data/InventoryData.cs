@@ -26,7 +26,7 @@ namespace PixelCrew.Model.Data
             if (itemDef.IsVoid) return;
 
            
-            if (itemDef.HashTag(ItemTag.Stackable))
+            if (itemDef.HasTag(ItemTag.Stackable))
             {
                 AddToStack(id, value);                   
             } 
@@ -43,7 +43,7 @@ namespace PixelCrew.Model.Data
             foreach (var item in _inventory)
             {
                 var itemDef = DefsFacade.I.Items.Get(item.Id);
-                var isAllRequirementsMet = tags.All(x => itemDef.HashTag(x));
+                var isAllRequirementsMet = tags.All(x => itemDef.HasTag(x));
                 if (isAllRequirementsMet)
                     retValue.Add(item);
             }
@@ -81,7 +81,7 @@ namespace PixelCrew.Model.Data
             var itemDef = DefsFacade.I.Items.Get(id);
             if (itemDef.IsVoid) return;
 
-            if (itemDef.HashTag(ItemTag.Stackable))
+            if (itemDef.HasTag(ItemTag.Stackable))
             {
                 RemoveFromStack(id, value);     
             }

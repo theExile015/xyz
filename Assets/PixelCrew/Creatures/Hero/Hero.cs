@@ -31,10 +31,6 @@ namespace PixelCrew.Creatures.Hero
         [SerializeField] private float _superThrowDelay = 0.2f;
         private bool _superThrow;
 
-        [Header("HastePotion")]
-        [SerializeField] private Cooldown _hasteTimer;
-
-
         [Space]
         [Header("Particles")]
         [SerializeField] private SpawnComponent _attackParticles;
@@ -46,15 +42,14 @@ namespace PixelCrew.Creatures.Hero
 
         private bool _allowDoubleJump;
 
+        private Cooldown _hasteUpCooldown = new Cooldown();
+        private float _additionalSpeed;
+
         private GameSession _session;
 
         private const string SwordId = "Sword";
-        private const string LesserHealingId = "LesserHealingPotion";
-        private const string MiddleHealingId = "MiddleHealingPotion";
-        private const string HastePotId = "HastePotion";
         private int CoinCount => _session.Data.Inventory.Count("Coin");
         private int SwordCount => _session.Data.Inventory.Count("Sword");
-
         private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
         private bool CanThrow
         {
@@ -64,25 +59,9 @@ namespace PixelCrew.Creatures.Hero
                     return SwordCount > 1;
 
                 var def = DefsFacade.I.Items.Get(SelectedItemId);
-                return def.HashTag(ItemTag.Throwable);
+                return def.HasTag(ItemTag.Throwable);
             }
         }
-
-        private bool CanUse
-        {
-            get
-            {
-                var def = DefsFacade.I.Items.Get(SelectedItemId);
-                if (!def.HashTag(ItemTag.Throwable))
-                {
-                    return def.HashTag(ItemTag.Usable);
-                }
-                else
-                    return false;
-            }
-        }
-
-
 
         protected override void Awake()
         {
@@ -115,13 +94,6 @@ namespace PixelCrew.Creatures.Hero
         protected override void Update()
         {
             base.Update();
-            
-            // Haste potion check and disabling
-            if(IsHasteUp)
-            {
-                if (_hasteTimer.IsReady)
-                    IsHasteUp = false;
-            }
         }
 
         protected override float CalculateYVelocity()
@@ -133,6 +105,14 @@ namespace PixelCrew.Creatures.Hero
             }
 
             return base.CalculateYVelocity();
+        }
+
+        protected override float CalculateSpeed()
+        {
+            if (_hasteUpCooldown.IsReady)
+                _additionalSpeed = 0f;
+
+            return base.CalculateSpeed() + _additionalSpeed;
         }
 
         protected override float CalculateJumpVelocity(float yVelocity)
@@ -244,36 +224,44 @@ namespace PixelCrew.Creatures.Hero
 
         public void UsePotion()
         {
-            if (!CanUse) return;
+            var potion = DefsFacade.I.Potions.Get(SelectedItemId);
 
-            var potionId = _session.QuickInventory.SelectedItem.Id;
-            var hp = GetComponent<HealthComponent>();
-
-            switch (potionId)
+            switch (potion.Effect)
             {
-                case (LesserHealingId):
-                    hp.ModifyHP(3);
+                case Effect.AddHp:
+                    _session.Data.HP.Value += (int)potion.Value;
                     break;
 
-                case (MiddleHealingId):
-                    hp.ModifyHP(6);
-                    break;
-
-                case (HastePotId):
-                    IsHasteUp = true;
-                    _hasteTimer.Reset();
+                case Effect.SpeedUp:
+                    _hasteUpCooldown.Value = _hasteUpCooldown.TimeLasts + potion.Time;
+                    _additionalSpeed = potion.Value;
+                    _hasteUpCooldown.Reset();
                     break;
             }
 
-            _session.Data.Inventory.Remove(potionId, 1);
+            _session.Data.Inventory.Remove(potion.Id, 1);
         }
+
 
         public void StartThrowing()
         {
             _superThrowCooldown.Reset();
         }
 
-        public void PerformThrowing()
+        public void UseInventory()
+        {
+            if (IsSelectedItem(ItemTag.Throwable))
+                PerfomThrowing();
+            else if (IsSelectedItem(ItemTag.Potion))
+                UsePotion();
+        }
+
+        private bool IsSelectedItem(ItemTag tag)
+        {
+            return _session.QuickInventory.SelectedDef.HasTag(tag); 
+        }
+
+        private void PerfomThrowing()
         {
             if (!_throwCooldown.IsReady || !CanThrow) return;
 
