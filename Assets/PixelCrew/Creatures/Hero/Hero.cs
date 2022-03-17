@@ -1,4 +1,5 @@
-﻿using PixelCrew.Components.ColliderBased;
+﻿using PixelCrew.Model.Definitions.Repositories.Items;
+using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.goBased;
 using PixelCrew.Components.Health;
 using PixelCrew.Model;

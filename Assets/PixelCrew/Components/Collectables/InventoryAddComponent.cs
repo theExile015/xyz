@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using PixelCrew.Creatures.Hero;
-using PixelCrew.Model.Definitions;
+﻿using PixelCrew.Creatures.Hero;
+using PixelCrew.Model.Definitions.Repositories.Items;
 using UnityEngine;
 
 namespace PixelCrew.Components.Collectables

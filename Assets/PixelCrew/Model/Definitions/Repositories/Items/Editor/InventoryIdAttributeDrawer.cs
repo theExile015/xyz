@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace PixelCrew.Model.Definitions.Editor
+namespace PixelCrew.Model.Definitions.Repositories.Items.Editor
 {
     [CustomPropertyDrawer(typeof(InventoryIdAttribute))]
     public class InventoryIdAttributeDrawer : PropertyDrawer

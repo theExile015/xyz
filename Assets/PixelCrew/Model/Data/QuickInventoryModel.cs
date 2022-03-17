@@ -1,5 +1,5 @@
-﻿using PixelCrew.Model.Data.Properties;
-using PixelCrew.Model.Definitions;
+﻿using PixelCrew.Model.Definitions.Repositories.Items;
+using PixelCrew.Model.Data.Properties;
 using PixelCrew.Utils.Disposables;
 using System;
 using System.Collections;
