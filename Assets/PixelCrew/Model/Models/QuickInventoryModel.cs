@@ -2,13 +2,13 @@
 using PixelCrew.Model.Data.Properties;
 using PixelCrew.Utils.Disposables;
 using System;
-using System.Collections;
 using UnityEngine;
 using PixelCrew.Model.Definitions;
+using PixelCrew.Model.Data;
 
-namespace PixelCrew.Model.Data
+namespace PixelCrew.Model.Models
 {
-    public class QuickInventoryModel: IDisposable
+    public class QuickInventoryModel : IDisposable
     {
         private readonly PlayerData _data;
 
@@ -54,7 +54,7 @@ namespace PixelCrew.Model.Data
 
         public void SetNextItem()
         {
-            SelectedIndex.Value = (int) Mathf.Repeat(SelectedIndex.Value + 1, Inventory.Length);            
+            SelectedIndex.Value = (int)Mathf.Repeat(SelectedIndex.Value + 1, Inventory.Length);
         }
 
         public void Dispose()
@@ -62,4 +62,4 @@ namespace PixelCrew.Model.Data
             _data.Inventory.OnChanged -= OnChangedInventory;
         }
     }
-} 
+}
