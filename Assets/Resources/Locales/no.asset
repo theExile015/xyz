@@ -66,3 +66,11 @@ MonoBehaviour:
     Value: Aktiveres
   - Key: label_price
     Value: Pris
+  - Key: button_upgrade
+    Value: Oppgradering
+  - Key: stat_hp
+    Value: Helse
+  - Key: stat_speed
+    Value: Hastighet
+  - Key: stat_range_dmg
+    Value: Rekkevidde skade

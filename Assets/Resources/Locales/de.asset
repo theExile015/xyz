@@ -67,3 +67,11 @@ MonoBehaviour:
     Value: Aktivieren
   - Key: label_price
     Value: Preis
+  - Key: button_upgrade
+    Value: Aktualisierung
+  - Key: stat_hp
+    Value: Die Gesundheit
+  - Key: stat_speed
+    Value: Geschwindigkeit
+  - Key: stat_range_dmg
+    Value: Reichweitenschaden

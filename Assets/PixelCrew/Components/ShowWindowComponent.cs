@@ -15,5 +15,14 @@ namespace PixelCrew.Components
             if (window == null)
                 WindowUtils.CreateWindow(_path); 
         }
+
+        public void ShowSafe()
+        {
+            var window = FindObjectOfType<ManagePerksWindow>();
+            if (window == null)
+                WindowUtils.CreateWindowSafeCall(_path);
+        }
+
+
     }
 }

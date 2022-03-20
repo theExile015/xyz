@@ -17,6 +17,11 @@ namespace PixelCrew.Components.Health
                 healthComponent.ModifyHP(_value);
             }
         }
+
+        public void SetValue(float value)
+        {
+            _value = (int) value;
+        }
     }
 
 }

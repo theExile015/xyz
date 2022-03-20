@@ -66,3 +66,11 @@ MonoBehaviour:
     Value: Activate
   - Key: label_price
     Value: Price
+  - Key: button_upgrade
+    Value: Upgrade
+  - Key: stat_hp
+    Value: Health
+  - Key: stat_speed
+    Value: Speed
+  - Key: stat_range_dmg
+    Value: Range damage

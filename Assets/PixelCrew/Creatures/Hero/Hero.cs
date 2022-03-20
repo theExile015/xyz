@@ -8,6 +8,7 @@ using PixelCrew.Utils;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
+using PixelCrew.Model.Player;
 
 namespace PixelCrew.Creatures.Hero
 {
@@ -45,9 +46,10 @@ namespace PixelCrew.Creatures.Hero
 
         private Cooldown _hasteUpCooldown = new Cooldown();
         private float _additionalSpeed;
+        private float _rangedDamage;
 
         private GameSession _session;
-
+        private HealthComponent _health;
         private const string SwordId = "Sword";
         private int CoinCount => _session.Data.Inventory.Count("Coin");
         private int SwordCount => _session.Data.Inventory.Count("Sword");
@@ -79,11 +81,31 @@ namespace PixelCrew.Creatures.Hero
         private void Start()
         {
             _session = FindObjectOfType<GameSession>();
-            var health = GetComponent<HealthComponent>();
+            _health = GetComponent<HealthComponent>();
             _session.Data.Inventory.OnChanged += OnInventoryChanged;
-            health.SetHealth(_session.Data.HP.Value);
+            _session.StatsModel.OnUpgraded += OnHeroUpgraded;
+            
+            _health.SetHealth(_session.Data.HP.Value);
+            _rangedDamage = _session.StatsModel.GetValue(StatId.RangeDamage);
 
             UpdateHeroWeaopn();
+        }
+
+        private void OnHeroUpgraded(StatId statId)
+        {
+            switch (statId)
+            {
+                case StatId.Hp:
+                    var health = (int)_session.StatsModel.GetValue(statId);
+                    _session.Data.HP.Value = health;
+                    _health.SetHealth(health);
+                    break;
+
+                case StatId.RangeDamage:
+                    var damage = (int)_session.StatsModel.GetValue(statId);
+                    _rangedDamage = damage;
+                    break;
+            }
         }
 
         private void OnInventoryChanged(string id, int value)
@@ -124,7 +146,8 @@ namespace PixelCrew.Creatures.Hero
             if (_hasteUpCooldown.IsReady)
                 _additionalSpeed = 0f;
 
-            return base.CalculateSpeed() + _additionalSpeed;
+            var defaultSpeed = _session.StatsModel.GetValue(StatId.Speed);
+            return defaultSpeed + _additionalSpeed;
         }
 
         protected override float CalculateJumpVelocity(float yVelocity)
@@ -216,7 +239,7 @@ namespace PixelCrew.Creatures.Hero
             var throwableId = _session.QuickInventory.SelectedItem.Id;
             var throwableDef = DefsFacade.I.Throable.Get(throwableId);
             _throwSpawner.SetPrefub(throwableDef.Projectile);
-            _throwSpawner.Spawn();
+            _throwSpawner.SpawnWithDamage(_rangedDamage);
 
             _session.Data.Inventory.Remove(throwableId, 1);
         }
