@@ -7,6 +7,7 @@ namespace PixelCrew.Model.Definitions.Repositories
         where TDefType : IHaveId
     {
         [SerializeField] protected TDefType[] _collection;
+
         public TDefType Get(string id)
         {
             if (string.IsNullOrEmpty(id))

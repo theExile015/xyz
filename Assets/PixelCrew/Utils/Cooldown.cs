@@ -21,7 +21,7 @@ namespace PixelCrew.Utils
             _timeIsUp = Time.time + _value;         
         }
 
-        public float TimeLasts => Mathf.Max(_timeIsUp - Time.deltaTime, 0); 
+        public float TimeLasts => Mathf.Max(_timeIsUp - Time.time, 0); 
 
         public bool IsReady => _timeIsUp <= Time.time;
     }

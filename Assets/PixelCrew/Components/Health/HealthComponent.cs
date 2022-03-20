@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using UnityEngine.Events;
+using PixelCrew.Model;
 
 namespace PixelCrew.Components.Health
 {
@@ -14,6 +15,7 @@ namespace PixelCrew.Components.Health
         [SerializeField] public HealthChangeEvent _onChange;
 
         private int _health;
+        private GameSession _session;
 
         public int Health => _health;
 
@@ -22,11 +24,17 @@ namespace PixelCrew.Components.Health
             _health = _maxHealth;
         }
 
+        private void Start()
+        {
+            _session = FindObjectOfType<GameSession>();    
+        }
+
         public void ModifyHP(int hpValue)
         {
             if (_health <= 0) return;
 
-            _health += hpValue;
+            if (!_session.PerksModel.IsMagicShieldSupported) 
+                _health += hpValue;
 
             _onChange?.Invoke(_health);
 

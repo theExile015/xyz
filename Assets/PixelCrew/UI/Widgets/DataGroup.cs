@@ -6,43 +6,44 @@ using UnityEngine;
 
 namespace PixelCrew.UI.Widgets
 {
-    public class DataGroup<TDataType, TItemType>
+    public class DataGroup<TDataType, TItemType> 
         where TItemType : MonoBehaviour, IItemRenderer<TDataType>
     {
-        protected List<TItemType> CreatedItem = new List<TItemType>();
-        private TItemType _prefub;
-        private Transform _container;
+        protected readonly List<TItemType> CreatedItems = new List<TItemType>();
+        private readonly TItemType _prefab;
+        private readonly Transform _container;
 
-        public DataGroup(TItemType prefub, Transform container)
+        public DataGroup(TItemType prefab, Transform container)
         {
-            _prefub = prefub;
+            _prefab = prefab;
             _container = container;
         }
 
         public virtual void SetData(IList<TDataType> data)
         {
-            for (var i = CreatedItem.Count; i < data.Count; i++)
+            // create required items
+            for (var i = CreatedItems.Count; i < data.Count(); i++)
             {
-                var item = Object.Instantiate(_prefub, _container);
-                CreatedItem.Add(item);
+                var item = Object.Instantiate(_prefab, _container);
+                CreatedItems.Add(item);
             }
 
             // update data and activate
             for (var i = 0; i < data.Count; i++)
             {
-                CreatedItem[i].SetData(data[i], i);
-                CreatedItem[i].gameObject.SetActive(true);
+                CreatedItems[i].SetData(data[i], i);
+                CreatedItems[i].gameObject.SetActive(true);
             }
 
             // hide unused items
-            for (var i = data.Count; i < CreatedItem.Count; i++)
+            for (var i = data.Count; i < CreatedItems.Count; i++)
             {
-                CreatedItem[i].gameObject.SetActive(false);
+                CreatedItems[i].gameObject.SetActive(false);
             }
         }
     }
 
-    public interface IItemRenderer<TDataType>
+    public interface IItemRenderer<in TDataType>
     {
         void SetData(TDataType data, int index);
     }

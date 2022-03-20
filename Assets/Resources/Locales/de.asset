@@ -15,40 +15,55 @@ MonoBehaviour:
   _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vTlmX_UxB9fMIEQz0d1wJ4IZBtffIp4o9JS2YX3tFzQAYVIUTu1tKFY7mozDqIO0lVApe8LvdcG8qWw/pub?gid=1940757697&single=true&output=tsv
   _localeItems:
   - Key: menu_title
-    Value: "Speisekarte\r"
+    Value: Speisekarte
   - Key: menu_start
-    Value: "Anfang\r"
+    Value: Anfang
   - Key: menu_options
-    Value: "Optionen\r"
+    Value: Optionen
   - Key: menu_exit
-    Value: "Ausfahrt\r"
+    Value: Ausfahrt
   - Key: selected_language
-    Value: "Ausgew\xE4hlte Sprache {0}\r"
+    Value: "Ausgew\xE4hlte Sprache {0}"
   - Key: menu_locales
-    Value: "Sprache\r"
+    Value: Sprache
   - Key: button_back
-    Value: "zur\xFCck\r"
+    Value: "zur\xFCck"
   - Key: opt_title
-    Value: "Optionen\r"
+    Value: Optionen
   - Key: opt_music
-    Value: "Musik\r"
+    Value: Musik
   - Key: opt_sfx
-    Value: "sfx\r"
+    Value: sfx
   - Key: button_restart
-    Value: "neu starten\r"
+    Value: neu starten
   - Key: dialog_continue
-    Value: "fortsetzen...\r"
+    Value: fortsetzen...
   - Key: dialog_1_1
-    Value: "Hol mir gr\xFCnen Edelstein...\r"
+    Value: "Hol mir gr\xFCnen Edelstein..."
   - Key: dialog_1_2
-    Value: "Und ich zeige dir das Wunder!\r"
+    Value: Und ich zeige dir das Wunder!
   - Key: dialog_2_1
-    Value: "Und jetzt das Wunder!\r"
+    Value: Und jetzt das Wunder!
   - Key: dialog_2_2
-    Value: "Ich habe ein Juwel ...\r"
+    Value: Ich habe ein Juwel ...
   - Key: dialog_2_3
-    Value: "...und du bist nicht\r"
+    Value: ...und du bist nicht
   - Key: dialog_2_4
-    Value: "ahahahahaha!\r"
+    Value: ahahahahaha!
   - Key: menu_pause
     Value: pause
+  - Key: perk_jump
+    Value: "Doppelsprung.  Erm\xF6glicht das Springen, die aus der Luft schieben. 
+      Wiederherstellung - 5 Sekunden."
+  - Key: perk_throw
+    Value: "Super Wurf  Erm\xF6glicht das, 3 Schwert gleichzeitig aufzuh\xF6ren. 
+      Wiederherstellung - 8 Sekunden."
+  - Key: perk_shield
+    Value: "Magischer Schild  Sie werden unverw\xFCnscht, um von Gegnern zu besch\xE4digen. 
+      Dauerhafter Effekt w\xE4hrend der Perk ist aktiv."
+  - Key: button_buy
+    Value: Kaufen
+  - Key: button_use
+    Value: Aktivieren
+  - Key: label_price
+    Value: Preis

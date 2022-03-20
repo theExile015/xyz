@@ -15,40 +15,54 @@ MonoBehaviour:
   _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vTlmX_UxB9fMIEQz0d1wJ4IZBtffIp4o9JS2YX3tFzQAYVIUTu1tKFY7mozDqIO0lVApe8LvdcG8qWw/pub?gid=265680004&single=true&output=tsv
   _localeItems:
   - Key: menu_title
-    Value: "menu\r"
+    Value: menu
   - Key: menu_start
-    Value: "start\r"
+    Value: start
   - Key: menu_options
-    Value: "options\r"
+    Value: options
   - Key: menu_exit
-    Value: "exit\r"
+    Value: exit
   - Key: selected_language
-    Value: "Selected language is {0}\r"
+    Value: Selected language is {0}
   - Key: menu_locales
-    Value: "language\r"
+    Value: language
   - Key: button_back
-    Value: "back\r"
+    Value: back
   - Key: opt_title
-    Value: "options\r"
+    Value: options
   - Key: opt_music
-    Value: "music\r"
+    Value: music
   - Key: opt_sfx
-    Value: "sfx\r"
+    Value: sfx
   - Key: button_restart
-    Value: "restart\r"
+    Value: restart
   - Key: dialog_continue
-    Value: "continue...\r"
+    Value: continue...
   - Key: dialog_1_1
-    Value: "Get me Green Gem...\r"
+    Value: Get me Green Gem...
   - Key: dialog_1_2
-    Value: "And I show you the miracle!\r"
+    Value: And I show you the miracle!
   - Key: dialog_2_1
-    Value: "And now the miracle!\r"
+    Value: And now the miracle!
   - Key: dialog_2_2
-    Value: "I have a gem...\r"
+    Value: I have a gem...
   - Key: dialog_2_3
-    Value: "...and you are not\r"
+    Value: ...and you are not
   - Key: dialog_2_4
-    Value: "ahahahahahaha!\r"
+    Value: ahahahahahaha!
   - Key: menu_pause
     Value: pause
+  - Key: perk_jump
+    Value: Double jump.  Allows you to jump, pushing out of the air.  Recovery -
+      5 seconds.
+  - Key: perk_throw
+    Value: Super-throw  Allows you to quit 3 sword at a time.  Recovery - 8 seconds.
+  - Key: perk_shield
+    Value: Magic Shield  You become invulnerable to damage from opponents.  Permanent
+      effect while Perk is active.
+  - Key: button_buy
+    Value: Buy
+  - Key: button_use
+    Value: Activate
+  - Key: label_price
+    Value: Price

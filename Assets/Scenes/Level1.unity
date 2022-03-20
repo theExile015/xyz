@@ -13017,10 +13017,14 @@ MonoBehaviour:
         Value: 5
       - Id: LesserHealingPotion
         Value: 1
-      - Id: HastePotion
+      - Id: GreenDiamond
         Value: 10
     HP:
       _value: 5
+    Perks:
+      _used:
+        _value: 
+      _unlocked: []
   _defaultCheckPoint: level1-checkpoint1
 --- !u!4 &861250046
 Transform:

@@ -146,7 +146,7 @@ namespace PixelCrew.Model.Data
             foreach (var item in items)
             {
                 if (joined.ContainsKey(item.ItemId))
-                    joined.[item.ItemId] += item.Count;
+                    joined[item.ItemId] += item.Count;
                 else
                     joined.Add(item.ItemId, item.Count);
             }

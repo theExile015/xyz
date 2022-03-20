@@ -37,6 +37,7 @@ namespace PixelCrew.Creatures.Hero
 
         [SerializeField] private ProbabilityDropComponent _hitDrop;
         [SerializeField] private SpawnComponent _throwSpawner;
+        [SerializeField] private GameObject _shieldEffect;
 
         private static readonly int ThrowKey = Animator.StringToHash("throw");
 
@@ -51,6 +52,8 @@ namespace PixelCrew.Creatures.Hero
         private int CoinCount => _session.Data.Inventory.Count("Coin");
         private int SwordCount => _session.Data.Inventory.Count("Sword");
         private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
+        public bool ShieldUp => _session.PerksModel.IsMagicShieldSupported;
+
         private bool CanThrow
         {
             get
@@ -94,6 +97,15 @@ namespace PixelCrew.Creatures.Hero
         protected override void Update()
         {
             base.Update();
+
+            if (ShieldUp)
+            {
+                _shieldEffect.SetActive(true);    
+            } 
+            else
+            {
+                _shieldEffect.SetActive(false);
+            }
         }
 
         protected override float CalculateYVelocity()
@@ -117,8 +129,9 @@ namespace PixelCrew.Creatures.Hero
 
         protected override float CalculateJumpVelocity(float yVelocity)
         {
-            if (!IsGrounded && _allowDoubleJump)
+            if (!IsGrounded && _allowDoubleJump && _session.PerksModel.IsDoubleJumpSupported)
             {
+                _session.PerksModel.Cooldown.Reset();
                 _allowDoubleJump = false;
                 DoJumpVfx();
                 return Jumpforce;
@@ -181,8 +194,9 @@ namespace PixelCrew.Creatures.Hero
 
         public void OnDoThrow()
         {
-            if (_superThrow)
+            if (_superThrow && _session.PerksModel.IsSuperThrowSupported)
             {
+                _session.PerksModel.Cooldown.Reset();
                 var throwableCount = _session.Data.Inventory.Count(SelectedItemId);
                 var possibleCount = SelectedItemId == SwordId ? throwableCount - 1 : throwableCount;
                 var numThrows = Mathf.Min(_superThrowParticles, possibleCount);

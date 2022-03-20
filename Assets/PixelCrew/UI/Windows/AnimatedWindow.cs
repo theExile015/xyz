@@ -22,6 +22,12 @@ namespace PixelCrew.UI.Windows
             _animator.SetTrigger(Hide);
         }
 
+        public void JustClose()
+        {
+            Destroy(gameObject);
+        }
+
+
         public virtual void OnCloseAnimationComplete()
         {
             Destroy(gameObject);
