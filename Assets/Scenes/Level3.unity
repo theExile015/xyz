@@ -1250,9 +1250,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47317a34d7cd86d48a2b5e9c871622c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mode: 1
+  _mode: 0
   _bound:
-    _sentences: []
+    _sentences:
+    - _value: Let's test new dialog system
+      _icon: {fileID: 21300000, guid: 9f9ee13d3ac9af840b0c08de2b122d48, type: 3}
+      _side: 1
+    - _value: Gonna help me?
+      _icon: {fileID: 21300000, guid: 9f9ee13d3ac9af840b0c08de2b122d48, type: 3}
+      _side: 1
+    - _value: Sure!
+      _icon: {fileID: 21300000, guid: 99c70e006c93e374ab74df3972acefd9, type: 3}
+      _side: 0
+    _type: 1
   _external: {fileID: 0}
 --- !u!114 &783377112
 MonoBehaviour:
@@ -1269,8 +1279,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 783377115}
-        m_MethodName: ShowSafe
+      - m_Target: {fileID: 783377111}
+        m_MethodName: Show
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

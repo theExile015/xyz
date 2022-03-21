@@ -9,6 +9,8 @@ TagManager:
   - Interactable
   - Walls
   - SfxAudioSource
+  - SimpleDialog
+  - PersonalizedDialog
   layers:
   - Default
   - TransparentFX
