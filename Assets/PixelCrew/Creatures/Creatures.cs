@@ -40,6 +40,8 @@ namespace PixelCrew.Creatures
         private static readonly int Hit = Animator.StringToHash("Hit");
         private static readonly int AttackKey = Animator.StringToHash("Attack");
 
+        
+
         protected virtual void Awake()
         {
             Rigidbody = GetComponent<Rigidbody2D>();
@@ -111,6 +113,7 @@ namespace PixelCrew.Creatures
         {
             if (IsGrounded)
             {
+                Rigidbody.gravityScale = 2f;
                 yVelocity += Jumpforce;
                 DoJumpVfx();
             }

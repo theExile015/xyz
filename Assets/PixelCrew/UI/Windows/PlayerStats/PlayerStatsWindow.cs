@@ -58,9 +58,10 @@ namespace PixelCrew.UI.Windows.PlayerStats
             _upgradeButton.gameObject.SetActive(def.Price.Count != 0);
         }
 
-        private void OnDestroy()
+        protected override void OnDestroy()
         {
             _trash.Dispose();
+            base.OnDestroy();
         }
     }
 }

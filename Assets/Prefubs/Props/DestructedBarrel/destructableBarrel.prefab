@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4902906562282497345}
   - component: {fileID: 4902906562282497375}
   - component: {fileID: 3977898448061658848}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: destructableBarrel
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 4902906562282497350}
+  _state: {fileID: 0}
 --- !u!114 &4902906562282497344
 MonoBehaviour:
   m_ObjectHideFlags: 0

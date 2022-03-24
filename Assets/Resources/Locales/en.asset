@@ -74,3 +74,21 @@ MonoBehaviour:
     Value: Speed
   - Key: stat_range_dmg
     Value: Range damage
+  - Key: button_to_quick
+    Value: Quick access
+  - Key: Coin
+    Value: Coin - payment facility.
+  - Key: Sword
+    Value: Sword - melee and ranged retribution weapon.
+  - Key: Key
+    Value: The key is tool for opening doors.
+  - Key: LesserHealingPotion
+    Value: Little medicinal potion - restores 3 hp.
+  - Key: PearlProjectile
+    Value: Pearl - weapon of remote retaliation.
+  - Key: MiddleHealingPotion
+    Value: The middle therapeutic potion - snaps up 6 hp.
+  - Key: HastePotion
+    Value: "Speed \u200B\u200Bpotion - significantly increases speed."
+  - Key: GreenDiamond
+    Value: Green Crystal is a premium payroll.

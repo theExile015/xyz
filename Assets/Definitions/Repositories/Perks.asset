@@ -34,3 +34,10 @@ MonoBehaviour:
       _itemId: GreenDiamond
       _count: 5
     _cooldown: 0
+  - _id: slow-fall
+    _icon: {fileID: 2078035292838911416, guid: c49f5dc45887db54781ec354903f14ec, type: 3}
+    _info: perk_slow_fall
+    _price:
+      _itemId: GreenDiamond
+      _count: 5
+    _cooldown: 0

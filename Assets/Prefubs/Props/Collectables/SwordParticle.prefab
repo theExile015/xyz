@@ -10,15 +10,15 @@ GameObject:
   m_Component:
   - component: {fileID: 3585575534756527239}
   - component: {fileID: 3585575534756527236}
-  - component: {fileID: 3585575534756527237}
   - component: {fileID: 3585575534756527235}
   - component: {fileID: 3585575534756527241}
   - component: {fileID: 3104470806534195902}
   - component: {fileID: 6612312288984532434}
   - component: {fileID: 790264507036002180}
   - component: {fileID: 592137533687155622}
+  - component: {fileID: 1612805726139057062}
   m_Layer: 15
-  m_Name: SilverCoinParticle
+  m_Name: SwordParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,8 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1187020389
   m_SortingLayer: 3
   m_SortingOrder: 3
-  m_Sprite: {fileID: -2322180950842035098, guid: 7bb8bc0bfc03b6046b7f5be9eea0bba1,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5e7dfca62e1386f4a87f785bf47026f6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -89,22 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3585575534756527237
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3585575534756527232}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.015130028, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.14192836
 --- !u!114 &3585575534756527235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,10 +118,14 @@ MonoBehaviour:
   _clips:
   - _name: idle
     _sprites:
-    - {fileID: -2322180950842035098, guid: 7bb8bc0bfc03b6046b7f5be9eea0bba1, type: 3}
-    - {fileID: -4893972260818282012, guid: 7bb8bc0bfc03b6046b7f5be9eea0bba1, type: 3}
-    - {fileID: -6323751108524238166, guid: 7bb8bc0bfc03b6046b7f5be9eea0bba1, type: 3}
-    - {fileID: 2722280177590742205, guid: 7bb8bc0bfc03b6046b7f5be9eea0bba1, type: 3}
+    - {fileID: 21300000, guid: 5e7dfca62e1386f4a87f785bf47026f6, type: 3}
+    - {fileID: 21300000, guid: 3bd40f16f77be544896724e9c267a7a0, type: 3}
+    - {fileID: 21300000, guid: 987a555d54a85004dac1c645660fa95c, type: 3}
+    - {fileID: 21300000, guid: b637b569e8144664dbc482e0e5d18db5, type: 3}
+    - {fileID: 21300000, guid: fe253cd97f4859f428df1413101bd153, type: 3}
+    - {fileID: 21300000, guid: 2cab194c980b7024c954c333a25010a7, type: 3}
+    - {fileID: 21300000, guid: b6aae09f9a3c37e44bc175ae84c66aa5, type: 3}
+    - {fileID: 21300000, guid: de741ad26ccb9cf49b0db6d1d0e4c0eb, type: 3}
     _loop: 1
     _allowNextClip: 0
     _onComplete:
@@ -186,7 +173,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &6612312288984532434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +191,7 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3585575534756527237}
+      - m_Target: {fileID: 0}
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -260,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ed1b0b6742a8a47895c0ac294cbe3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: Coin
+  _id: GreenDiamond
   _count: 1
 --- !u!114 &592137533687155622
 MonoBehaviour:
@@ -275,3 +262,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clip: {fileID: 8300000, guid: 8978b8c46955a7248b59cb058085d6d9, type: 3}
+--- !u!61 &1612805726139057062
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3585575534756527232}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0025651753, y: -0.020521402}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.625, y: 0.625}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.58908767, y: 0.14274836}
+  m_EdgeRadius: 0

@@ -149,9 +149,22 @@ namespace PixelCrew.Creatures.Hero
             var defaultSpeed = _session.StatsModel.GetValue(StatId.Speed);
             return defaultSpeed + _additionalSpeed;
         }
+        
+        private void SetFallSpeed()
+        {
+            if (_session.PerksModel.IsSlowFallSupported)
+                Rigidbody.gravityScale = 0.5f;
+            else
+                Rigidbody.gravityScale = 2f;
+        }
 
         protected override float CalculateJumpVelocity(float yVelocity)
         {
+            if (yVelocity < 0)
+                SetFallSpeed();
+            else
+                Rigidbody.gravityScale = 2f;
+
             if (!IsGrounded && _allowDoubleJump && _session.PerksModel.IsDoubleJumpSupported)
             {
                 _session.PerksModel.Cooldown.Reset();

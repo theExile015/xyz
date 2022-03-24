@@ -18,6 +18,7 @@ namespace PixelCrew.Model
         private PlayerData _save;
         private readonly CompositeDisposable _trash = new CompositeDisposable();
         public QuickInventoryModel QuickInventory { get; private set; }
+        public BaseInventoryModel BaseInventory { get; private set; }
         public PerksModel PerksModel { get; private set; }
         public StatsModel StatsModel { get; private set; }
 
@@ -66,6 +67,9 @@ namespace PixelCrew.Model
         {
             QuickInventory = new QuickInventoryModel(_data);
             _trash.Retain(QuickInventory);
+
+            BaseInventory = new BaseInventoryModel(_data);
+            _trash.Retain(BaseInventory);
 
             PerksModel = new PerksModel(_data);
             _trash.Retain(PerksModel);
@@ -127,5 +131,17 @@ namespace PixelCrew.Model
             _trash.Dispose();
         }
 
+        private List<string> _removedItems = new List<string>();
+
+        public bool RestoreState(string id)
+        {
+            return _removedItems.Contains(id);            
+        }
+
+        public void StoreState(string id)
+        {
+            if (!_removedItems.Contains(id))
+                _removedItems.Add(id);
+        }
     }
 }

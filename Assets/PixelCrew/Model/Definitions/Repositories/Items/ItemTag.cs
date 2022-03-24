@@ -2,6 +2,7 @@
 {
     public enum ItemTag
     {
+        Visible,
         Stackable,
         Usable,
         Throwable,

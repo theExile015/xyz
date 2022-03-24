@@ -8,6 +8,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using PixelCrew.Model.Data.Properties;
 
 namespace PixelCrew.UI.HUD.QuickInventory
 {
@@ -16,6 +17,8 @@ namespace PixelCrew.UI.HUD.QuickInventory
         [SerializeField] private Image _icon;
         [SerializeField] private GameObject _selection;
         [SerializeField] private Text _value;
+
+        public readonly StringProperty InterfaceSelection = new StringProperty();
 
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 
@@ -39,8 +42,8 @@ namespace PixelCrew.UI.HUD.QuickInventory
             var def = DefsFacade.I.Items.Get(item.Id);
             _icon.sprite = def.Icon;
             _value.text = def.HasTag(ItemTag.Stackable) ? item.Value.ToString() : string.Empty;
-
         }
+
 
         private void OnDestroy()
         {

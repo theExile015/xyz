@@ -12,7 +12,7 @@ namespace PixelCrew.Model.Models
     {
         private readonly PlayerData _data;
 
-        public InventoryItemData[] Inventory { get; private set; }
+        public InventoryItemData[] QuickInventory { get; private set; }
 
         public readonly IntProperty SelectedIndex = new IntProperty();
 
@@ -22,8 +22,8 @@ namespace PixelCrew.Model.Models
         {
             get
             {
-                if (Inventory.Length > 0 && Inventory.Length > SelectedIndex.Value)
-                    return Inventory[SelectedIndex.Value];
+                if (QuickInventory.Length > 0 && QuickInventory.Length > SelectedIndex.Value)
+                    return QuickInventory[SelectedIndex.Value];
 
                 return null;
             }
@@ -35,7 +35,7 @@ namespace PixelCrew.Model.Models
         {
             _data = data;
 
-            Inventory = _data.Inventory.GetAll(ItemTag.Usable);
+            QuickInventory = _data.Inventory.GetQuickAccessItems();
             _data.Inventory.OnChanged += OnChangedInventory;
         }
 
@@ -45,16 +45,23 @@ namespace PixelCrew.Model.Models
             return new ActionDisposable(() => OnChanged -= call);
         }
 
+        public void OnForcedRebuild()
+        {
+            QuickInventory = _data.Inventory.GetQuickAccessItems();
+            SelectedIndex.Value = Mathf.Clamp(SelectedIndex.Value, 0, QuickInventory.Length - 1);
+            OnChanged?.Invoke();
+        }
+
         private void OnChangedInventory(string id, int value)
         {
-            Inventory = _data.Inventory.GetAll(ItemTag.Usable);
-            SelectedIndex.Value = Mathf.Clamp(SelectedIndex.Value, 0, Inventory.Length - 1);
+            QuickInventory = _data.Inventory.GetQuickAccessItems();
+            SelectedIndex.Value = Mathf.Clamp(SelectedIndex.Value, 0, QuickInventory.Length - 1);
             OnChanged?.Invoke();
         }
 
         public void SetNextItem()
         {
-            SelectedIndex.Value = (int)Mathf.Repeat(SelectedIndex.Value + 1, Inventory.Length);
+            SelectedIndex.Value = (int)Mathf.Repeat(SelectedIndex.Value + 1, QuickInventory.Length);
         }
 
         public void Dispose()

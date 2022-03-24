@@ -1,6 +1,7 @@
 ﻿using PixelCrew.Model;
 using PixelCrew.UI.Windows;
 using PixelCrew.Utils;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,15 +9,12 @@ namespace Assets.PixelCrew.UI.GameMenu.Windows
 {
     public class GameMenu : AnimatedWindow
     {
-        private System.Action _closeAction;
-        private float _defaultTimeScale;
+        private Action _closeAction;
 
         protected override void Start()
         {
             base.Start();
 
-            _defaultTimeScale = Time.timeScale;
-            Time.timeScale = 0;
         }
         public void OnShowSettings()
         {
@@ -42,9 +40,9 @@ namespace Assets.PixelCrew.UI.GameMenu.Windows
             _closeAction?.Invoke();
         }
 
-        private void OnDestroy()
+        protected override void OnDestroy()
         {
-            Time.timeScale = _defaultTimeScale;
+            base.OnDestroy();
         }
     }
 }

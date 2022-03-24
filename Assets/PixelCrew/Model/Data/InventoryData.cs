@@ -51,6 +51,18 @@ namespace PixelCrew.Model.Data
             return retValue.ToArray();
         }
 
+        public InventoryItemData[] GetQuickAccessItems()
+        {
+            var retValue = new List<InventoryItemData>();
+            foreach (var item in _inventory)
+            {
+                if (item.HasQuickAccess && retValue.Count < 3)
+                    retValue.Add(item);
+            }
+
+            return retValue.ToArray();
+        }
+
         private void AddToStack(string id, int value)
         {
             var isFull = _inventory.Count >= DefsFacade.I.Player.InventorySize;
@@ -166,6 +178,7 @@ namespace PixelCrew.Model.Data
     {
         [InventoryId] public string Id;
         public int Value;
+        public bool HasQuickAccess;
 
         public InventoryItemData(string id )
         {
