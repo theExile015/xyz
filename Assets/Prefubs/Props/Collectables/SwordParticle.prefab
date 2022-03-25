@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9ed1b0b6742a8a47895c0ac294cbe3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: GreenDiamond
+  _id: Sword
   _count: 1
 --- !u!114 &592137533687155622
 MonoBehaviour:
