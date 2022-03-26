@@ -9,6 +9,7 @@ using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
 using PixelCrew.Model.Player;
+using PixelCrew.Components;
 
 namespace PixelCrew.Creatures.Hero
 {
@@ -50,6 +51,7 @@ namespace PixelCrew.Creatures.Hero
 
         private GameSession _session;
         private HealthComponent _health;
+
         private const string SwordId = "Sword";
         private int CoinCount => _session.Data.Inventory.Count("Coin");
         private int SwordCount => _session.Data.Inventory.Count("Sword");
@@ -325,6 +327,5 @@ namespace PixelCrew.Creatures.Hero
         {
             _session.QuickInventory.SetNextItem();
         }
-
     }
 }

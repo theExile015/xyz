@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PixelCrew.Components;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace PixelCrew.Creatures.Hero
@@ -7,6 +8,7 @@ namespace PixelCrew.Creatures.Hero
     public class HeroInputReader : MonoBehaviour
     {
         [SerializeField] private Hero _hero;
+        [SerializeField] private LampComponent _lamp;
 
 
         public void OnSaySomething(InputAction.CallbackContext context)
@@ -52,11 +54,11 @@ namespace PixelCrew.Creatures.Hero
             }
         }
 
-        public void OnPotionUse(InputAction.CallbackContext context)
+        public void OnSwitchLamp(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
-                _hero.UsePotion();
+                _lamp.SetPause();
             }
         }
 
