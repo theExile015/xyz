@@ -2656,20 +2656,22 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6340693127858858695}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &712575615
-CapsuleCollider:
+--- !u!58 &712575615
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712575614}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.20022583
-  m_Height: 0.6956245
-  m_Direction: 1
-  m_Center: {x: -0.016654015, y: 0.056608737, z: 0}
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.45
 --- !u!1001 &717754199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29120,6 +29122,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Candle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340693127435854791, guid: 1e649e7abaa7fee4ca49da99f0f7ee6e,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 712575617, guid: 1e649e7abaa7fee4ca49da99f0f7ee6e, type: 3}
