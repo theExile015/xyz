@@ -63,3 +63,6 @@ TagManager:
   - name: Front layer
     uniqueID: 1501466391
     locked: 0
+  - name: Overlay
+    uniqueID: 978292035
+    locked: 0

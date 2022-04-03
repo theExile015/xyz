@@ -10,6 +10,7 @@ using UnityEditor.Animations;
 using UnityEngine;
 using PixelCrew.Model.Player;
 using PixelCrew.Components;
+using PixelCrew.Effects.CameraRelated;
 
 namespace PixelCrew.Creatures.Hero
 {
@@ -51,6 +52,7 @@ namespace PixelCrew.Creatures.Hero
 
         private GameSession _session;
         private HealthComponent _health;
+        private CameraShakeEffect _cameraShake;
 
         private const string SwordId = "Sword";
         private int CoinCount => _session.Data.Inventory.Count("Coin");
@@ -82,6 +84,7 @@ namespace PixelCrew.Creatures.Hero
 
         private void Start()
         {
+            _cameraShake = FindObjectOfType<CameraShakeEffect>();
             _session = FindObjectOfType<GameSession>();
             _health = GetComponent<HealthComponent>();
             _session.Data.Inventory.OnChanged += OnInventoryChanged;
@@ -185,6 +188,7 @@ namespace PixelCrew.Creatures.Hero
         public override void TakeDamage()
         {
             base.TakeDamage();
+            _cameraShake.Shake();
             if (CoinCount > 0)
             {
                 SpawnCoins();
