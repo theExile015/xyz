@@ -13,9 +13,8 @@ namespace PixelCrew.Utils
 
         public static void CreateWindowSafeCall(string resourcePath)
         {
-            var go = GameObject.Find("Canvas");
             var window = Resources.Load<GameObject>(resourcePath);
-            var canvas = go.GetComponent<Canvas>();
+            var canvas = GameObject.FindWithTag("MainUICanvas").GetComponent<Canvas>();
             Object.Instantiate(window, canvas.transform);
         }
     }

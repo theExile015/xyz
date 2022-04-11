@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using PixelCrew.Model;
-
+using PixelCrew.UI.LevelsLoader;
 
 namespace PixelCrew.Components.LevelManagement
 {
@@ -13,7 +13,8 @@ namespace PixelCrew.Components.LevelManagement
         {
             var session = FindObjectOfType<GameSession>();
             session.Save();
-            SceneManager.LoadScene(_sceneName);
+            var loader = FindObjectOfType<LevelLoader>();
+            loader.LoadLevel(_sceneName);
         }
     }
 }
