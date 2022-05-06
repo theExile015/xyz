@@ -13,11 +13,18 @@ namespace PixelCrew.Components.Health
         [SerializeField] public UnityEvent _onDie;
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] public HealthChangeEvent _onChange;
+        [SerializeField] private bool _imunne;
 
         private GameSession _session;
         private int _maxHealth;
 
         public int Health => _health;
+
+        public bool Imunne
+        {
+            get => _imunne;
+            set => _imunne = value;
+        }
 
         private void Awake()
         {
@@ -31,10 +38,11 @@ namespace PixelCrew.Components.Health
 
         public void ModifyHP(int hpValue)
         {
+            if (hpValue < 0 && Imunne) return;
+
             if (_health <= 0) return;
 
-            if (!_session.PerksModel.IsMagicShieldSupported) 
-                _health += hpValue;
+            _health += hpValue;
 
             _onChange?.Invoke(_health);
 

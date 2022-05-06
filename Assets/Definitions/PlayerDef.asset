@@ -75,3 +75,19 @@ MonoBehaviour:
       _price:
         _itemId: Coin
         _count: 150
+  - _name: crit_dmg
+    _id: 3
+    _icon: {fileID: 21300000, guid: e13788edc2b699f4786396e174c535a6, type: 3}
+    _levels:
+    - _value: 10
+      _price:
+        _itemId: Coin
+        _count: 100
+    - _value: 25
+      _price:
+        _itemId: Coin
+        _count: 250
+    - _value: 90
+      _price:
+        _itemId: Coin
+        _count: 900

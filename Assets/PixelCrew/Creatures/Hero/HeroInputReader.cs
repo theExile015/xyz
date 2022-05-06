@@ -67,6 +67,12 @@ namespace PixelCrew.Creatures.Hero
             if (context.performed)
                 _hero.NextItem();
         }
+
+        public void OnUsePerk(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+                _hero.UsePerk();
+        }
     }
 }
 

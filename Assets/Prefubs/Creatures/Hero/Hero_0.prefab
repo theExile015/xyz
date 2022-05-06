@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 871754330}
   - component: {fileID: 871754332}
   - component: {fileID: 871754331}
+  - component: {fileID: 384535542}
   m_Layer: 14
   m_Name: Sheld
   m_TagString: Untagged
@@ -108,6 +109,21 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
+--- !u!114 &384535542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871754329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0fff43cff0bf5468906edad5babece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 5667291142690478990}
+  _cooldown:
+    _value: 5
 --- !u!1 &1280377491619016765
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +581,7 @@ MonoBehaviour:
   _attackParticles: {fileID: 2859541196937790419}
   _hitDrop: {fileID: 2132858975917804866}
   _throwSpawner: {fileID: 7513869545175237437}
-  _shieldEffect: {fileID: 871754329}
+  _shield: {fileID: 384535542}
 --- !u!114 &5667291142690478704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,21 +685,6 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5667291142690478704}
-        m_MethodName: OnSwitchLamp
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 5a13395e-03ad-4ccd-941f-cf5532c01424
-    m_ActionName: HeroInput/New action
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5667291142690478704}
         m_MethodName: OnThrow
         m_Mode: 0
         m_Arguments:
@@ -711,6 +712,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d4e2a9df-ef41-4671-a11a-266acc9da1ab
     m_ActionName: HeroInput/NextItem[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5667291142690478704}
+        m_MethodName: OnUsePerk
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e684e928-ae77-487d-b2af-5d5e0df7cbea
+    m_ActionName: HeroInput/UsePerk[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: HeroInput
@@ -784,7 +800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 832d38f8675982546b6421946c6e9621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 30
+  _health: 0
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -841,6 +857,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _imunne: 0
 --- !u!114 &7940711054822077161
 MonoBehaviour:
   m_ObjectHideFlags: 0

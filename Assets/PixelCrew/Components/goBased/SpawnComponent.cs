@@ -16,26 +16,18 @@ namespace PixelCrew.Components.goBased
 
         public void Spawn()
         {
-            var instance = SpawnUtils.Spawn(_particlesPrefub, _spawnTarget.position);
-
-            var scale = _spawnTarget.lossyScale;
-            instance.transform.localScale = scale;
-            instance.SetActive(true);
+            SpawnInstance();
         }
 
-        public void SpawnWithDamage(float damage = -1)
+        public GameObject SpawnInstance()
         {
             var instance = SpawnUtils.Spawn(_particlesPrefub, _spawnTarget.position);
 
             var scale = _spawnTarget.lossyScale;
             instance.transform.localScale = scale;
             instance.SetActive(true);
-
-            if (damage != -1)
-                instance.GetComponent<ModifyHPComponent>().SetValue(damage * -1);
+            return instance;
         }
-
-
 
         public void SetPrefub(GameObject prefub)
         {

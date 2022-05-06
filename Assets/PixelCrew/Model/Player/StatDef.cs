@@ -33,6 +33,7 @@ namespace PixelCrew.Model.Player
     {
         Hp,
         Speed,
-        RangeDamage
+        RangeDamage,
+        CriticalDamage
     }
 }

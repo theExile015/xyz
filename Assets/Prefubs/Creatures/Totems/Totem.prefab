@@ -219,7 +219,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6948384346617222246}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 25, y: -3.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 832d38f8675982546b6421946c6e9621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 3
+  _health: 5
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -399,6 +399,7 @@ MonoBehaviour:
   _onChange:
     m_PersistentCalls:
       m_Calls: []
+  _imunne: 0
 --- !u!114 &3906466324402771839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,5 +588,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnTarget: {fileID: 1861210045116555512}
-  _particlesPrefub: {fileID: 1061372962695143570, guid: eda4eb9d7ab040f43968b65b52c42893,
+  _particlesPrefub: {fileID: 1061372962695143570, guid: c1e5bcb236cc79f4f9062076505b290c,
     type: 3}

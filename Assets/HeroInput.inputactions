@@ -38,14 +38,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "PotionUse",
-                    "type": "Button",
-                    "id": "5a13395e-03ad-4ccd-941f-cf5532c01424",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Throw",
                     "type": "Button",
                     "id": "bf64f4ca-a1bc-419e-8665-935a1abe2c60",
@@ -57,6 +49,14 @@
                     "name": "NextItem",
                     "type": "Button",
                     "id": "d4e2a9df-ef41-4671-a11a-266acc9da1ab",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "UsePerk",
+                    "type": "Button",
+                    "id": "e684e928-ae77-487d-b2af-5d5e0df7cbea",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -208,17 +208,6 @@
                 },
                 {
                     "name": "",
-                    "id": "d1f1f0d2-be04-4c56-bb78-f0fce0f90615",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "PotionUse",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "d8ff7636-d56e-448e-b76e-8db69e52d344",
                     "path": "<Keyboard>/shift",
                     "interactions": "",
@@ -236,6 +225,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "NextItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "720d9b14-ee0a-417a-8179-03cd7ba69de5",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UsePerk",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

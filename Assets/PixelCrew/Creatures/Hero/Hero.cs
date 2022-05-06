@@ -40,7 +40,7 @@ namespace PixelCrew.Creatures.Hero
 
         [SerializeField] private ProbabilityDropComponent _hitDrop;
         [SerializeField] private SpawnComponent _throwSpawner;
-        [SerializeField] private GameObject _shieldEffect;
+        [SerializeField] private ShieldComponent _shield;
 
         private static readonly int ThrowKey = Animator.StringToHash("throw");
 
@@ -58,7 +58,6 @@ namespace PixelCrew.Creatures.Hero
         private int CoinCount => _session.Data.Inventory.Count("Coin");
         private int SwordCount => _session.Data.Inventory.Count("Sword");
         private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
-        public bool ShieldUp => _session.PerksModel.IsMagicShieldSupported;
 
         private bool CanThrow
         {
@@ -124,15 +123,6 @@ namespace PixelCrew.Creatures.Hero
         protected override void Update()
         {
             base.Update();
-
-            if (ShieldUp)
-            {
-                _shieldEffect.SetActive(true);    
-            } 
-            else
-            {
-                _shieldEffect.SetActive(false);
-            }
         }
 
         protected override float CalculateYVelocity()
@@ -188,7 +178,7 @@ namespace PixelCrew.Creatures.Hero
         public override void TakeDamage()
         {
             base.TakeDamage();
-            _cameraShake.Shake();
+            //_cameraShake.Shake();
             if (CoinCount > 0)
             {
                 SpawnCoins();
@@ -258,11 +248,30 @@ namespace PixelCrew.Creatures.Hero
             var throwableId = _session.QuickInventory.SelectedItem.Id;
             var throwableDef = DefsFacade.I.Throable.Get(throwableId);
             _throwSpawner.SetPrefub(throwableDef.Projectile);
-            _throwSpawner.SpawnWithDamage(_rangedDamage);
+            var instance = _throwSpawner.SpawnInstance();
+            ApplyRangeDamageStat(instance);
 
             _session.Data.Inventory.Remove(throwableId, 1);
         }
 
+        private void ApplyRangeDamageStat(GameObject projectile)
+        {
+            var hpModify = projectile.GetComponent<ModifyHPComponent>();
+            var damageValue = (int) _session.StatsModel.GetValue(StatId.RangeDamage);
+            damageValue = ModifyDamageByCrit(damageValue);
+            hpModify.SetValue(-damageValue);
+        }
+
+        public int ModifyDamageByCrit(int damage)
+        {
+            var critChance = _session.StatsModel.GetValue(StatId.CriticalDamage);
+            if (Random.value * 100 <= critChance)
+            {
+                return damage * 2;
+            }
+
+            return damage;
+        }
 
         private IEnumerator DoSuperThrow(int numThrows)
         {
@@ -330,6 +339,15 @@ namespace PixelCrew.Creatures.Hero
         public void NextItem()
         {
             _session.QuickInventory.SetNextItem();
+        }
+
+        public void UsePerk()
+        {
+            if(_session.PerksModel.IsMagicShieldSupported && _session.PerksModel.Cooldown.IsReady)
+            {
+                _shield.Use();
+                _session.PerksModel.Cooldown.Reset();
+            }
         }
     }
 }
