@@ -8,20 +8,20 @@ namespace PixelCrew.Components.Health
 
     public class HealthComponent : MonoBehaviour
     {
-        [SerializeField] private int _maxHealth;
+        [SerializeField] private int _health;
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] public UnityEvent _onDie;
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] public HealthChangeEvent _onChange;
 
-        private int _health;
         private GameSession _session;
+        private int _maxHealth;
 
         public int Health => _health;
 
         private void Awake()
         {
-            _health = _maxHealth;
+            _maxHealth = _health;            
         }
 
         private void Start()

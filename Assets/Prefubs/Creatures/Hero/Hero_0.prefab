@@ -539,7 +539,7 @@ MonoBehaviour:
   _invertScale: 0
   _speed: 3
   _hasteSpeed: 6
-  Jumpforce: 10
+  Jumpforce: 11
   _damageJumpForce: 7
   _meleeDamage: 1
   _groundLayer:
