@@ -1,6 +1,7 @@
 ﻿using Assets.PixelCrew.Utils;
 using PixelCrew.Model.Data;
 using PixelCrew.Model.Definitions.Localization;
+using PixelCrew.Utils;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -49,14 +50,15 @@ namespace PixelCrew.UI.HUD.Dialogs
             _animator.SetBool(IsOpen, true);
         }
 
-        private IEnumerator TypeDialogText()
+        private IEnumerator TypeDialogText() 
         {
             CurrentContent.Text.text = String.Empty;
-            var sentenceKey = _data.Sentences[_currentSentence];
-            var sentence = LocalizationManager.I.Localize(sentenceKey.Value); //преобразуем ключ в текст из данных локализации
-            CurrentContent.TrySetIcon(sentenceKey.Icon);
+            var sentence = CurrentSentence;
+            CurrentContent.TrySetIcon(sentence.Icon);
 
-            foreach (var letter in sentence)
+            var localizedSentence = sentence.Value.Localize();
+
+            foreach (var letter in localizedSentence)
             {
                 CurrentContent.Text.text += letter;
                 _sfxSource.PlayOneShot(_typing);
@@ -73,7 +75,8 @@ namespace PixelCrew.UI.HUD.Dialogs
             if (_typingRoutine == null) return;
 
             StopTypingAnimation();
-            CurrentContent.Text.text = _data.Sentences[_currentSentence].Value;
+            var sentence = _data.Sentences[_currentSentence].Value;
+            CurrentContent.Text.text = sentence.Localize();
         }
 
         public void OnContinue()

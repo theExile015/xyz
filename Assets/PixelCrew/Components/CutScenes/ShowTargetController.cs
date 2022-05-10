@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PixelCrew.Components.CutScenes
 {
-    public class CameraStateController : MonoBehaviour
+    public class ShowTargetController : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
         [SerializeField] private CinemachineVirtualCamera _camera;

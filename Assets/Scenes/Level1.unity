@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6652,6 +6652,9 @@ MonoBehaviour:
       _side: 0
     _type: 0
   _external: {fileID: 0}
+  _onComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &490385200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18398,8 +18401,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _traget: {fileID: 1965669856}
-  _controller: {fileID: 2107706715}
   _delay: 2
+  _onDelay:
+    m_PersistentCalls:
+      m_Calls: []
+  _controller: {fileID: 2107706715}
 --- !u!114 &1319028279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28242,7 +28248,7 @@ PrefabInstance:
     - target: {fileID: 139066913845780696, guid: 004d2e00aabae634b932beecdb9db307,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 139066913845780696, guid: 004d2e00aabae634b932beecdb9db307,
         type: 3}
