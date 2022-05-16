@@ -1,8 +1,6 @@
 ﻿using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.goBased;
 using PixelCrew.Utils;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace PixelCrew.Creatures.Mobs
@@ -29,7 +27,7 @@ namespace PixelCrew.Creatures.Mobs
 
         private void Awake()
         {
-            _animator = GetComponent<Animator>();           
+            _animator = GetComponent<Animator>();
         }
 
         private void Update()
@@ -53,7 +51,8 @@ namespace PixelCrew.Creatures.Mobs
                 {
                     RangeAttack();
                 }
-            } else
+            }
+            else
             {
                 _isAttacking = false;
             }
@@ -74,7 +73,7 @@ namespace PixelCrew.Creatures.Mobs
 
         public void OnMeleeAttack()
         {
-            _meleeAttack.Check();   
+            _meleeAttack.Check();
         }
 
         public void OnRangeAttack()
@@ -82,4 +81,4 @@ namespace PixelCrew.Creatures.Mobs
             _rangeAttack.Spawn();
         }
     }
-} 
+}

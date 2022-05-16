@@ -4,10 +4,10 @@ using UnityEngine;
 namespace PixelCrew.Utils
 {
     [Serializable]
-    public class Cooldown 
+    public class Cooldown
     {
         [SerializeField] private float _value;
-        
+
         private float _timeIsUp;
 
         public float Value
@@ -18,10 +18,10 @@ namespace PixelCrew.Utils
 
         public void Reset()
         {
-            _timeIsUp = Time.time + _value;         
+            _timeIsUp = Time.time + _value;
         }
 
-        public float TimeLasts => Mathf.Max(_timeIsUp - Time.time, 0); 
+        public float TimeLasts => Mathf.Max(_timeIsUp - Time.time, 0);
 
         public bool IsReady => _timeIsUp <= Time.time;
     }

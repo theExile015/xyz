@@ -39,8 +39,8 @@ namespace PixelCrew.UI.Windows.BaseInventory
             _isUsed.gameObject.SetActive(!IsEmpty);
             _count.gameObject.SetActive(!IsEmpty);
             _isSelected.gameObject.SetActive(_session.BaseInventory.InterfaceSelection.Value == _id);
-            
-            if(!IsEmpty)
+
+            if (!IsEmpty)
             {
                 var def = DefsFacade.I.Items.Get(items[_id - 1].Id);
                 _icon.sprite = def.Icon;
@@ -56,7 +56,7 @@ namespace PixelCrew.UI.Windows.BaseInventory
 
         public void SetData(InventoryItemData data, int index)
         {
-            
+
         }
 
         private void OnDestroy()

@@ -2,7 +2,7 @@
 using UnityEngine;
 
 namespace PixelCrew.Model.Data.Properties
-{ 
+{
     [Serializable]
     public class FloatPresistentProperty : PrefsPresistentProperty<float>
     {
@@ -13,7 +13,7 @@ namespace PixelCrew.Model.Data.Properties
 
         protected override float Read(float defaultValue)
         {
-            return PlayerPrefs.GetFloat(Key, defaultValue);            
+            return PlayerPrefs.GetFloat(Key, defaultValue);
         }
 
         protected override void Write(float value)

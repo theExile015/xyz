@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace PixelCrew.Utils.Disposables
 {
- 
+
     public class CompositeDisposable : IDisposable
     {
         private readonly List<IDisposable> _disposables = new List<IDisposable>();
@@ -15,7 +14,7 @@ namespace PixelCrew.Utils.Disposables
 
         public void Dispose()
         {
-            foreach(var disposable in _disposables)
+            foreach (var disposable in _disposables)
             {
                 disposable.Dispose();
             }

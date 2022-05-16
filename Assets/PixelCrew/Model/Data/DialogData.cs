@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 
 namespace PixelCrew.Model.Data
@@ -10,7 +9,7 @@ namespace PixelCrew.Model.Data
         [SerializeField] private Sentence[] _sentences;
         [SerializeField] private DialogType _type;
         public Sentence[] Sentences => _sentences;
-        public DialogType Type => _type; 
+        public DialogType Type => _type;
     }
 
     [Serializable]

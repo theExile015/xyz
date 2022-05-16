@@ -3,7 +3,6 @@ using PixelCrew.Model.Definitions;
 using PixelCrew.Utils;
 using PixelCrew.Utils.Disposables;
 using System;
-using UnityEngine;
 
 namespace PixelCrew.Model.Models
 {
@@ -73,7 +72,7 @@ namespace PixelCrew.Model.Models
 
         public bool IsUnlocked(string perkId)
         {
-            return _data.Perks.IsUnlocked(perkId);             
+            return _data.Perks.IsUnlocked(perkId);
         }
 
         public bool CanBuy(string perkId)

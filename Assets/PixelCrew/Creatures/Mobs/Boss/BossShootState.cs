@@ -1,6 +1,4 @@
 ﻿using PixelCrew.Components.goBased;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossShootState : StateMachineBehaviour

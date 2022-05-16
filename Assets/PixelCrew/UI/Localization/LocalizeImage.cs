@@ -1,6 +1,5 @@
 ﻿using PixelCrew.Model.Definitions.Localization;
 using System;
-using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +13,7 @@ namespace PixelCrew.UI.Localization
         protected override void Localize()
         {
             var iconData = _icons.FirstOrDefault(x => x.Id == LocalizationManager.I.LocaleKey);
-            if(iconData != null)
+            if (iconData != null)
                 _icon.sprite = iconData.Icon;
         }
     }

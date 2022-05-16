@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 
 namespace PixelCrew.Utils
 {
-    public class Lock 
+    public class Lock
     {
         private readonly List<object> _retained = new List<object>();
 
@@ -20,5 +18,4 @@ namespace PixelCrew.Utils
 
         public bool IsLocked => _retained.Count > 0;
     }
-}
 }

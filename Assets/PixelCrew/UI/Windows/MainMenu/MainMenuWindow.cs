@@ -2,7 +2,6 @@
 using PixelCrew.UI.Windows;
 using PixelCrew.Utils;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace PixelCrew.UI.MainMenu.Windows
 {
@@ -22,7 +21,7 @@ namespace PixelCrew.UI.MainMenu.Windows
 
         public void OnStartGame()
         {
-            _closeAction = () => 
+            _closeAction = () =>
             {
                 var loader = FindObjectOfType<LevelLoader>();
                 loader.LoadLevel("Level1");
@@ -48,7 +47,7 @@ namespace PixelCrew.UI.MainMenu.Windows
         {
             base.OnCloseAnimationComplete();
             _closeAction?.Invoke();
-           
+
         }
     }
 }

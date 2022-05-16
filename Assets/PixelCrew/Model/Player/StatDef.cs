@@ -1,22 +1,21 @@
 ﻿using PixelCrew.Model.Definitions.Repositories;
 using System;
-using System.Collections;
 using UnityEngine;
 
 namespace PixelCrew.Model.Player
 {
     [Serializable]
-    public struct StatDef 
+    public struct StatDef
     {
         [SerializeField] private string _name;
-        [SerializeField] private StatId _id;        
+        [SerializeField] private StatId _id;
         [SerializeField] private Sprite _icon;
         [SerializeField] private StatLevelDef[] _levels;
 
         public StatId Id => _id;
         public string Name => _name;
-        public Sprite Icon  => _icon; 
-        public StatLevelDef[] Levels => _levels; 
+        public Sprite Icon => _icon;
+        public StatLevelDef[] Levels => _levels;
     }
 
     [Serializable]

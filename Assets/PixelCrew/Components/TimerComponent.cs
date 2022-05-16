@@ -29,6 +29,6 @@ namespace PixelCrew.Components
             public float Delay;
             public UnityEvent OnTimesUp;
         }
-        
+
     }
 }

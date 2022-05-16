@@ -1,12 +1,10 @@
-﻿using PixelCrew.UI.HUD.QuickInventory;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 namespace PixelCrew.UI.Widgets
 {
-    public class DataGroup<TDataType, TItemType> 
+    public class DataGroup<TDataType, TItemType>
         where TItemType : MonoBehaviour, IItemRenderer<TDataType>
     {
         protected readonly List<TItemType> CreatedItems = new List<TItemType>();

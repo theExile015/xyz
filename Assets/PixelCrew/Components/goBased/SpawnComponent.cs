@@ -1,8 +1,4 @@
-﻿using PixelCrew.Components.Health;
-using PixelCrew.Utils;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using PixelCrew.Utils;
 using UnityEngine;
 
 namespace PixelCrew.Components.goBased

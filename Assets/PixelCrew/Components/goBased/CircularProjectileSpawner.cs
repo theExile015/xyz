@@ -44,6 +44,6 @@ namespace PixelCrew.Components.goBased
         public DirectionalProjectile Prefub => _prefub;
         public int BurstCount => _burstCount;
         public float Delay => _delay;
-        
+
     }
 }

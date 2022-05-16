@@ -1,7 +1,5 @@
 ﻿using PixelCrew.Model.Definitions.Localization;
-using PixelCrew.UI;
 using PixelCrew.UI.Widgets;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,5 +1,4 @@
 ﻿using PixelCrew.Model.Data;
-using System.Collections;
 using UnityEngine;
 
 namespace PixelCrew.UI.HUD.Dialogs

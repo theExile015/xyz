@@ -2,7 +2,6 @@
 using PixelCrew.Model.Definitions;
 using PixelCrew.Model.Definitions.Localization;
 using PixelCrew.Model.Definitions.Repositories.Items;
-using PixelCrew.UI.HUD.QuickInventory;
 using PixelCrew.Utils.Disposables;
 using UnityEngine;
 using UnityEngine.UI;
@@ -48,7 +47,7 @@ namespace PixelCrew.UI.Windows.BaseInventory
                 var def = DefsFacade.I.Items.Get(item.Id);
                 _info.text = LocalizationManager.I.Localize(def.Id);
                 _accessButton.interactable = def.HasTag(ItemTag.Usable);
-            } 
+            }
             else
             {
                 _accessButton.interactable = false;

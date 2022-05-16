@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace PixelCrew.Effects
 {
@@ -20,7 +19,7 @@ namespace PixelCrew.Effects
             var currentPosition = transform.position;
             var deltaX = _followTarget.position.x * _effectValue;
             transform.position = new Vector3(_startX + deltaX, currentPosition.y, currentPosition.z);
-             
+
 
         }
     }

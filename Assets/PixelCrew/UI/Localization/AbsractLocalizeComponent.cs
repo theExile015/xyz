@@ -1,5 +1,4 @@
 ﻿using PixelCrew.Model.Definitions.Localization;
-using System.Collections;
 using UnityEngine;
 
 namespace PixelCrew.UI.Localization
@@ -17,7 +16,7 @@ namespace PixelCrew.UI.Localization
             Localize();
         }
 
-        protected abstract void Localize();        
+        protected abstract void Localize();
 
         private void OnDestroy()
         {

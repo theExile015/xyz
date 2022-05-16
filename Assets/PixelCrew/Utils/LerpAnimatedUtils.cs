@@ -8,7 +8,7 @@ namespace PixelCrew.Utils
     {
         public static Coroutine LerpAnimated(this MonoBehaviour behaviour, float start, float end, float time, Action<float> onFrame)
         {
-           return behaviour.StartCoroutine(Animate(start, end, time, onFrame));
+            return behaviour.StartCoroutine(Animate(start, end, time, onFrame));
         }
 
         private static IEnumerator Animate(float start, float end, float animationTime, Action<float> onFrame)

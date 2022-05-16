@@ -1,7 +1,5 @@
 ﻿using PixelCrew.Model.Data.Properties;
-using PixelCrew.UI.Windows.Localization;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,7 +29,7 @@ namespace PixelCrew.Model.Definitions.Localization
         {
             var def = Resources.Load<LocaleDef>($"Locales/{localeToLoad}");
             _localization = def.GetData();
-            _localeKey.Value = localeToLoad;  
+            _localeKey.Value = localeToLoad;
             OnLocaleChanged?.Invoke();
         }
 

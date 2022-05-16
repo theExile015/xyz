@@ -1,6 +1,6 @@
 ﻿namespace PixelCrew.Model.Definitions
 {
-    public interface IHaveId 
+    public interface IHaveId
     {
         string Id { get; }
     }

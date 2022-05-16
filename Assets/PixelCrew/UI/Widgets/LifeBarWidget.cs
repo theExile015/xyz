@@ -1,6 +1,5 @@
 ﻿using PixelCrew.Components.Health;
 using PixelCrew.Utils.Disposables;
-using System.Collections;
 using UnityEngine;
 
 namespace PixelCrew.UI.Widgets

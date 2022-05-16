@@ -1,6 +1,5 @@
 ﻿using PixelCrew.Components.goBased;
 using PixelCrew.Model;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,7 +13,7 @@ namespace PixelCrew.Components.LevelManagement
         [SerializeField] private UnityEvent _setUnchecked;
         [SerializeField] private SpawnComponent _heroSpawner;
 
-        public string Id => _id; 
+        public string Id => _id;
         private GameSession _session;
 
         private void Start()

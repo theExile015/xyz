@@ -1,6 +1,5 @@
 ﻿using PixelCrew.UI.Windows.Perks;
 using PixelCrew.Utils;
-using System.Collections;
 using UnityEngine;
 
 namespace PixelCrew.Components
@@ -13,7 +12,7 @@ namespace PixelCrew.Components
         {
             var window = FindObjectOfType<ManagePerksWindow>();
             if (window == null)
-                WindowUtils.CreateWindow(_path); 
+                WindowUtils.CreateWindow(_path);
         }
 
         public void ShowSafe()

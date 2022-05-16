@@ -39,8 +39,8 @@ namespace PixelCrew.Model.Data.Properties
         public void Validate()
         {
             if (!_stored.Equals(_value))
-                Value = _value; 
+                Value = _value;
         }
-        
+
     }
 }

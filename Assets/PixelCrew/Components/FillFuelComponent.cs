@@ -1,5 +1,4 @@
 ﻿using PixelCrew.Model;
-using System.Collections;
 using UnityEngine;
 
 namespace PixelCrew.Components
@@ -15,9 +14,9 @@ namespace PixelCrew.Components
             _session = FindObjectOfType<GameSession>();
         }
 
-        private void AddFuel()
+        public void AddFuel()
         {
-            _session.Data.Fuel.Value += _value;
+            _session.Data.Fuel.Value = 100;
         }
     }
 }

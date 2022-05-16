@@ -1,7 +1,4 @@
 ﻿using PixelCrew.Model.Data.Properties;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace PixelCrew.Model.Data
@@ -23,7 +20,7 @@ namespace PixelCrew.Model.Data
             return Resources.Load<GameSettings>("GameSettings");
         }
 
-        private void OnEnable() 
+        private void OnEnable()
         {
             _music = new FloatPresistentProperty(1f, SoundSetting.Music.ToString());
             _sfx = new FloatPresistentProperty(1f, SoundSetting.Sfx.ToString());

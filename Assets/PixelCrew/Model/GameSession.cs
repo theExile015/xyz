@@ -1,11 +1,11 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
-using PixelCrew.Utils.Disposables;
-using System.Collections.Generic;
-using PixelCrew.Components.LevelManagement;
-using System.Linq;
+﻿using PixelCrew.Components.LevelManagement;
 using PixelCrew.Model.Models;
 using PixelCrew.Model.Player;
+using PixelCrew.Utils.Disposables;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PixelCrew.Model
 {
@@ -55,7 +55,7 @@ namespace PixelCrew.Model
             var lastCheckPoint = _checkPoints.Last();
             foreach (var checkPoint in checkpoints)
             {
-                if(checkPoint.Id == lastCheckPoint)
+                if (checkPoint.Id == lastCheckPoint)
                 {
                     checkPoint.SpawnHero();
                     break;
@@ -77,7 +77,7 @@ namespace PixelCrew.Model
             StatsModel = new StatsModel(_data);
             _trash.Retain(StatsModel);
 
-            _data.HP.Value = (int) StatsModel.GetValue(StatId.Hp);
+            _data.HP.Value = (int)StatsModel.GetValue(StatId.Hp);
         }
 
         private void LoadHUD()
@@ -135,7 +135,7 @@ namespace PixelCrew.Model
 
         public bool RestoreState(string id)
         {
-            return _removedItems.Contains(id);            
+            return _removedItems.Contains(id);
         }
 
         public void StoreState(string id)

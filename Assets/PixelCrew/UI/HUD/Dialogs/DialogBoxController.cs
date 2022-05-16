@@ -1,12 +1,10 @@
 ﻿using Assets.PixelCrew.Utils;
 using PixelCrew.Model.Data;
-using PixelCrew.Model.Definitions.Localization;
 using PixelCrew.Utils;
 using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 namespace PixelCrew.UI.HUD.Dialogs
 {
@@ -22,7 +20,7 @@ namespace PixelCrew.UI.HUD.Dialogs
         [SerializeField] private AudioClip _open;
         [SerializeField] private AudioClip _close;
 
-        [Space][SerializeField] protected DialogContent _content;
+        [Space] [SerializeField] protected DialogContent _content;
 
         private static readonly int IsOpen = Animator.StringToHash("IsOpen");
         private UnityEvent _onComplete;
@@ -50,7 +48,7 @@ namespace PixelCrew.UI.HUD.Dialogs
             _animator.SetBool(IsOpen, true);
         }
 
-        private IEnumerator TypeDialogText() 
+        private IEnumerator TypeDialogText()
         {
             CurrentContent.Text.text = String.Empty;
             var sentence = CurrentSentence;

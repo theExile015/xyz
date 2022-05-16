@@ -1,6 +1,5 @@
 ﻿using PixelCrew.UI.Widgets;
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -11,9 +10,9 @@ namespace PixelCrew.UI.HUD.Dialogs
     {
         [SerializeField] private Text _label;
         [SerializeField] private SelectOption _onSelect;
-        
+
         private OptionData _data;
-        
+
         public void SetData(OptionData data, int index)
         {
             _data = data;
@@ -26,7 +25,7 @@ namespace PixelCrew.UI.HUD.Dialogs
         }
 
         [Serializable]
-        public class SelectOption: UnityEvent<OptionData>
+        public class SelectOption : UnityEvent<OptionData>
         {
 
         }

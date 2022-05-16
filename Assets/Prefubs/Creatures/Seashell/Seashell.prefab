@@ -460,8 +460,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7080464766123679499}
   - component: {fileID: 7080464766123679502}
-  - component: {fileID: 7080464766123679501}
   - component: {fileID: 7080464766123679500}
+  - component: {fileID: 6150761329645786216}
   m_Layer: 9
   m_Name: Vision
   m_TagString: Untagged
@@ -509,22 +509,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7, y: 2}
   m_EdgeRadius: 0
---- !u!114 &7080464766123679501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7080464766123679498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc948e80c594f7f4baaed79d2ab3623f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _layer:
-    serializedVersion: 2
-    m_Bits: 16384
-  _isTouchingLayer: 0
 --- !u!114 &7080464766123679500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,6 +539,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6150761329645786216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7080464766123679498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70adfe638bfa66042865ef3a4129a4f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 16384
+  _isTouchingLayer: 0
 --- !u!1 &7080464766364621121
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,7 +711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e88912f9a75cd4192fc0571d090f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vision: {fileID: 7080464766123679501}
+  _vision: {fileID: 6150761329645786216}
   _meleeCooldown:
     _value: 2
   _meleeAttack: {fileID: 7080464765491534551}
@@ -777,7 +777,6 @@ MonoBehaviour:
   _onChange:
     m_PersistentCalls:
       m_Calls: []
-  _imunne: 0
 --- !u!114 &2102594945607839446
 MonoBehaviour:
   m_ObjectHideFlags: 0

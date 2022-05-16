@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using PixelCrew.Model;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-using PixelCrew.Model;
 
 namespace PixelCrew.Components.LevelManagement
 {

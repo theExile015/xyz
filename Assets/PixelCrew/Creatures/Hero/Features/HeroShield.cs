@@ -1,11 +1,10 @@
 ﻿using PixelCrew.Components.Health;
 using PixelCrew.Utils;
-using System.Collections;
 using UnityEngine;
 
 namespace PixelCrew.Components
 {
-    public class ShieldComponent : MonoBehaviour
+    public class HeroShield : MonoBehaviour
     {
         [SerializeField] private HealthComponent _health;
         [SerializeField] private Cooldown _cooldown;

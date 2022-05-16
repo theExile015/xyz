@@ -53,17 +53,17 @@ MonoBehaviour:
   - Key: menu_pause
     Value: pause
   - Key: perk_jump
-    Value: Dobbelt hopp.  Lar deg hoppe, skyve ut av luften.  Gjenoppretting - 5
-      sekunder.
+    Value: Dobbelthopp.  Lar deg hoppe, skyve bort fra luften.  Gjenoppretting -
+      5 sekunder.
   - Key: perk_throw
-    Value: Super-kaste  Lar deg avslutte 3 sverd om gangen.  Gjenoppretting - 8 sekunder.
+    Value: Superkutt  Lar deg slutte med 3 sverd om gangen.  Gjenoppretting - 8 sekunder.
   - Key: perk_shield
-    Value: Magisk skjold  Du blir uskadelig for skade fra motstandere.  Permanent
-      effekt mens perk er aktiv.
+    Value: "Magic Shield  Du blir us\xE5rbar av skade fra motstandere.  Konstant
+      effekt mens fordelene er aktiv."
   - Key: button_buy
     Value: "Kj\xF8pe"
   - Key: button_use
-    Value: Aktiveres
+    Value: Aktivere
   - Key: label_price
     Value: Pris
   - Key: button_upgrade
@@ -74,3 +74,11 @@ MonoBehaviour:
     Value: Hastighet
   - Key: stat_range_dmg
     Value: Rekkevidde skade
+  - Key: boss_d_1
+    Value: Jeg dreper deg!
+  - Key: boss_d_2
+    Value: Nei! Jeg dreper deg!
+  - Key: boss_d_3
+    Value: Neeeeeeeeei...
+  - Key: boss_d_4
+    Value: Fortalte deg ...

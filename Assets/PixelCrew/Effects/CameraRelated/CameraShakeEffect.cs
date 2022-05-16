@@ -1,5 +1,4 @@
 ﻿using Cinemachine;
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -28,7 +27,7 @@ namespace PixelCrew.Effects.CameraRelated
             StartCoroutine(StartAnimation());
         }
 
-        private IEnumerator StartAnimation() 
+        private IEnumerator StartAnimation()
         {
             _cameraNoise.m_FrequencyGain = _intensity;
             yield return new WaitForSeconds(_animationTime);

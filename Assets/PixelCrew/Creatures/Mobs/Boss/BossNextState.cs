@@ -1,7 +1,5 @@
 ﻿using PixelCrew.Components.goBased;
 using PixelCrew.Creatures.Mobs.Boss;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossNextState : StateMachineBehaviour
@@ -13,7 +11,7 @@ public class BossNextState : StateMachineBehaviour
         spawner.Stage++;
 
         var changeLight = animator.GetComponent<ChangeLightComponent>();
-        changeLight.SetColor(); 
+        changeLight.SetColor();
     }
 
 

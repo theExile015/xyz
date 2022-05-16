@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 871754330}
   - component: {fileID: 871754332}
   - component: {fileID: 871754331}
-  - component: {fileID: 384535542}
+  - component: {fileID: 1911620095543921618}
   m_Layer: 14
   m_Name: Sheld
   m_TagString: Untagged
@@ -109,7 +109,7 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
---- !u!114 &384535542
+--- !u!114 &1911620095543921618
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,12 +118,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 871754329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0fff43cff0bf5468906edad5babece, type: 3}
+  m_Script: {fileID: 11500000, guid: 067217d4aa0c09b42823361a44eb4826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 5667291142690478990}
   _cooldown:
-    _value: 5
+    _value: 3
 --- !u!1 &1280377491619016765
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 1410076136344513724}
   - component: {fileID: 1410076136344513725}
   - component: {fileID: 1410076136344513602}
+  - component: {fileID: 3528612726193121689}
   m_Layer: 0
   m_Name: Candle
   m_TagString: Untagged
@@ -280,6 +281,20 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
+--- !u!114 &3528612726193121689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410076136344513603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55329095137b49b4a8807222cbd77e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _consumePerSecond: 5
+  _light: {fileID: 1410076136631856957}
 --- !u!1 &1410076136631856835
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,6 +473,7 @@ GameObject:
   - component: {fileID: 3966644594958590609}
   - component: {fileID: 4842905744647129141}
   - component: {fileID: 4572718434222622168}
+  - component: {fileID: 8262245033227923300}
   m_Layer: 14
   m_Name: Hero_0
   m_TagString: Player
@@ -561,9 +577,10 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  _groundCheck: {fileID: 5667291143501099337}
+  _groundCheck: {fileID: 5862306033706620988}
   _attackRange: {fileID: 5931456910991614328}
   _particles: {fileID: 7940711054822077161}
+  _isPlayer: 1
   _slamDownVelocity: 10
   _interactionRadius: 0.55
   _interactionLayer:
@@ -581,7 +598,8 @@ MonoBehaviour:
   _attackParticles: {fileID: 2859541196937790419}
   _hitDrop: {fileID: 2132858975917804866}
   _throwSpawner: {fileID: 7513869545175237437}
-  _shield: {fileID: 384535542}
+  _shield: {fileID: 1911620095543921618}
+  _flashLight: {fileID: 3528612726193121689}
 --- !u!114 &5667291142690478704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,7 +613,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hero: {fileID: 5667291142690478707}
-  _lamp: {fileID: 4572718434222622168}
 --- !u!114 &5667291142690478705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,6 +744,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e684e928-ae77-487d-b2af-5d5e0df7cbea
     m_ActionName: HeroInput/UsePerk[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5667291142690478704}
+        m_MethodName: OnSwitchLamp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8af3d9b7-ec51-4406-889f-45e73adf0ea0
+    m_ActionName: HeroInput/ToggleFlashLight[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: HeroInput
@@ -857,7 +889,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _imunne: 0
 --- !u!114 &7940711054822077161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -926,10 +957,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55329095137b49b4a8807222cbd77e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lamp: {fileID: 1410076136344513603}
-  _light: {fileID: 1410076136631856957}
-  _maxFuel: 15
-  _defaultIntensity: 1
+  _consumePerSecond: 0
+  _light: {fileID: 0}
+--- !u!114 &8262245033227923300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5667291142690478708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9dd7508be3602641ad1855f7d679403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _immuneTime: 1
 --- !u!1 &5667291142706246294
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,8 +1027,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5667291143501099339}
-  - component: {fileID: 5667291143501099337}
   - component: {fileID: 5667291143501099336}
+  - component: {fileID: 5862306033706620988}
   m_Layer: 16
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -1008,22 +1050,6 @@ Transform:
   m_Father: {fileID: 5667291142690478710}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5667291143501099337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5667291143501099342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc948e80c594f7f4baaed79d2ab3623f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _layer:
-    serializedVersion: 2
-    m_Bits: 256
-  _isTouchingLayer: 0
 --- !u!58 &5667291143501099336
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1040,6 +1066,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.05440241}
   serializedVersion: 2
   m_Radius: 0.19910747
+--- !u!114 &5862306033706620988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5667291143501099342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70adfe638bfa66042865ef3a4129a4f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 256
+  _isTouchingLayer: 0
 --- !u!1 &5667291144048277281
 GameObject:
   m_ObjectHideFlags: 0

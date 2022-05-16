@@ -35,10 +35,10 @@ namespace PixelCrew.Model.Definitions.Localization
 
         private void OnDataLoaded(AsyncOperation operation)
         {
-            if(operation.isDone)
+            if (operation.isDone)
             {
                 var rows = _request.downloadHandler.text.Split('\n');
-                _localeItems.Clear(); 
+                _localeItems.Clear();
                 foreach (var row in rows)
                 {
                     AddLocaleItem(row);
@@ -51,8 +51,8 @@ namespace PixelCrew.Model.Definitions.Localization
             try
             {
                 var parts = row.Split('\t');
-                _localeItems.Add(new LocaleItem { Key = parts[0], Value = parts[1] }); 
-                
+                _localeItems.Add(new LocaleItem { Key = parts[0], Value = parts[1] });
+
             }
             catch (Exception e)
             {

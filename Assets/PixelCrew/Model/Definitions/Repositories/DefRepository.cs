@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace PixelCrew.Model.Definitions.Repositories
 {
-    public class DefRepository<TDefType> : ScriptableObject 
+    public class DefRepository<TDefType> : ScriptableObject
         where TDefType : IHaveId
     {
         [SerializeField] protected TDefType[] _collection;

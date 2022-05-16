@@ -1,13 +1,8 @@
-﻿using PixelCrew.Model;
-using PixelCrew.Model.Data;
+﻿using PixelCrew.Model.Data;
 using PixelCrew.Model.Data.Properties;
-using PixelCrew.Model.Definitions;
 using PixelCrew.Model.Definitions.Repositories.Items;
 using PixelCrew.Utils.Disposables;
 using System;
-using System.Collections;
-using System.Linq;
-using UnityEngine;
 
 namespace PixelCrew.Model.Models
 {
@@ -15,9 +10,9 @@ namespace PixelCrew.Model.Models
     {
         private readonly PlayerData _data;
         public readonly IntProperty InterfaceSelection = new IntProperty();
-        
+
         // переменная для реализации костыля. На её изменение будет попдписаны виджеты, чтобы отрисовывать/убирать галочку         
-        public readonly IntProperty InterfaceUpdateTrigger = new IntProperty(); 
+        public readonly IntProperty InterfaceUpdateTrigger = new IntProperty();
 
 
         public InventoryItemData[] BaseInventory { get; private set; }

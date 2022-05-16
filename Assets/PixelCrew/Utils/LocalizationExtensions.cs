@@ -1,6 +1,4 @@
 ﻿using PixelCrew.Model.Definitions.Localization;
-using System.Collections;
-using UnityEngine;
 
 namespace PixelCrew.Utils
 {

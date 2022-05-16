@@ -1,8 +1,6 @@
 ﻿using PixelCrew.Model;
 using PixelCrew.Model.Player;
 using PixelCrew.Utils.Disposables;
-using System;
-using System.Collections;
 using UnityEngine;
 
 namespace PixelCrew.Effects.CameraRelated

@@ -1,5 +1,4 @@
-﻿using PixelCrew.Components;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace PixelCrew.Creatures.Hero
@@ -8,8 +7,6 @@ namespace PixelCrew.Creatures.Hero
     public class HeroInputReader : MonoBehaviour
     {
         [SerializeField] private Hero _hero;
-        [SerializeField] private LampComponent _lamp;
-
 
         public void OnSaySomething(InputAction.CallbackContext context)
         {
@@ -58,7 +55,7 @@ namespace PixelCrew.Creatures.Hero
         {
             if (context.performed)
             {
-                _lamp.SetPause();
+                _hero.ToggleFlashLight();
             }
         }
 

@@ -1,7 +1,6 @@
 ﻿using PixelCrew.Model.Definitions.Localization;
 using PixelCrew.UI.Widgets;
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -32,7 +31,7 @@ namespace PixelCrew.UI.Windows.Localization
         private void UpdateSelection()
         {
             var isSelected = LocalizationManager.I.LocaleKey == _data.LocaleId;
-            
+
             _selector.SetActive(isSelected);
         }
 

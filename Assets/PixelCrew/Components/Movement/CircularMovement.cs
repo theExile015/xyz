@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace PixelCrew.Components.Movement
 {
@@ -43,7 +41,7 @@ namespace PixelCrew.Components.Movement
                 Destroy(gameObject, 1f);
             }
 
-            _time += Time.deltaTime;                       
+            _time += Time.deltaTime;
         }
 
         private void CalculatePositions()

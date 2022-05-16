@@ -1,8 +1,6 @@
 ﻿using PixelCrew.Components.Health;
 using PixelCrew.Utils;
 using PixelCrew.Utils.Disposables;
-using System;
-using System.Collections;
 using UnityEngine;
 
 namespace PixelCrew.UI.Widgets
@@ -31,7 +29,7 @@ namespace PixelCrew.UI.Widgets
 
         private void SetAlpha(float alpha)
         {
-            _canvas.alpha = alpha;                 
+            _canvas.alpha = alpha;
         }
 
         [ContextMenu("Hide")]

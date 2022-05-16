@@ -399,7 +399,6 @@ MonoBehaviour:
   _onChange:
     m_PersistentCalls:
       m_Calls: []
-  _imunne: 0
 --- !u!114 &3906466324402771839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e88912f9a75cd4192fc0571d090f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vision: {fileID: 497402671294810478}
+  _vision: {fileID: 2713085641176745531}
   _meleeCooldown:
     _value: 2
   _meleeAttack: {fileID: 3725871287101232337}
@@ -449,8 +448,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5922371919731211956}
   - component: {fileID: 4112690854666799482}
-  - component: {fileID: 497402671294810478}
   - component: {fileID: 4349433913696139185}
+  - component: {fileID: 2713085641176745531}
   m_Layer: 9
   m_Name: Vision
   m_TagString: Untagged
@@ -498,22 +497,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 2}
   m_EdgeRadius: 0
---- !u!114 &497402671294810478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7335069267571231854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc948e80c594f7f4baaed79d2ab3623f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _layer:
-    serializedVersion: 2
-    m_Bits: 16384
-  _isTouchingLayer: 0
 --- !u!114 &4349433913696139185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,6 +527,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2713085641176745531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7335069267571231854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70adfe638bfa66042865ef3a4129a4f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 16384
+  _isTouchingLayer: 0
 --- !u!1 &7346665615360770176
 GameObject:
   m_ObjectHideFlags: 0

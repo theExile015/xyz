@@ -1,7 +1,5 @@
 ﻿using PixelCrew.Model.Definitions;
 using PixelCrew.Model.Definitions.Repositories;
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 

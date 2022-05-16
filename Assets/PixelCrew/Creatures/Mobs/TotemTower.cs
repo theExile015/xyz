@@ -1,9 +1,8 @@
-﻿using PixelCrew.Utils;
-using System.Linq;
-using System.Collections;
+﻿using PixelCrew.Components.Health;
+using PixelCrew.Utils;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using PixelCrew.Components.Health;
 
 namespace PixelCrew.Creatures.Mobs
 {
@@ -51,7 +50,7 @@ namespace PixelCrew.Creatures.Mobs
                 {
                     _traps[_currentTrap].RangeAttack();
                     _cooldown.Reset();
-                    _currentTrap = (int) Mathf.Repeat(_currentTrap + 1, _traps.Count);
+                    _currentTrap = (int)Mathf.Repeat(_currentTrap + 1, _traps.Count);
                 }
             }
         }

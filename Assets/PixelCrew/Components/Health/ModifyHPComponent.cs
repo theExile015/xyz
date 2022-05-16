@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace PixelCrew.Components.Health
 {
@@ -20,7 +18,7 @@ namespace PixelCrew.Components.Health
 
         public void SetValue(float value)
         {
-            _value = (int) value;
+            _value = (int)value;
         }
     }
 

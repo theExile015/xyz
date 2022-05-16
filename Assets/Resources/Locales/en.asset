@@ -53,13 +53,13 @@ MonoBehaviour:
   - Key: menu_pause
     Value: pause
   - Key: perk_jump
-    Value: Double jump.  Allows you to jump, pushing out of the air.  Recovery -
-      5 seconds.
+    Value: Double jump.  Allows you to jump, pushing away from the air.  Recovery
+      - 5 seconds.
   - Key: perk_throw
-    Value: Super-throw  Allows you to quit 3 sword at a time.  Recovery - 8 seconds.
+    Value: Super-cut  Allows you to quit 3 swords at a time.  Recovery - 8 seconds.
   - Key: perk_shield
-    Value: Magic Shield  You become invulnerable to damage from opponents.  Permanent
-      effect while Perk is active.
+    Value: Magic shield  You become invulnerable to damage from opponents.  Constant
+      effect while the perk is active.
   - Key: button_buy
     Value: Buy
   - Key: button_use
@@ -77,18 +77,26 @@ MonoBehaviour:
   - Key: button_to_quick
     Value: Quick access
   - Key: Coin
-    Value: Coin - payment facility.
+    Value: A coin is a payment product.
   - Key: Sword
     Value: Sword - melee and ranged retribution weapon.
   - Key: Key
-    Value: The key is tool for opening doors.
+    Value: The key is a means of opening doors.
   - Key: LesserHealingPotion
-    Value: Little medicinal potion - restores 3 hp.
+    Value: A small healing potion - restores 3 CP.
   - Key: PearlProjectile
-    Value: Pearl - weapon of remote retaliation.
+    Value: The pearl is a weapon of remote retaliation.
   - Key: MiddleHealingPotion
-    Value: The middle therapeutic potion - snaps up 6 hp.
+    Value: Average medical potion - slows down 6 CP.
   - Key: HastePotion
     Value: "Speed \u200B\u200Bpotion - significantly increases speed."
   - Key: GreenDiamond
-    Value: Green Crystal is a premium payroll.
+    Value: Green Crystal is a premium payment.
+  - Key: boss_d_1
+    Value: I kill you!
+  - Key: boss_d_2
+    Value: No! I kill you!
+  - Key: boss_d_3
+    Value: Noooooooooo...
+  - Key: boss_d_4
+    Value: Told ya...

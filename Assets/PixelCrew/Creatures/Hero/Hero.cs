@@ -1,16 +1,16 @@
-﻿using PixelCrew.Model.Definitions.Repositories.Items;
+﻿using PixelCrew.Components;
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.goBased;
 using PixelCrew.Components.Health;
+using PixelCrew.Effects.CameraRelated;
 using PixelCrew.Model;
 using PixelCrew.Model.Definitions;
+using PixelCrew.Model.Definitions.Repositories.Items;
+using PixelCrew.Model.Player;
 using PixelCrew.Utils;
 using System.Collections;
 using UnityEditor.Animations;
 using UnityEngine;
-using PixelCrew.Model.Player;
-using PixelCrew.Components;
-using PixelCrew.Effects.CameraRelated;
 
 namespace PixelCrew.Creatures.Hero
 {
@@ -40,7 +40,8 @@ namespace PixelCrew.Creatures.Hero
 
         [SerializeField] private ProbabilityDropComponent _hitDrop;
         [SerializeField] private SpawnComponent _throwSpawner;
-        [SerializeField] private ShieldComponent _shield;
+        [SerializeField] private HeroShield _shield;
+        [SerializeField] private HeroFlashLight _flashLight;
 
         private static readonly int ThrowKey = Animator.StringToHash("throw");
 
@@ -88,7 +89,7 @@ namespace PixelCrew.Creatures.Hero
             _health = GetComponent<HealthComponent>();
             _session.Data.Inventory.OnChanged += OnInventoryChanged;
             _session.StatsModel.OnUpgraded += OnHeroUpgraded;
-            
+
             _health.SetHealth(_session.Data.HP.Value);
             _rangedDamage = _session.StatsModel.GetValue(StatId.RangeDamage);
 
@@ -144,7 +145,7 @@ namespace PixelCrew.Creatures.Hero
             var defaultSpeed = _session.StatsModel.GetValue(StatId.Speed);
             return defaultSpeed + _additionalSpeed;
         }
-        
+
         private void SetFallSpeed()
         {
             if (_session.PerksModel.IsSlowFallSupported)
@@ -216,7 +217,7 @@ namespace PixelCrew.Creatures.Hero
 
         private void UpdateHeroWeaopn()
         {
-            Animator.runtimeAnimatorController = SwordCount > 0  ? _armed : _unarmed;
+            Animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _unarmed;
         }
 
         public void AddInInventory(string id, int value)
@@ -244,7 +245,7 @@ namespace PixelCrew.Creatures.Hero
         private void ThrowAndRemoveFromInventory()
         {
             Sounds.Play("Range");
-            
+
             var throwableId = _session.QuickInventory.SelectedItem.Id;
             var throwableDef = DefsFacade.I.Throable.Get(throwableId);
             _throwSpawner.SetPrefub(throwableDef.Projectile);
@@ -257,7 +258,7 @@ namespace PixelCrew.Creatures.Hero
         private void ApplyRangeDamageStat(GameObject projectile)
         {
             var hpModify = projectile.GetComponent<ModifyHPComponent>();
-            var damageValue = (int) _session.StatsModel.GetValue(StatId.RangeDamage);
+            var damageValue = (int)_session.StatsModel.GetValue(StatId.RangeDamage);
             damageValue = ModifyDamageByCrit(damageValue);
             hpModify.SetValue(-damageValue);
         }
@@ -323,7 +324,7 @@ namespace PixelCrew.Creatures.Hero
 
         private bool IsSelectedItem(ItemTag tag)
         {
-            return _session.QuickInventory.SelectedDef.HasTag(tag); 
+            return _session.QuickInventory.SelectedDef.HasTag(tag);
         }
 
         private void PerfomThrowing()
@@ -343,11 +344,18 @@ namespace PixelCrew.Creatures.Hero
 
         public void UsePerk()
         {
-            if(_session.PerksModel.IsMagicShieldSupported && _session.PerksModel.Cooldown.IsReady)
+            if (_session.PerksModel.IsMagicShieldSupported && _session.PerksModel.Cooldown.IsReady)
             {
                 _shield.Use();
                 _session.PerksModel.Cooldown.Reset();
             }
+        }
+
+        public void ToggleFlashLight()
+        {
+            Debug.Log("Inside");
+            var isActive = _flashLight.gameObject.activeSelf;
+            _flashLight.gameObject.SetActive(!isActive);
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using PixelCrew.Utils;
-using System.Collections;
 using UnityEngine;
 
 namespace PixelCrew.UI

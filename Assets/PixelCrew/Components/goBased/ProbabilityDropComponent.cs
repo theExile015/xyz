@@ -35,13 +35,13 @@ namespace PixelCrew.Components.goBased
                 var current = 0f;
                 foreach (var dropData in sortedDrop)
                 {
-                    current += dropData.Probability;                    
-                    if(current >= random)
+                    current += dropData.Probability;
+                    if (current >= random)
                     {
                         itemsToDrop[itemCount] = dropData.Drop;
                         itemCount++;
                         break;
-                    } 
+                    }
                 }
             }
 
@@ -57,7 +57,7 @@ namespace PixelCrew.Components.goBased
 
         public void SetCount(int count)
         {
-            _count = count;    
+            _count = count;
         }
     }
 

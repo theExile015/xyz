@@ -53,16 +53,16 @@ MonoBehaviour:
   - Key: menu_pause
     Value: pause
   - Key: perk_jump
-    Value: "Doppelsprung.  Erm\xF6glicht das Springen, die aus der Luft schieben. 
-      Wiederherstellung - 5 Sekunden."
+    Value: "Doppelsprung.  Erm\xF6glicht es Ihnen, zu springen und von der Luft wegzuschieben. 
+      Erholung - 5 Sekunden."
   - Key: perk_throw
-    Value: "Super Wurf  Erm\xF6glicht das, 3 Schwert gleichzeitig aufzuh\xF6ren. 
-      Wiederherstellung - 8 Sekunden."
+    Value: "Superschnell  Erm\xF6glicht Ihnen, jeweils 3 Schwerter zu beenden.  Erholung
+      - 8 Sekunden."
   - Key: perk_shield
-    Value: "Magischer Schild  Sie werden unverw\xFCnscht, um von Gegnern zu besch\xE4digen. 
-      Dauerhafter Effekt w\xE4hrend der Perk ist aktiv."
+    Value: "Zauberschild  Sie werden unverwundbar f\xFCr Sch\xE4den durch Gegner. 
+      Konstante Wirkung, w\xE4hrend der Vorteil aktiv ist."
   - Key: button_buy
-    Value: Kaufen
+    Value: Besorgen
   - Key: button_use
     Value: Aktivieren
   - Key: label_price
@@ -70,8 +70,16 @@ MonoBehaviour:
   - Key: button_upgrade
     Value: Aktualisierung
   - Key: stat_hp
-    Value: Die Gesundheit
+    Value: Gesundheit
   - Key: stat_speed
     Value: Geschwindigkeit
   - Key: stat_range_dmg
-    Value: Reichweitenschaden
+    Value: Reichweiteschaden
+  - Key: boss_d_1
+    Value: "Ich t\xF6te dich!"
+  - Key: boss_d_2
+    Value: "Nein! Ich t\xF6te dich!"
+  - Key: boss_d_3
+    Value: Neeeeeeeeeeeeein...
+  - Key: boss_d_4
+    Value: "Erz\xE4hlte dir..."

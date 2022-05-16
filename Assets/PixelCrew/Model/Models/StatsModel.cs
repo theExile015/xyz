@@ -3,8 +3,6 @@ using PixelCrew.Model.Definitions;
 using PixelCrew.Model.Player;
 using PixelCrew.Utils.Disposables;
 using System;
-using System.Collections;
-using UnityEngine;
 
 namespace PixelCrew.Model.Models
 {
@@ -21,7 +19,7 @@ namespace PixelCrew.Model.Models
         public StatsModel(PlayerData data)
         {
             _data = data;
-            _trash.Retain( InterfaceSelectedStat.Subscribe((x, y) => OnChanged?.Invoke()));
+            _trash.Retain(InterfaceSelectedStat.Subscribe((x, y) => OnChanged?.Invoke()));
         }
 
         public IDisposable Subscribe(Action call)
@@ -61,8 +59,8 @@ namespace PixelCrew.Model.Models
 
             return default;
         }
-         
-        public int GetCurrentLevel(StatId id) =>  _data.Levels.GetLevel(id);
+
+        public int GetCurrentLevel(StatId id) => _data.Levels.GetLevel(id);
 
         public void Dispose()
         {

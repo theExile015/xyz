@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 6340693127152574535}
   - component: {fileID: 6340693127152574648}
   - component: {fileID: 712575618}
-  - component: {fileID: 712575615}
   - component: {fileID: 712575616}
-  - component: {fileID: 712575617}
+  - component: {fileID: 1565356951}
+  - component: {fileID: 4945998154013326852}
   m_Layer: 11
   m_Name: Candle
   m_TagString: Interactable
@@ -134,32 +134,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &712575615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6340693127152574649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f8d4a214e863da4eacd1b6dbcd73104, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6340693127152574649}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &712575616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _value: 15
---- !u!114 &712575617
+--- !u!114 &1565356951
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,21 +156,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 6340693127152574649}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fb9d0f13f73fc147ad0aa124f200b4b, type: 3}
+  m_Script: {fileID: 11500000, guid: cc5515abf7be65f43a2216b98278636e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _radius: 0.5
-  _mask:
+  _tag: Player
+  _layer:
     serializedVersion: 2
     m_Bits: 16384
-  _tags:
-  - Hero
-  _onOverlap:
+  _action:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 712575616}
         m_MethodName: AddFuel
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -205,6 +177,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!58 &4945998154013326852
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6340693127152574649}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.005710602}
+  serializedVersion: 2
+  m_Radius: 0.30010414
 --- !u!1 &6340693127257542834
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
+  m_FalloffIntensity: 0.75
   m_Color: {r: 0.9433962, g: 0.6749452, b: 0.28924885, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
@@ -370,8 +358,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0.33
-  m_PointLightOuterRadius: 1.69
+  m_PointLightInnerRadius: 0.45
+  m_PointLightOuterRadius: 2
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5

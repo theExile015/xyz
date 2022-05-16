@@ -1,8 +1,6 @@
 ﻿using PixelCrew.Model;
 using PixelCrew.Model.Definitions.Repositories;
 using PixelCrew.UI.Widgets;
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 

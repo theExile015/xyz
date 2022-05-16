@@ -1,11 +1,10 @@
-﻿using PixelCrew.Model.Definitions.Repositories.Items;
-using PixelCrew.Model.Definitions;
+﻿using PixelCrew.Model.Definitions;
+using PixelCrew.Model.Definitions.Repositories;
+using PixelCrew.Model.Definitions.Repositories.Items;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using PixelCrew.Model.Definitions.Repositories;
 
 namespace PixelCrew.Model.Data
 {
@@ -26,14 +25,14 @@ namespace PixelCrew.Model.Data
             var itemDef = DefsFacade.I.Items.Get(id);
             if (itemDef.IsVoid) return;
 
-           
+
             if (itemDef.HasTag(ItemTag.Stackable))
             {
-                AddToStack(id, value);                   
-            } 
+                AddToStack(id, value);
+            }
             else
             {
-                AddNonStack(id, value);   
+                AddNonStack(id, value);
             }
             OnChanged?.Invoke(id, Count(id));
         }
@@ -96,14 +95,14 @@ namespace PixelCrew.Model.Data
 
             if (itemDef.HasTag(ItemTag.Stackable))
             {
-                RemoveFromStack(id, value);     
+                RemoveFromStack(id, value);
             }
             else
             {
-                RemoveNonStack(id, value);                
+                RemoveNonStack(id, value);
             }
-            
-             
+
+
             OnChanged?.Invoke(id, Count(id));
         }
 
@@ -154,7 +153,7 @@ namespace PixelCrew.Model.Data
         public bool IsEnough(params ItemWithCount[] items)
         {
             var joined = new Dictionary<string, int>();
-            
+
             foreach (var item in items)
             {
                 if (joined.ContainsKey(item.ItemId))
@@ -174,13 +173,13 @@ namespace PixelCrew.Model.Data
     }
 
     [Serializable]
-    public class InventoryItemData 
+    public class InventoryItemData
     {
         [InventoryId] public string Id;
         public int Value;
         public bool HasQuickAccess;
 
-        public InventoryItemData(string id )
+        public InventoryItemData(string id)
         {
             Id = id;
         }

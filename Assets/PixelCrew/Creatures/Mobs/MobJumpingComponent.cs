@@ -1,5 +1,4 @@
 ﻿using PixelCrew.Components.ColliderBased;
-using System.Collections;
 using UnityEngine;
 
 namespace PixelCrew.Creatures.Mobs
@@ -7,7 +6,7 @@ namespace PixelCrew.Creatures.Mobs
     public class MobJumpingComponent : MonoBehaviour
     {
         [SerializeField] private LayerCheck _groundEndCheck;
-        [SerializeField] private LayerCheck _jumpTargetCheck;
+        //[SerializeField] private LayerCheck _jumpTargetCheck;
         private Creatures _creature;
 
         private void Awake()
@@ -20,14 +19,15 @@ namespace PixelCrew.Creatures.Mobs
             if (!_creature.CreatureIsGrounded) return;
 
 
-           if((!_groundEndCheck.IsTouchingLayer))
-           {
+            if ((!_groundEndCheck.IsTouchingLayer))
+            {
                 _creature.SetMobJump(true);
-           } else
-           {
+            }
+            else
+            {
                 _creature.SetMobJump(false);
-           }
-            
+            }
+
         }
     }
 }

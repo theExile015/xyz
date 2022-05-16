@@ -1,7 +1,6 @@
 ﻿using PixelCrew.Model.Data;
 using PixelCrew.Model.Data.Properties;
 using System;
-using System.Collections;
 using UnityEngine;
 
 namespace Assets.PixelCrew.Audio

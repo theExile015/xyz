@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections;
-using UnityEngine;
 
 namespace PixelCrew.Utils.Disposables
 {
-    public class ActionDisposable : IDisposable 
+    public class ActionDisposable : IDisposable
     {
         private Action _onDispose;
         public ActionDisposable(Action onDispose)

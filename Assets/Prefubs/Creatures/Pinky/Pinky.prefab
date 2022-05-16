@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3974364143400265098}
   - component: {fileID: 8172266690465993836}
-  - component: {fileID: 3417195680661397839}
+  - component: {fileID: 9002742963605759041}
   m_Layer: 9
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -48,7 +48,7 @@ CircleCollider2D:
   m_Offset: {x: 0.031360626, y: -0.29106808}
   serializedVersion: 2
   m_Radius: 0.15062046
---- !u!114 &3417195680661397839
+--- !u!114 &9002742963605759041
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 130029081645434614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc948e80c594f7f4baaed79d2ab3623f, type: 3}
+  m_Script: {fileID: 11500000, guid: 70adfe638bfa66042865ef3a4129a4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _layer:
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4939737499960203228}
   - component: {fileID: 3144632337482612208}
-  - component: {fileID: 2283869475108595762}
+  - component: {fileID: 639935623399160519}
   m_Layer: 9
   m_Name: PatrolTrigger (1)
   m_TagString: Untagged
@@ -168,7 +168,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &2283869475108595762
+--- !u!114 &639935623399160519
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,12 +177,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3243660276115915142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc948e80c594f7f4baaed79d2ab3623f, type: 3}
+  m_Script: {fileID: 11500000, guid: 70adfe638bfa66042865ef3a4129a4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 256
   _isTouchingLayer: 0
 --- !u!1 &3537180929048489611
 GameObject:
@@ -311,6 +311,80 @@ MonoBehaviour:
   _spawnTarget: {fileID: 2044020279731306906}
   _particlesPrefub: {fileID: 8905712907038806034, guid: a7252ba3e6c3b784e82702fdb96e4829,
     type: 3}
+--- !u!1 &3884184017938138254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4417688694554500740}
+  - component: {fileID: 4170893513310804363}
+  - component: {fileID: 1988733540795449687}
+  m_Layer: 9
+  m_Name: ObstacleCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4417688694554500740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3884184017938138254}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5, y: -0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1853513181933587876}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &4170893513310804363
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3884184017938138254}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.37447834}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.25104332}
+  m_EdgeRadius: 0
+--- !u!114 &1988733540795449687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3884184017938138254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70adfe638bfa66042865ef3a4129a4f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 132864
+  _isTouchingLayer: 0
 --- !u!1 &5968384000790894863
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6426998279887289391}
   - component: {fileID: 687361812921783218}
-  - component: {fileID: 70429642908399703}
+  - component: {fileID: 1708098944521669265}
   m_Layer: 9
   m_Name: JumpGroundTrigger
   m_TagString: Untagged
@@ -369,7 +443,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &70429642908399703
+--- !u!114 &1708098944521669265
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -378,7 +452,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5968384000790894863}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc948e80c594f7f4baaed79d2ab3623f, type: 3}
+  m_Script: {fileID: 11500000, guid: 70adfe638bfa66042865ef3a4129a4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _layer:
@@ -395,7 +469,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6908017261178770200}
   - component: {fileID: 7314799749558331221}
-  - component: {fileID: 5571780399015502177}
+  - component: {fileID: 1224172364210780558}
   m_Layer: 0
   m_Name: JumpTrigger
   m_TagString: Untagged
@@ -443,7 +517,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5571780399015502177
+--- !u!114 &1224172364210780558
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -452,7 +526,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6273248306578620415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc948e80c594f7f4baaed79d2ab3623f, type: 3}
+  m_Script: {fileID: 11500000, guid: 70adfe638bfa66042865ef3a4129a4f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _layer:
@@ -643,8 +717,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3097287565876190175}
   - component: {fileID: 6103408868889839958}
-  - component: {fileID: 1846410554403746386}
   - component: {fileID: 2120660374079544541}
+  - component: {fileID: 6046495996110975364}
   m_Layer: 9
   m_Name: Vision (1)
   m_TagString: Untagged
@@ -692,22 +766,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 2}
   m_EdgeRadius: 0
---- !u!114 &1846410554403746386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7261892175667650193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc948e80c594f7f4baaed79d2ab3623f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _layer:
-    serializedVersion: 2
-    m_Bits: 16384
-  _isTouchingLayer: 0
 --- !u!114 &2120660374079544541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -738,6 +796,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6046495996110975364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7261892175667650193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70adfe638bfa66042865ef3a4129a4f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 16384
+  _isTouchingLayer: 0
 --- !u!1 &8999539836264876275
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,6 +860,7 @@ Transform:
   - {fileID: 2044020279731306906}
   - {fileID: 3097287565876190175}
   - {fileID: 6207393131931565864}
+  - {fileID: 4417688694554500740}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -908,17 +983,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _invertScale: 1
-  _speed: 2
+  _speed: 3
   _hasteSpeed: 0
-  Jumpforce: 8
+  Jumpforce: 12
   _damageJumpForce: 2
   _meleeDamage: 1
   _groundLayer:
     serializedVersion: 2
     m_Bits: 256
-  _groundCheck: {fileID: 3417195680661397839}
+  _groundCheck: {fileID: 9002742963605759041}
   _attackRange: {fileID: 6502618691788230661}
   _particles: {fileID: 1989397920476507852}
+  _isPlayer: 0
 --- !u!114 &6244491254313420483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,7 +1007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be3482faa4be82349bee1757dc682bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vision: {fileID: 1846410554403746386}
+  _vision: {fileID: 6046495996110975364}
   _canAttack: {fileID: 2182310016643520039}
   _alarmDelay: 0.5
   _attackCooldown: 1
@@ -950,10 +1026,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ef2521c301c6854d8853fc1eaf1538b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _layerCheck: {fileID: 2283869475108595762}
-  _invertPatrolTrigger: 1
-  _cooldown:
-    _value: 0.58
+  _groundCheck: {fileID: 639935623399160519}
+  _obstacleCheck: {fileID: 1988733540795449687}
+  _onChangeDirection:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7081652766167690506}
+        m_MethodName: SetDirection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _direction: -1
 --- !u!114 &6815501322584676312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -966,7 +1055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 832d38f8675982546b6421946c6e9621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 5
+  _health: 3
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -1013,8 +1102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5220a466d953894ea36e5497a86d96a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _groundEndCheck: {fileID: 70429642908399703}
-  _jumpTargetCheck: {fileID: 5571780399015502177}
+  _groundEndCheck: {fileID: 1708098944521669265}
 --- !u!114 &1989397920476507852
 MonoBehaviour:
   m_ObjectHideFlags: 0

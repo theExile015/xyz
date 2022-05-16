@@ -1,5 +1,4 @@
 ﻿using Assets.PixelCrew.Utils;
-using System.Collections;
 using UnityEngine;
 
 namespace PixelCrew.Effects
@@ -41,13 +40,13 @@ namespace PixelCrew.Effects
             var camPosition = _camera.transform.position.x;
             var screenLeft = new Vector3(camPosition - _screenSize.x / 2, _containerBounds.center.y);
             var screenRight = new Vector3(camPosition + _screenSize.x / 2, _containerBounds.center.y);
-            
-            if(!_allBounds.Contains(screenLeft))
+
+            if (!_allBounds.Contains(screenLeft))
             {
                 InstantiateContainer(_allBounds.min.x - _containerBounds.extents.x);
             }
 
-            if(!_allBounds.Contains(screenRight))
+            if (!_allBounds.Contains(screenRight))
             {
                 InstantiateContainer(_allBounds.max.x + _containerBounds.extents.x);
             }

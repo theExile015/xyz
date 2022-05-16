@@ -1,8 +1,6 @@
 ﻿using PixelCrew.Model.Definitions.Repositories;
 using PixelCrew.Model.Definitions.Repositories.Items;
 using PixelCrew.Model.Player;
-using System;
-using System.Collections;
 using UnityEngine;
 
 namespace PixelCrew.Model.Definitions
@@ -27,7 +25,7 @@ namespace PixelCrew.Model.Definitions
 
         private static DefsFacade LoadDefs()
         {
-           return _instance = Resources.Load<DefsFacade>("DefsFacade");
+            return _instance = Resources.Load<DefsFacade>("DefsFacade");
         }
 
     }

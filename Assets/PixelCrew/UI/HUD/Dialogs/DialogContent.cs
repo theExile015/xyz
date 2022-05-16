@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace PixelCrew.UI.HUD.Dialogs
@@ -10,7 +9,7 @@ namespace PixelCrew.UI.HUD.Dialogs
         [SerializeField] private Image _icon;
 
         public Text Text => _text;
-        
+
         public void TrySetIcon(Sprite icon)
         {
             if (_icon != null)

@@ -2,7 +2,6 @@
 using PixelCrew.Model.Definitions;
 using PixelCrew.UI.HUD.Dialogs;
 using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -53,7 +52,7 @@ namespace PixelCrew.Components.Dialogs
         {
             get
             {
-                switch(_mode)
+                switch (_mode)
                 {
                     case Mode.Bound:
                         return _bound;
@@ -63,7 +62,7 @@ namespace PixelCrew.Components.Dialogs
 
                     default:
                         throw new ArgumentOutOfRangeException();
-                }   
+                }
             }
         }
 

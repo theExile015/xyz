@@ -3,8 +3,6 @@ using PixelCrew.Model.Definitions;
 using PixelCrew.Model.Player;
 using PixelCrew.UI.Widgets;
 using PixelCrew.Utils.Disposables;
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,17 +26,17 @@ namespace PixelCrew.UI.Windows.PlayerStats
             base.Start();
 
             _dataGroup = new DataGroup<StatDef, StatsWidget>(_prefub, _statsContainer);
-       
+
             _session = FindObjectOfType<GameSession>();
 
             _session.StatsModel.InterfaceSelectedStat.Value = DefsFacade.I.Player.Stats[0].Id;
-            _trash.Retain( _session.StatsModel.Subscribe(OnStatsChanged));
+            _trash.Retain(_session.StatsModel.Subscribe(OnStatsChanged));
             _trash.Retain(_upgradeButton.onClick.Subscribe(OnUpgrade));
 
             OnStatsChanged();
         }
 
-        private void OnUpgrade ()
+        private void OnUpgrade()
         {
             var selected = _session.StatsModel.InterfaceSelectedStat.Value;
             _session.StatsModel.LevelUp(selected);

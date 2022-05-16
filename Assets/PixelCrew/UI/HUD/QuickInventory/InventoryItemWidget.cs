@@ -1,14 +1,12 @@
-﻿using PixelCrew.Model.Definitions.Repositories.Items;
-using PixelCrew.Model;
+﻿using PixelCrew.Model;
 using PixelCrew.Model.Data;
+using PixelCrew.Model.Data.Properties;
 using PixelCrew.Model.Definitions;
+using PixelCrew.Model.Definitions.Repositories.Items;
 using PixelCrew.UI.Widgets;
 using PixelCrew.Utils.Disposables;
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using PixelCrew.Model.Data.Properties;
 
 namespace PixelCrew.UI.HUD.QuickInventory
 {

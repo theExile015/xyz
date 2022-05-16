@@ -6,7 +6,7 @@ namespace PixelCrew.Creatures.Mobs.Boss
     public class ChangeLightComponent : MonoBehaviour
     {
         [SerializeField] private Light2D[] _lights;
-        [ColorUsage(true, true)] 
+        [ColorUsage(true, true)]
         [SerializeField] private Color _color;
 
         [ContextMenu("Setup")]

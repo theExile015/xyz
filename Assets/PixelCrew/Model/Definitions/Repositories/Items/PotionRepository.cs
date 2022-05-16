@@ -16,7 +16,7 @@ namespace PixelCrew.Model.Definitions.Repositories.Items
         [InventoryId] [SerializeField] private string _id;
         [SerializeField] private Effect _effect;
         [SerializeField] private float _value;
-        [SerializeField] private float _time; 
+        [SerializeField] private float _time;
 
         public string Id => _id;
         public Effect Effect => _effect;

@@ -30,12 +30,12 @@ namespace PixelCrew.UI.Widgets
             _trash.Retain(model.Subscribe(OnValueChanged));
             OnValueChanged(model.Value, model.Value);
         }
-         
+
         private void OnValueChanged(float newValue, float oldValue)
         {
             var textValue = Mathf.Round(newValue * 100);
             _value.text = textValue.ToString();
-             
+
             _slider.normalizedValue = newValue;
         }
 

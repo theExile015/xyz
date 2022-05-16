@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace PixelCrew.Model
 
-{   
+{
     [Serializable]
     public class PlayerData
     {

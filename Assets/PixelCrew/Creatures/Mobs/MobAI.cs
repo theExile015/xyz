@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using UnityEngine;
-using PixelCrew.Components.ColliderBased;
+﻿using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.goBased;
 using PixelCrew.Creatures.Mobs.Patrlolling;
+using System.Collections;
+using UnityEngine;
 
 namespace PixelCrew.Creatures.Mobs
 {

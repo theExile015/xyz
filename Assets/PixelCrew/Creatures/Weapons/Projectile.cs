@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace PixelCrew.Creatures.Weapons
 {
 
-    public class Projectile : BaseProjectile 
+    public class Projectile : BaseProjectile
     {
 
         protected override void Start()

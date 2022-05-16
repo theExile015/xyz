@@ -1,6 +1,4 @@
-﻿using PixelCrew.Model.Data.Properties;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace PixelCrew.Model.Data.Properties
 {

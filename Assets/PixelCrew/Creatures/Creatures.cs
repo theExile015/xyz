@@ -1,8 +1,8 @@
 ﻿#if UNITY_EDITOR
-using UnityEngine;
+using PixelCrew.Components.Audio;
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.goBased;
-using PixelCrew.Components.Audio;
+using UnityEngine;
 
 namespace PixelCrew.Creatures
 {
@@ -21,6 +21,7 @@ namespace PixelCrew.Creatures
         [SerializeField] protected LayerCheck _groundCheck;
         [SerializeField] private CheckCircleOverlap _attackRange;
         [SerializeField] protected SpawnListComponent _particles;
+        [SerializeField] bool _isPlayer;
 
         protected Rigidbody2D Rigidbody;
         protected Vector2 Direction;
@@ -32,7 +33,7 @@ namespace PixelCrew.Creatures
 
         public bool CreatureIsJumping => IsJumping;
         public bool CreatureIsGrounded => IsGrounded;
-        public bool CreatureIsFalling => IsFalling; 
+        public bool CreatureIsFalling => IsFalling;
 
         private static readonly int IsGroundKey = Animator.StringToHash("IsGround");
         private static readonly int IsRunningKey = Animator.StringToHash("IsRunning");
@@ -40,7 +41,7 @@ namespace PixelCrew.Creatures
         private static readonly int Hit = Animator.StringToHash("Hit");
         private static readonly int AttackKey = Animator.StringToHash("Attack");
 
-        
+
 
         protected virtual void Awake()
         {
@@ -51,7 +52,13 @@ namespace PixelCrew.Creatures
 
         public void SetDirection(Vector2 direction)
         {
-            Direction = direction;
+            if (_isPlayer)
+            {
+                Direction = direction;
+                return;
+            }
+            else if (Direction.y == 0)
+                Direction.x = direction.x;
         }
 
         protected virtual void Update()

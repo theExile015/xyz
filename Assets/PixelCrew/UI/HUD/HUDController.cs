@@ -1,9 +1,6 @@
 ﻿using PixelCrew.Model;
-using PixelCrew.Model.Definitions;
 using PixelCrew.Model.Player;
 using PixelCrew.UI.Widgets;
-using System;
-using System.Collections;
 using UnityEngine;
 
 namespace Assets.PixelCrew.UI.HUD

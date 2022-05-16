@@ -1,6 +1,5 @@
 ﻿using PixelCrew.Utils.Editor;
 using UnityEditor;
-using UnityEngine;
 
 namespace PixelCrew.Components.Dialogs.Editor
 {
@@ -18,10 +17,10 @@ namespace PixelCrew.Components.Dialogs.Editor
         public override void OnInspectorGUI()
         {
             EditorGUILayout.PropertyField(_modeProperty);
-            
-            if(_modeProperty.GetEnum(out ShowDialogComponent.Mode mode))
+
+            if (_modeProperty.GetEnum(out ShowDialogComponent.Mode mode))
             {
-                switch(mode)
+                switch (mode)
                 {
                     case ShowDialogComponent.Mode.Bound:
                         EditorGUILayout.PropertyField(serializedObject.FindProperty("_bound"));

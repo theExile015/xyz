@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using System;
-using UnityEngine.Events;
-using PixelCrew.Model;
+﻿using PixelCrew.Model;
 using PixelCrew.Utils;
+using System;
+using UnityEngine;
+using UnityEngine.Events;
 
 namespace PixelCrew.Components.Health
 {
@@ -14,7 +14,7 @@ namespace PixelCrew.Components.Health
         [SerializeField] public UnityEvent _onDie;
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] public HealthChangeEvent _onChange;
-        
+
         private Lock _imunne = new Lock();
         private GameSession _session;
         private int _maxHealth;
@@ -26,12 +26,12 @@ namespace PixelCrew.Components.Health
 
         private void Awake()
         {
-            _maxHealth = _health;            
+            _maxHealth = _health;
         }
 
         private void Start()
         {
-            _session = FindObjectOfType<GameSession>();    
+            _session = FindObjectOfType<GameSession>();
         }
 
         public void ModifyHP(int hpValue)

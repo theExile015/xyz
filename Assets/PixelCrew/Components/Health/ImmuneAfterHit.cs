@@ -1,5 +1,4 @@
 ﻿using PixelCrew.Utils.Disposables;
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -11,7 +10,7 @@ namespace PixelCrew.Components.Health
         [SerializeField] private float _immuneTime;
         private HealthComponent _health;
         private Coroutine _coroutine;
-        private readonly CompositeDisposable _trash = new CompositeDisposable(); 
+        private readonly CompositeDisposable _trash = new CompositeDisposable();
 
 
         private void Awake()

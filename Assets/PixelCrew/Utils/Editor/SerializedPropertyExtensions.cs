@@ -1,11 +1,11 @@
-﻿using UnityEditor;
-using System;
+﻿using System;
+using UnityEditor;
 
 namespace PixelCrew.Utils.Editor
 {
     public static class SerializedPropertyExtensions
     {
-        public static bool GetEnum<TEnumType>(this SerializedProperty property, out TEnumType retValue) 
+        public static bool GetEnum<TEnumType>(this SerializedProperty property, out TEnumType retValue)
             where TEnumType : Enum
         {
             retValue = default;
@@ -15,7 +15,7 @@ namespace PixelCrew.Utils.Editor
                 return false;
 
             var enumName = names[property.enumValueIndex];
-            retValue = (TEnumType) Enum.Parse(typeof(TEnumType), enumName);
+            retValue = (TEnumType)Enum.Parse(typeof(TEnumType), enumName);
             return true;
         }
     }

@@ -3,8 +3,6 @@ using PixelCrew.Model.Definitions;
 using PixelCrew.Model.Definitions.Localization;
 using PixelCrew.Model.Player;
 using PixelCrew.UI.Widgets;
-using System;
-using System.Collections;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
