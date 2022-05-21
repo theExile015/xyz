@@ -8,12 +8,12 @@ namespace PixelCrew.Creatures.Mobs.Patrlolling
         [SerializeField] private Transform[] _points;
         [SerializeField] private float _treshold = 1f;
 
-        private Creatures _creature;
+        private Creature _creature;
         private int _destinationPointIndex;
 
         private void Awake()
         {
-            _creature = GetComponent<Creatures>();
+            _creature = GetComponent<Creature>();
         }
 
         public override IEnumerator DoPatrol()

@@ -1,4 +1,5 @@
 ﻿using PixelCrew.Utils;
+using PixelCrew.Utils.ObjectPool;
 using UnityEngine;
 
 namespace PixelCrew.Components.goBased
@@ -7,6 +8,7 @@ namespace PixelCrew.Components.goBased
     {
         [SerializeField] private Transform _spawnTarget;
         [SerializeField] private GameObject _particlesPrefub;
+        [SerializeField] private bool _usePool;
 
         [ContextMenu("Spawn")]
 
@@ -17,7 +19,11 @@ namespace PixelCrew.Components.goBased
 
         public GameObject SpawnInstance()
         {
-            var instance = SpawnUtils.Spawn(_particlesPrefub, _spawnTarget.position);
+            var targetPosition = _spawnTarget.position;
+
+            var instance = _usePool 
+                ? Pool.Instance.Get(_particlesPrefub, targetPosition)
+                : SpawnUtils.Spawn(_particlesPrefub, targetPosition);
 
             var scale = _spawnTarget.lossyScale;
             instance.transform.localScale = scale;

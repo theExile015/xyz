@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Check-Point
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 94d031bcff916134e97ec77a770f22fa, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 61b61580e1439b243b779fcd9276c9a0, type: 3}
+  - {fileID: 21300000, guid: 322e4c41faf0ffc44992e061ee021a17, type: 3}
+  - {fileID: 21300000, guid: 81c226329e0a3564283c1f236625d759, type: 3}
+  - {fileID: 21300000, guid: 56fe5d522072dd64694865f64a224879, type: 3}
+  - {fileID: 21300000, guid: c846a5c2968883a4bb048e142d6525f3, type: 3}
+  - {fileID: 21300000, guid: a1a465f2bab5daa48912b55918867a04, type: 3}
+  - {fileID: 21300000, guid: fe6b5763abf921049b89f6166049c80e, type: 3}
+  - {fileID: 21300000, guid: 802f1bb3c04202c43a50f17666f19041, type: 3}
+  - {fileID: 21300000, guid: 86fbee35bb83150468a9ebb75305b410, type: 3}
+  - {fileID: 21300000, guid: 3b5307c657fdf61409ef41af2d1c3930, type: 3}
+  - {fileID: 21300000, guid: 546290572790aa94e980fcd2d71b0de4, type: 3}
+  - {fileID: 21300000, guid: 68bd29c761193df418fdcc5c9e0adac1, type: 3}
+  - {fileID: 21300000, guid: 88c2d3194b72ef04bbb4c648f8eba383, type: 3}
+  - {fileID: 21300000, guid: 9bd2479a4c471cc4f8dd9c560810a353, type: 3}
+  - {fileID: 21300000, guid: a56a35fa4410f334eafe24f7fb63a046, type: 3}
+  - {fileID: 21300000, guid: c2962bdb936295f418f893845fcb6363, type: 3}
+  - {fileID: 21300000, guid: 0916ea1d2c73e7245a0edffb41f9fdfd, type: 3}
+  - {fileID: 21300000, guid: 71d6d59e912d2b64abae163e2e665347, type: 3}
+  - {fileID: 21300000, guid: 507ba3fe0d9384149ab661dda66e5338, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 1
+  - 3
+  - 1
+  - 5
+  - 3
+  - platform
+  - 1
+  - 8
+  - 2
+  - 4
+  - 6
+  - 4
+  - 3
+  - 2
+  - 2
+  - 1
+  - 2
+  - 7
+  - 3
+  m_Tag: Check-Point
+  m_IsVariant: 0

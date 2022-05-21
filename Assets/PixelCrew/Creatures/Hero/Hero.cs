@@ -9,13 +9,12 @@ using PixelCrew.Model.Definitions.Repositories.Items;
 using PixelCrew.Model.Player;
 using PixelCrew.Utils;
 using System.Collections;
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace PixelCrew.Creatures.Hero
 {
 
-    public class Hero : Creatures
+    public class Hero : Creature
     {
         [SerializeField] private float _slamDownVelocity;
 
@@ -23,8 +22,10 @@ namespace PixelCrew.Creatures.Hero
         [SerializeField] private LayerMask _interactionLayer;
 
         [SerializeField] private Cooldown _throwCooldown;
-        [SerializeField] private AnimatorController _armed;
-        [SerializeField] private AnimatorController _unarmed;
+#if UNITY_EDITOR
+        [SerializeField] private UnityEditor.Animations.AnimatorController _armed;
+        [SerializeField] private UnityEditor.Animations.AnimatorController _unarmed;
+#endif
 
         [SerializeField] private CheckCircleOverlap _interactionCheck;
 
@@ -217,7 +218,9 @@ namespace PixelCrew.Creatures.Hero
 
         private void UpdateHeroWeaopn()
         {
+#if UNITY_EDITOR
             Animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _unarmed;
+#endif
         }
 
         public void AddInInventory(string id, int value)

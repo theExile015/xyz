@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 6045428629569735072}
   - component: {fileID: 4830467155237233536}
   - component: {fileID: 3651339615213907480}
-  - component: {fileID: 5080298632158884995}
   - component: {fileID: 4558945217207917492}
+  - component: {fileID: 238864365526134652}
   m_Layer: 0
   m_Name: PearlSinProjectile
   m_TagString: Untagged
@@ -154,7 +154,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5080298632158884995}
+      - m_Target: {fileID: 238864365526134652}
         m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
@@ -178,20 +178,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _value: -1
---- !u!114 &5080298632158884995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1061372962695143570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5059ebc8a1e32484eb057f04c6e98b74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 1061372962695143570}
-  _state: {fileID: 0}
 --- !u!114 &4558945217207917492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,3 +194,17 @@ MonoBehaviour:
   _invertX: 1
   _frequency: 5
   _amplitude: 0.2
+--- !u!114 &238864365526134652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061372962695143570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5059ebc8a1e32484eb057f04c6e98b74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToDestroy: {fileID: 1061372962695143570}
+  _state: {fileID: 0}

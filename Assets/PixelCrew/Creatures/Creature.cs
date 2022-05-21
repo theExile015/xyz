@@ -1,12 +1,12 @@
-﻿#if UNITY_EDITOR
-using PixelCrew.Components.Audio;
+﻿using PixelCrew.Components.Audio;
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.goBased;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 namespace PixelCrew.Creatures
 {
-    public class Creatures : MonoBehaviour
+    public class Creature : MonoBehaviour
     {
         [Header("Params")]
         [SerializeField] private bool _invertScale;
@@ -180,4 +180,3 @@ namespace PixelCrew.Creatures
         }
     }
 }
-#endif

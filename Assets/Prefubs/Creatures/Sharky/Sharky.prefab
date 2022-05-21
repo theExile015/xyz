@@ -514,6 +514,7 @@ MonoBehaviour:
   _spawnTarget: {fileID: 5667291142706246289}
   _particlesPrefub: {fileID: 23932536491478171, guid: 15e501d5eb66eb74fb7353a07d5aaccc,
     type: 3}
+  _usePool: 1
 --- !u!1 &5667291143501099342
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,6 +625,7 @@ MonoBehaviour:
   _spawnTarget: {fileID: 5667291144048277280}
   _particlesPrefub: {fileID: 3393601434514733161, guid: 425700786828e6d41813a7f83347f20e,
     type: 3}
+  _usePool: 0
 --- !u!1 &6871577206898373097
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,6 +753,7 @@ MonoBehaviour:
   _spawnTarget: {fileID: 6990637213231790691}
   _particlesPrefub: {fileID: 8905712907038806034, guid: a7252ba3e6c3b784e82702fdb96e4829,
     type: 3}
+  _usePool: 0
 --- !u!1 &7561425231103932252
 GameObject:
   m_ObjectHideFlags: 0
@@ -902,6 +905,7 @@ MonoBehaviour:
   _spawnTarget: {fileID: 3453729093765906675}
   _particlesPrefub: {fileID: 8905712907038806034, guid: 505b2d65fbcfc334b94de4ab65b5372b,
     type: 3}
+  _usePool: 0
 --- !u!1 &9010025239596667837
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,3 +952,4 @@ MonoBehaviour:
   _spawnTarget: {fileID: 4835976267970837297}
   _particlesPrefub: {fileID: 7990069752233272823, guid: 9413289471d5b0e49befe73b366b03df,
     type: 3}
+  _usePool: 0

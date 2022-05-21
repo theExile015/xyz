@@ -783,6 +783,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 199666660}
     m_Modifications:
+    - target: {fileID: 1861210045116555512, guid: 8c2c37858be43884ba4f3142d9cdb994,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.354
+      objectReference: {fileID: 0}
+    - target: {fileID: 1861210045116555512, guid: 8c2c37858be43884ba4f3142d9cdb994,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.28
+      objectReference: {fileID: 0}
     - target: {fileID: 3707672255467063545, guid: 8c2c37858be43884ba4f3142d9cdb994,
         type: 3}
       propertyPath: m_Mass
@@ -24608,6 +24618,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: TotemTop
       objectReference: {fileID: 0}
+    - target: {fileID: 6005253743903920900, guid: a20a06a2e86b16349a883797349edf9e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005253743903920900, guid: a20a06a2e86b16349a883797349edf9e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.305
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a20a06a2e86b16349a883797349edf9e, type: 3}
 --- !u!4 &1921844683 stripped
@@ -28768,6 +28788,7 @@ MonoBehaviour:
   _spawnTarget: {fileID: 1711061301}
   _particlesPrefub: {fileID: 5667291142690478708, guid: 5869c17d052053446813587c400d855c,
     type: 3}
+  _usePool: 0
 --- !u!1001 &7080464764666703248
 PrefabInstance:
   m_ObjectHideFlags: 0

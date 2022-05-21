@@ -7,11 +7,11 @@ namespace PixelCrew.Creatures.Mobs
     {
         [SerializeField] private LayerCheck _groundEndCheck;
         //[SerializeField] private LayerCheck _jumpTargetCheck;
-        private Creatures _creature;
+        private Creature _creature;
 
         private void Awake()
         {
-            _creature = GetComponent<Creatures>();
+            _creature = GetComponent<Creature>();
         }
 
         public void Update()

@@ -589,3 +589,4 @@ MonoBehaviour:
   _spawnTarget: {fileID: 1861210045116555512}
   _particlesPrefub: {fileID: 1061372962695143570, guid: c1e5bcb236cc79f4f9062076505b290c,
     type: 3}
+  _usePool: 1

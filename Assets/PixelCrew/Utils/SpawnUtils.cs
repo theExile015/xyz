@@ -6,11 +6,11 @@ namespace PixelCrew.Utils
     {
         public const string ContainerName = "*** SPAWNED ***";
 
-        public static GameObject Spawn(GameObject prefub, Vector3 position)
+        public static GameObject Spawn(GameObject prefub, Vector3 position, string containerName = ContainerName)
         {
-            var container = GameObject.Find(ContainerName);
+            var container = GameObject.Find(containerName);
             if (container == null)
-                container = new GameObject(ContainerName);
+                container = new GameObject(containerName);
 
             return GameObject.Instantiate(prefub, position, Quaternion.identity, container.transform);
         }

@@ -26,7 +26,7 @@ namespace PixelCrew.Creatures.Mobs
         private static readonly int IsDeadKey = Animator.StringToHash("IsDead");
 
         private SpawnListComponent _particles;
-        private Creatures _creature;
+        private Creature _creature;
         private Animator _animator;
         private Patrol _patrol;
         private CapsuleCollider2D _collider;
@@ -34,7 +34,7 @@ namespace PixelCrew.Creatures.Mobs
         private void Awake()
         {
             _particles = GetComponent<SpawnListComponent>();
-            _creature = GetComponent<Creatures>();
+            _creature = GetComponent<Creature>();
             _animator = GetComponent<Animator>();
             _patrol = GetComponent<Patrol>();
             _collider = GetComponent<CapsuleCollider2D>();

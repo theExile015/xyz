@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 6045428629569735072}
   - component: {fileID: 4830467155237233536}
   - component: {fileID: 3651339615213907480}
-  - component: {fileID: 5080298632158884995}
   - component: {fileID: 6249843457492865608}
+  - component: {fileID: 6024191661602211201}
   m_Layer: 0
-  m_Name: PearlProjectile
+  m_Name: PearlProjectile 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   _tag: 
   _layer:
     serializedVersion: 2
-    m_Bits: 17665
+    m_Bits: 16640
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -154,8 +154,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 5080298632158884995}
-        m_MethodName: DestroyObject
+      - m_Target: {fileID: 6024191661602211201}
+        m_MethodName: Release
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -178,20 +178,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _value: -1
---- !u!114 &5080298632158884995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1061372962695143570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5059ebc8a1e32484eb057f04c6e98b74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 1061372962695143570}
-  _state: {fileID: 0}
 --- !u!114 &6249843457492865608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,5 +190,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c203542ee5a796647a52c4c73d108543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
+  _speed: 2.5
   _invertX: 1
+--- !u!114 &6024191661602211201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061372962695143570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd31a79225dc6a4dba82a8d2dbe8f85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onRestart:
+    m_PersistentCalls:
+      m_Calls: []

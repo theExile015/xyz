@@ -11,6 +11,19 @@ namespace PixelCrew.Model.Player
         [SerializeField] private StatDef[] _statas;
         public int InventorySize => _inventorySize;
         public StatDef[] Stats => _statas;
-        public StatDef GetStat(StatId id) => _statas.FirstOrDefault(x => x.Id == id);
+        // public StatDef GetStat(StatId id) => _statas.FirstOrDefault(x => x.Id == id);
+
+        public StatDef GetStat(StatId id)
+        {
+            foreach (var statDef in _statas)
+            {
+                if (statDef.Id == id)
+                {
+                    return statDef;
+                }
+            }
+
+            return default;
+        }
     }
 }

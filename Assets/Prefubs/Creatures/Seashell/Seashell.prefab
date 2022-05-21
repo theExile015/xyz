@@ -323,6 +323,7 @@ MonoBehaviour:
   _spawnTarget: {fileID: 7080464764735863515}
   _particlesPrefub: {fileID: 1061372962695143570, guid: 47a63680b23680e49bd2760e40d39f71,
     type: 3}
+  _usePool: 0
 --- !u!1 &7080464765491534545
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +451,7 @@ MonoBehaviour:
   _spawnTarget: {fileID: 7080464765491534546}
   _particlesPrefub: {fileID: 8905712907038806034, guid: a7252ba3e6c3b784e82702fdb96e4829,
     type: 3}
+  _usePool: 0
 --- !u!1 &7080464766123679498
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,3 +808,4 @@ MonoBehaviour:
   _spawnTarget: {fileID: 7080464766364621122}
   _particlesPrefub: {fileID: 9030357931007310558, guid: 64ea568a87e378640948e8966baf5daf,
     type: 3}
+  _usePool: 0
