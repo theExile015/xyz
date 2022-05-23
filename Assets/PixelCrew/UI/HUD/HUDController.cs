@@ -13,7 +13,7 @@ namespace Assets.PixelCrew.UI.HUD
 
         private void Start()
         {
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             _session.Data.HP.OnChanged += OnHealthChanged;
 
             OnHealthChanged(_session.Data.HP.Value, 0);

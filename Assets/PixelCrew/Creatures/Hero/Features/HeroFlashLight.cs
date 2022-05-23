@@ -13,7 +13,7 @@ namespace PixelCrew.Components
 
         private void Start()
         {
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             if (!_light) return;
             _defaultIntensity = _light.intensity;
         }

@@ -10,7 +10,7 @@ namespace PixelCrew.Components.LevelManagement
         [ContextMenu("Reload")]
         public void Reload()
         {
-            var session = FindObjectOfType<GameSession>();
+            var session = GameSession.Instance;
             session.LoadLastSave();
 
 

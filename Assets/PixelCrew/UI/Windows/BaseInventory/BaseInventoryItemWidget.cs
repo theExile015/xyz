@@ -23,7 +23,7 @@ namespace PixelCrew.UI.Windows.BaseInventory
 
         private void Start()
         {
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             _isSelected.GetComponent<Image>().color = Color.yellow;
             var index = _session.BaseInventory.InterfaceSelection;
             var trigger = _session.BaseInventory.InterfaceUpdateTrigger;

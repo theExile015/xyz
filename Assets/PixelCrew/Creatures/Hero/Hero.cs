@@ -86,7 +86,7 @@ namespace PixelCrew.Creatures.Hero
         private void Start()
         {
             _cameraShake = FindObjectOfType<CameraShakeEffect>();
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             _health = GetComponent<HealthComponent>();
             _session.Data.Inventory.OnChanged += OnInventoryChanged;
             _session.StatsModel.OnUpgraded += OnHeroUpgraded;

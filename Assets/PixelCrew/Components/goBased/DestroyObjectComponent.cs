@@ -12,7 +12,7 @@ namespace PixelCrew.Components.goBased
         {
             Destroy(_objectToDestroy);
             if (_state != null)
-                FindObjectOfType<GameSession>().StoreState(_state.ID);
+                GameSession.Instance.StoreState(_state.ID);
         }
 
     }

@@ -22,7 +22,7 @@ namespace PixelCrew.UI.HUD.QuickInventory
         private void Start()
         {
             _dataGroup = new DataGroup<InventoryItemData, InventoryItemWidget>(_prefub, _container);
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             _trash.Retain(_session.QuickInventory.Subscribe(Rebuild));
             _trash.Retain(_session.BaseInventory.InterfaceUpdateTrigger.Subscribe(OnAccessChange));
             Rebuild();

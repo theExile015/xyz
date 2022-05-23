@@ -31,7 +31,7 @@ namespace PixelCrew.Components.Health
 
         private void Start()
         {
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
         }
 
         public void ModifyHP(int hpValue)

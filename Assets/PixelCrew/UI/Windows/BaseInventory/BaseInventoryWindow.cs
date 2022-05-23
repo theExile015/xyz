@@ -23,7 +23,7 @@ namespace PixelCrew.UI.Windows.BaseInventory
         {
             base.Start();
 
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             _session.BaseInventory.InterfaceSelection.Value = 1;
 
             _trash.Retain(_session.BaseInventory.Subscribe(OnBaseInventoryChanged));
