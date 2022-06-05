@@ -336,8 +336,8 @@ GameObject:
   - component: {fileID: 7080464765491534551}
   - component: {fileID: 7080464765491534549}
   - component: {fileID: 7080464765491534548}
-  - component: {fileID: 7080464765491534547}
   - component: {fileID: 6905021341353392920}
+  - component: {fileID: 215912776782398330}
   m_Layer: 9
   m_Name: AttackPosition
   m_TagString: Untagged
@@ -420,22 +420,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
---- !u!114 &7080464765491534547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7080464765491534545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc948e80c594f7f4baaed79d2ab3623f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _layer:
-    serializedVersion: 2
-    m_Bits: 16384
-  _isTouchingLayer: 0
 --- !u!114 &6905021341353392920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,6 +436,22 @@ MonoBehaviour:
   _particlesPrefub: {fileID: 8905712907038806034, guid: a7252ba3e6c3b784e82702fdb96e4829,
     type: 3}
   _usePool: 0
+--- !u!114 &215912776782398330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7080464765491534545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70adfe638bfa66042865ef3a4129a4f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 16384
+  _isTouchingLayer: 0
 --- !u!1 &7080464766123679498
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +573,7 @@ GameObject:
   - component: {fileID: 4208536054446925690}
   - component: {fileID: 2102594945607839446}
   - component: {fileID: 6177301764626280736}
+  - component: {fileID: 6715456800715478723}
   m_Layer: 9
   m_Name: Seashell
   m_TagString: Enemy
@@ -713,14 +714,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e88912f9a75cd4192fc0571d090f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isTotem: 0
   _vision: {fileID: 6150761329645786216}
   _meleeCooldown:
     _value: 2
   _meleeAttack: {fileID: 7080464765491534551}
-  _meleeCanAttack: {fileID: 7080464765491534547}
+  _meleeCanAttack: {fileID: 215912776782398330}
   _rangeCooldown:
     _value: 2
   _rangeAttack: {fileID: 6745007946738828831}
+  _rangeAttackEffect: {fileID: 0}
 --- !u!114 &4208536054446925690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -809,3 +812,18 @@ MonoBehaviour:
   _particlesPrefub: {fileID: 9030357931007310558, guid: 64ea568a87e378640948e8966baf5daf,
     type: 3}
   _usePool: 0
+--- !u!114 &6715456800715478723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7080464766364621121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad765ac5948d63488b6c742a059646b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - _id: shoot
+    _clip: {fileID: 8300000, guid: a4cc3aa4970ba4469b76c20bb163371f, type: 3}

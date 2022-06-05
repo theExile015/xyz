@@ -25,3 +25,7 @@ MonoBehaviour:
     _effect: 1
     _value: 5
     _time: 5
+  - _id: Rum
+    _effect: 0
+    _value: 3
+    _time: 0

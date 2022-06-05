@@ -12,7 +12,7 @@ namespace PixelCrew.UI.Windows.Localization.Window
 
         private DataGroup<LocaleInfo, LocaleItemWidget> _dataGroup;
 
-        private readonly string[] _supportedLocales = { "en", "ru", "de", "no" };
+        private readonly string[] _supportedLocales = { "en", "ru" };
 
         protected override void Start()
         {

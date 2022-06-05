@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Level4.unity
     guid: fafe7e86d6eb9dc4baafce99cdc2fc2c
   - enabled: 1
-    path: Assets/Scenes/Level5.unity
+    path: Assets/Scenes/Level3.unity
     guid: 6d443109c27f8ef4282f70520ede8b47
   - enabled: 1
     path: Assets/Scenes/HUD.unity
@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelLoader.unity
     guid: 5824e072d88d725458b0a4881580c710
+  - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: 3c2fb391754c50e4a8cdbbc9218ed468
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 6767a77caac9caf4da053354031aa913,
       type: 2}

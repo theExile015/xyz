@@ -76,10 +76,9 @@ namespace PixelCrew.UI.Windows.BaseInventory
         }
 
 
-        protected override void OnDestroy()
+        private void OnDestroy()
         {
             _trash.Dispose();
-            base.OnDestroy();
         }
     }
 }

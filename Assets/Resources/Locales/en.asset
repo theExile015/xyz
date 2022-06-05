@@ -93,10 +93,56 @@ MonoBehaviour:
   - Key: GreenDiamond
     Value: Green Crystal is a premium payment.
   - Key: boss_d_1
-    Value: I kill you!
+    Value: I Kill You!
   - Key: boss_d_2
-    Value: No! I kill you!
+    Value: No! I Kill You!
   - Key: boss_d_3
-    Value: Noooooooooo...
+    Value: Noooooooooo ...
   - Key: boss_d_4
-    Value: Told ya...
+    Value: Told ya ...
+  - Key: story_1_1
+    Value: What ... where ... where am I?
+  - Key: story_1_2
+    Value: I do not remember this island at all ...
+  - Key: story_1_3
+    Value: And what the hell became with my ship?
+  - Key: story_1_4
+    Value: So. Need to figure it out!
+  - Key: story_1_5
+    Value: I use arrows for movement. Button A for jumping.
+  - Key: story_2_1
+    Value: Locked stone door ...
+  - Key: story_2_2
+    Value: Surely there is a switch somewhere!
+  - Key: story_3_1
+    Value: Are you kidding me...
+  - Key: story_4_1
+    Value: And here is the switch.
+  - Key: story_4_2
+    Value: I press B for activation.
+  - Key: story_5_1
+    Value: How bad I am
+  - Key: story_5_2
+    Value: It's good that I found a bottle of Roma!
+  - Key: story_5_3
+    Value: In the upper right corner, the inventory access button.
+  - Key: story_5_4
+    Value: You need to activate the rum, and then use it with the X button.
+  - Key: story_10_1
+    Value: Hey, what are you doing here?
+  - Key: story_10_2
+    Value: I'm lost...
+  - Key: story_10_3
+    Value: Guard !! Guard !!
+  - Key: story_11_1
+    Value: Ahahahahahaha!
+  - Key: story_11_2
+    Value: This guy...
+  - Key: story_12_1
+    Value: You again!
+  - Key: story_12_2
+    Value: Wait! You confused me with my brother.
+  - Key: story_12_3
+    Value: I am kind and can teach you new features!
+  - Key: story_12_4
+    Value: Let's try...

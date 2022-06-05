@@ -22,7 +22,7 @@ MonoBehaviour:
     _tags: 00000000010000000200000003000000
   - _id: Key
     _icon: {fileID: 21300000, guid: baca21e925f4a4f86a4c23d789b5f7e4, type: 3}
-    _tags: 0000000002000000
+    _tags: 000000000200000001000000
   - _id: LesserHealingPotion
     _icon: {fileID: 1185527514606905908, guid: 6ef7420a5c668a247bf2b1ca2d08d684, type: 3}
     _tags: 00000000010000000200000004000000
@@ -39,3 +39,7 @@ MonoBehaviour:
   - _id: GreenDiamond
     _icon: {fileID: 5489425550423852611, guid: 456ad15b831805d488a6d475522a7251, type: 3}
     _tags: 0000000001000000
+  - _id: Rum
+    _icon: {fileID: -8438763151253471919, guid: 6ef7420a5c668a247bf2b1ca2d08d684,
+      type: 3}
+    _tags: 00000000010000000200000004000000

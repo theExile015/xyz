@@ -63,8 +63,6 @@ namespace PixelCrew.Components.Health
                     _health = _maxHealth;
                 }
             }
-
-            Debug.Log("Ouch!! HP = " + _health);
         }
 
         private void OnDestroy()

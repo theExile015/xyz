@@ -8,7 +8,7 @@ namespace PixelCrew.UI
         // Update is called once per frame
         public void OnGameMenuButtonClick(string _path)
         {
-            WindowUtils.CreateWindowSafeCall(_path);
+            WindowUtils.CreateWindow(_path);
         }
     }
 }

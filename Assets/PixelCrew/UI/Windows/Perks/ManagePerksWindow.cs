@@ -65,10 +65,9 @@ namespace PixelCrew.UI.Windows.Perks
             _session.PerksModel.Unlock(selected);
         }
 
-        protected override void OnDestroy()
+        private void OnDestroy()
         {
             _trash.Dispose();
-            base.OnDestroy();
         }
     }
 }

@@ -35,6 +35,8 @@ namespace PixelCrew.Creatures
         public bool CreatureIsGrounded => IsGrounded;
         public bool CreatureIsFalling => IsFalling;
 
+        public Vector2 _Direction => Direction;
+
         private static readonly int IsGroundKey = Animator.StringToHash("IsGround");
         private static readonly int IsRunningKey = Animator.StringToHash("IsRunning");
         private static readonly int VerticalVelocityKey = Animator.StringToHash("VerticalVelocity");

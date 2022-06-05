@@ -45,9 +45,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.031360626, y: -0.29106808}
+  m_Offset: {x: 0.031360626, y: -0.31177616}
   serializedVersion: 2
-  m_Radius: 0.15062046
+  m_Radius: 0.17132854
 --- !u!114 &9002742963605759041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,8 +197,8 @@ GameObject:
   - component: {fileID: 6502618691788230661}
   - component: {fileID: 5412655068218697221}
   - component: {fileID: 2803210279722924040}
-  - component: {fileID: 2182310016643520039}
   - component: {fileID: 4877951827744623672}
+  - component: {fileID: 7786759937306610012}
   m_Layer: 9
   m_Name: AttackPosition (1)
   m_TagString: Enemy
@@ -281,22 +281,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
---- !u!114 &2182310016643520039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3537180929048489611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc948e80c594f7f4baaed79d2ab3623f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _layer:
-    serializedVersion: 2
-    m_Bits: 16384
-  _isTouchingLayer: 0
 --- !u!114 &4877951827744623672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +297,22 @@ MonoBehaviour:
   _particlesPrefub: {fileID: 8905712907038806034, guid: a7252ba3e6c3b784e82702fdb96e4829,
     type: 3}
   _usePool: 0
+--- !u!114 &7786759937306610012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3537180929048489611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70adfe638bfa66042865ef3a4129a4f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layer:
+    serializedVersion: 2
+    m_Bits: 16384
+  _isTouchingLayer: 0
 --- !u!1 &3884184017938138254
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,7 +828,6 @@ GameObject:
   - component: {fileID: 6198901019277641259}
   - component: {fileID: 872615885957097728}
   - component: {fileID: 211463726544073675}
-  - component: {fileID: 7081652766167690506}
   - component: {fileID: 6244491254313420483}
   - component: {fileID: 5967867818022103364}
   - component: {fileID: 6815501322584676312}
@@ -836,6 +835,7 @@ GameObject:
   - component: {fileID: 1989397920476507852}
   - component: {fileID: 7347656037469489395}
   - component: {fileID: 6845246672290938302}
+  - component: {fileID: 7253522598827307679}
   m_Layer: 9
   m_Name: Pinky
   m_TagString: Enemy
@@ -973,31 +973,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7081652766167690506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8999539836264876275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 700b33c4fa3c8084384246ea34bb5baf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _invertScale: 1
-  _speed: 3
-  _hasteSpeed: 0
-  Jumpforce: 12
-  _damageJumpForce: 2
-  _meleeDamage: 1
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  _groundCheck: {fileID: 9002742963605759041}
-  _attackRange: {fileID: 6502618691788230661}
-  _particles: {fileID: 1989397920476507852}
-  _isPlayer: 0
 --- !u!114 &6244491254313420483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1011,12 +986,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vision: {fileID: 6046495996110975364}
-  _canAttack: {fileID: 2182310016643520039}
+  _canAttack: {fileID: 7786759937306610012}
   _alarmDelay: 0.5
   _attackCooldown: 1
   _missHeroCooldown: 1
   _horizontalTreshold: 0.2
-  _jumpingMob: 0
+  _jumpingMob: 1
 --- !u!114 &5967867818022103364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1034,7 +1009,7 @@ MonoBehaviour:
   _onChangeDirection:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7081652766167690506}
+      - m_Target: {fileID: 7253522598827307679}
         m_MethodName: SetDirection
         m_Mode: 0
         m_Arguments:
@@ -1062,7 +1037,7 @@ MonoBehaviour:
   _onDamage:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7081652766167690506}
+      - m_Target: {fileID: 7253522598827307679}
         m_MethodName: TakeDamage
         m_Mode: 1
         m_Arguments:
@@ -1153,3 +1128,28 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: d060a259c1fa4eb489c4234fad6b64a5, type: 3}
   - _id: Melee
     _clip: {fileID: 8300000, guid: b43a3065c6b41544a9d6eb549fbfe81a, type: 3}
+--- !u!114 &7253522598827307679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8999539836264876275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7108b0baf46e60044829d58f8bc241c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _invertScale: 1
+  _speed: 3
+  _hasteSpeed: 3
+  Jumpforce: 12
+  _damageJumpForce: 3
+  _meleeDamage: 1
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  _groundCheck: {fileID: 9002742963605759041}
+  _attackRange: {fileID: 6502618691788230661}
+  _particles: {fileID: 1989397920476507852}
+  _isPlayer: 0

@@ -3,14 +3,17 @@ using PixelCrew.Model.Models;
 using PixelCrew.Model.Player;
 using PixelCrew.Utils.Disposables;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 namespace PixelCrew.Model
 {
     public class GameSession : MonoBehaviour
     {
+        [SerializeField] private int _levelIndex;
         [SerializeField] private PlayerData _data;
         [SerializeField] private string _defaultCheckPoint;
 
@@ -31,7 +34,7 @@ namespace PixelCrew.Model
             var existsSession = GetExistsSession();
             if (existsSession != null)
             {
-                existsSession.StartSession(_defaultCheckPoint);
+                existsSession.StartSession(_defaultCheckPoint, _levelIndex);
                 Destroy(gameObject);
             }
             else
@@ -40,16 +43,26 @@ namespace PixelCrew.Model
                 InitModels();
                 DontDestroyOnLoad(this);
                 Instance = this;
-                StartSession(_defaultCheckPoint);
+                StartSession(_defaultCheckPoint, _levelIndex);
             }
         }
 
-        private void StartSession(string defaultCheckPoint)
+        private void StartSession(string defaultCheckPoint, int levelIndex)
         {
             SetChecked(defaultCheckPoint);
+            TrackSessionStart(levelIndex);
 
-            LoadHUD();
+            LoadUIs();
             SpawnHero();
+        }
+
+        private void TrackSessionStart(int levelIndex)
+        {
+            var eventParams = new Dictionary<string, object>
+            {
+                {"level_index", levelIndex }
+            };
+            AnalyticsEvent.Custom("level_start", eventParams);
         }
 
         private void SpawnHero()
@@ -83,9 +96,16 @@ namespace PixelCrew.Model
             _data.HP.Value = (int)StatsModel.GetValue(StatId.Hp);
         }
 
-        private void LoadHUD()
+        private void LoadUIs()
         {
             SceneManager.LoadScene("HUD", LoadSceneMode.Additive);
+            LoadOnScreenControls();
+        }
+
+        [Conditional("USE_ONSCREEN_CONTROLS")]
+        private void LoadOnScreenControls()
+        {
+            SceneManager.LoadScene("Controls", LoadSceneMode.Additive);
         }
 
         private GameSession GetExistsSession()

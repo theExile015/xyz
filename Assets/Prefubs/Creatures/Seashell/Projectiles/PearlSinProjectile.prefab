@@ -194,6 +194,7 @@ MonoBehaviour:
   _invertX: 1
   _frequency: 5
   _amplitude: 0.2
+  _lifeTime: 14.2
 --- !u!114 &238864365526134652
 MonoBehaviour:
   m_ObjectHideFlags: 0

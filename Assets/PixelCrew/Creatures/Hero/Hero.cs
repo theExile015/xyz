@@ -94,7 +94,7 @@ namespace PixelCrew.Creatures.Hero
             _health.SetHealth(_session.Data.HP.Value);
             _rangedDamage = _session.StatsModel.GetValue(StatId.RangeDamage);
 
-            UpdateHeroWeaopn();
+            //UpdateHeroWeaopn();
         }
 
         private void OnHeroUpgraded(StatId statId)
@@ -118,7 +118,7 @@ namespace PixelCrew.Creatures.Hero
         {
             if (id == SwordId)
             {
-                UpdateHeroWeaopn();
+                // UpdateHeroWeaopn();
             }
         }
 
@@ -211,7 +211,7 @@ namespace PixelCrew.Creatures.Hero
 
         public override void Attack()
         {
-            if (SwordCount <= 0) return;
+           // if (SwordCount <= 0) return;
 
             base.Attack();
         }
@@ -299,6 +299,7 @@ namespace PixelCrew.Creatures.Hero
             {
                 case Effect.AddHp:
                     _session.Data.HP.Value += (int)potion.Value;
+                    _health.SetHealth(_session.Data.HP.Value);
                     break;
 
                 case Effect.SpeedUp:

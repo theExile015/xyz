@@ -21,29 +21,67 @@ namespace PixelCrew.UI
         public void OnControlDown()
         {
             TryFindHero();
+            var direction = _hero._Direction;
             switch (_control)
             {
                 case MobileControl.ControlLeft:
-                    _hero.SetDirection(Vector2.left);
+                    direction.x = -1;
+                    _hero.SetDirection(direction);
                     break;
 
                 case MobileControl.ControlRight:
-                    _hero.SetDirection(Vector2.right);
+                    direction.x = 1;
+                    _hero.SetDirection(direction);
                     break;
 
                 case MobileControl.ControlA:
-                    _hero.SetDirection(Vector2.up);
+                    direction.y = 1;
+                    _hero.SetDirection(direction);
+                    break;
+
+                case MobileControl.ControlB:
+                    _hero.Attack();
+                    break;
+
+                case MobileControl.ControlX:
+                    _hero.Interact();
+                    break;
+
+                case MobileControl.ControlY:
+                    _hero.StartThrowing();
                     break;
 
                 default:
                     break;
             }
+
+
         }
 
         public void OnControlUp()
         {
             TryFindHero();
-            _hero.SetDirection(Vector2.zero);
+            var direction = _hero._Direction;
+            switch (_control)
+            {
+                case MobileControl.ControlLeft:
+                    direction.x = 0;
+                    _hero.SetDirection(direction);
+                    break;
+
+                case MobileControl.ControlRight:
+                    direction.x = 0;
+                    _hero.SetDirection(direction);
+                    break;
+
+                case MobileControl.ControlA:
+                    direction.y = 0;
+                    _hero.SetDirection(direction);
+                    break;
+
+                default:
+                    break;
+            }
         }
 
         private void OnDestroy()

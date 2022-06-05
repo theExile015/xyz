@@ -6,7 +6,7 @@ namespace PixelCrew.Creatures.Weapons
     public class SinProjectile : BaseProjectile
     {
         [SerializeField] private float _frequency = 5f;
-        [SerializeField] private float _amplitude = 0.2f;
+        [SerializeField] private float _amplitude = 0.2f;   
         private float _originalY;
         private float _time;
 
